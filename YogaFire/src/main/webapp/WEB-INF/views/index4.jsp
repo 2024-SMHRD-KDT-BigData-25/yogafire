@@ -180,7 +180,7 @@
     <div class="menu-links">
       <a href="#">Home</a>
       <a href="#">프로그램</a>
-      <a href="#">요금제</a>
+      <a href="/boot/index5"">요금제</a>
     </div>
   </div>
 

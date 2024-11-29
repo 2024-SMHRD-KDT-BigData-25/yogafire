@@ -142,12 +142,13 @@
     </style>
 </head>
 <body>
-    <!-- 상단 메뉴 -->
-    <div class="top-menu">
-        <div class="menu-items">
-            <a href="#">🧘 Home</a>
-        </div>
+   <div class="top-menu">
+    <div class="menu-items">
+        <!-- Home 버튼 클릭 시 index4.jsp로 이동 -->
+        <a href="/boot/index4">🧘 Home</a>
     </div>
+</div>
+
 
 
     <h1 class="page-title">요가 및 명상 회원권 🌿</h1>

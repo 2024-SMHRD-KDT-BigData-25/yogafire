@@ -28,19 +28,23 @@
     gap: 10px;
     margin-left: auto !important; 
 }
+.button-group a,
+.button-group button {
+    background-color: #4d7155;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    text-decoration: none; /* 링크 밑줄 제거 */
+    cursor: pointer;
+}
+.button-group a:hover {
+    background-color: #3b5942;
+}
 
-     
-        .button-group button {
-            background-color: #4d7155;
-            color: white;
-            border: none;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 20px;
-            padding: 10px 20px;
-            margin-right: 10px;
-            cursor: pointer;
-        }
         .button-group button:hover {
             background-color: #3b5942;
         }
@@ -184,14 +188,16 @@
     <!-- 상단 메뉴 -->
   <div class="top-menu">
     <div class="menu-items">
-      <a href="#">요가</a>
-      <a href="#">명상</a>
+      <a href="/boot/index2">요가</a>
+      <a href="/boot/index3">명상</a>
 
     </div>
-    <div class="button-group">
-      <button>회원권</button>
-      <button>체험권</button>
-    </div>
+ <div class="button-group">
+    <a href="/boot/index5" class="btn">회원권</a>
+    <button>체험권</button>
+</div>
+
+
   </div>
 
     <!-- 메인 섹션 -->
