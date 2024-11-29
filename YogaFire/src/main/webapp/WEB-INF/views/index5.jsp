@@ -145,7 +145,7 @@
    <div class="top-menu">
     <div class="menu-items">
         <!-- Home 버튼 클릭 시 index4.jsp로 이동 -->
-        <a href="/boot/index4">🧘 Home</a>
+        <a href="/boot/index4">🧘 마이페이지</a>
     </div>
 </div>
 
@@ -254,7 +254,9 @@
                     <tr>
                         <th>전화 상담</th>
                         <td>02-3447-9642</td>
+                        <br>
                     </tr>
+                    <br>
                     <tr>
                         <th>채팅 상담</th>
                         <td><a href="#" style="color: var(--main-text);">카카오톡 바로가기</a></td>

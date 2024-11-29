@@ -184,6 +184,27 @@
       background: var(--button-hover);
       transform: scale(1.05);
     }
+
+    .score-card {
+      margin-top: 20px;
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      background: var(--accent-color);
+      box-shadow: 0 5px 10px var(--card-shadow);
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+
+    .score-card h4 {
+      font-size: 1.3rem;
+      color: var(--text-color);
+      margin-bottom: 10px;
+    }
+
+    .score-card p {
+      margin: 5px 0;
+    }
   </style>
 </head>
 
@@ -191,15 +212,15 @@
   <div class="top-menu">
     <h1>🔥 Yoga Dashboard 🔥</h1>
     <div class="menu-links">
-      <a href="#">Home</a>
+      <a href="/boot/">Home</a>
       <a href="#">프로그램</a>
-     <a href="/boot/index5">요금제</a>
+      <a href="/boot/index5">요금제</a>
     </div>
   </div>
 
   <div class="dashboard">
     <div class="profile-card">
-         <img src="images/뚱냥이.jpg" alt="Profile Picture">
+      <img src="images/뚱냥이.jpg" alt="Profile Picture">
       <h3>김선우</h3>
       <p>🌟 레벨: <strong>5</strong></p>
       <p>🕒 전체 요가 시간: <strong>45시간</strong></p>
@@ -209,13 +230,11 @@
 
     <div class="main-content">
       <div class="card">
-        <div class="emoji">📅</div>
         <h3>운동 캘린더</h3>
         <div id="calendar"></div>
       </div>
 
       <div class="card">
-        <div class="emoji">📊</div>
         <h3>요가 시간 그래프</h3>
         <div class="view-options">
           <button onclick="updateChart('daily')">일별</button>
@@ -223,6 +242,13 @@
           <button onclick="updateChart('monthly')">월별</button>
         </div>
         <canvas id="yoga-chart"></canvas>
+        <!-- 나의 순위 섹션 -->
+        <div class="score-card">
+          <h4>나의 통계</h4>
+          <p>🏆 <strong>순위:</strong> 12위</p>
+          <p>📈 <strong>월간 점수:</strong> 85점</p>
+          <p>🔄 <strong>누적 점수:</strong> 450점</p>
+        </div>
       </div>
     </div>
   </div>
