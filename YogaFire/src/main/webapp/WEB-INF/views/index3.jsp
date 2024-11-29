@@ -264,7 +264,7 @@ body {
   <div class="top-menu">
     <div class="menu-items">
       <a href="/boot/index2">요가</a>
-      <a href="/boot/index4">대시보드</a>
+      <a href="/boot/index4">명상</a>
     </div>
   <div class="button-group">
     <a href="/boot/index5" class="btn">회원권</a>

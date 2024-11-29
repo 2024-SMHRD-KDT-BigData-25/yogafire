@@ -38,7 +38,7 @@
     border-radius: 20px;
     padding: 10px 20px;
     margin-right: 10px;
-    text-decoration: none; /* 링크 밑줄 제거 */
+    text-decoration: none; 
     cursor: pointer;
 }
 .button-group a:hover {
@@ -68,7 +68,7 @@
             color: white;
         }
 
-        /* 메인 섹션 스타일 */
+
         #intro {
             background-color: #f9f9eb;
             padding: 100px 0;
@@ -83,7 +83,7 @@
             font-weight: 600;
         }
 
-        /* 이미지 섹션  */
+   
         .image-section {
             position: relative;
             text-align: center;
@@ -109,7 +109,7 @@
             text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
         }
 
-        /* 하단 섹션  */
+
         .features-section {
             background-color: #f9f9eb;
             padding: 60px 0;
@@ -150,7 +150,7 @@
             margin: 10px 0;
         }
 
-        /* 푸터  */
+      
         footer {
             background-color: #4d7155;
             color: white;
@@ -164,7 +164,7 @@
         p {
             color: black;
         }
-           /* 카카오톡 아이콘 고정 스타일 */
+    
 
         .kakao-login-icon {
             position: fixed; 
@@ -179,7 +179,7 @@
         }
 
         .kakao-login-icon:hover {
-            transform: scale(1.1); /* 호버 시 확대 효과 */
+            transform: scale(1.1); 
             transition: transform 0.2s ease-in-out;
         }
     </style>
