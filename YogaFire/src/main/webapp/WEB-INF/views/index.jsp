@@ -328,11 +328,13 @@
         </div>
     </div>
     
-        <!카카오톡 로그인 버튼>
-   <a href="https://kauth.kakao.com/oauth/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code">
-        <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" 
-             alt="카카오톡 로그인" 
-             class="kakao-login-icon">	
+     <a href="https://kauth.kakao.com/oauth/authorize?client_id=YOUR_REST_API_KEY&redirect_uri=http://localhost:8080/oauth&response_type=code">
+    <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" 
+         alt="카카오톡 로그인" 
+         class="kakao-login-icon">
+</a>
+
 </section>
+
 </body>
 </html>
