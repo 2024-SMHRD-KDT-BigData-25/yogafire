@@ -194,7 +194,7 @@
     </div>
  <div class="button-group">
     <a href="/boot/index5" class="btn">회원권</a>
-    <a href="/boot/index5" class="btn">대시보드</a>
+    <a href="/boot/index4" class="btn">대시보드</a>
 </div>
 
 
