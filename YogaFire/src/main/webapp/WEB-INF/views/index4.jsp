@@ -242,7 +242,7 @@
           <button onclick="updateChart('monthly')">월별</button>
         </div>
         <canvas id="yoga-chart"></canvas>
-        <!-- 나의 순위 섹션 -->
+   
         <div class="score-card">
           <h4>나의 통계</h4>
           <p>🏆 <strong>순위:</strong> 12위</p>

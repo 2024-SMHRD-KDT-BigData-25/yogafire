@@ -9,50 +9,50 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
 
-    .top-menu {
-      background-color: #f9f9eb;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      border-bottom: 1px solid #c9c9b8;
-    }
+   .top-menu {
+    background-color: #f9f9eb;
+    display: flex;
+    justify-content: center; /* 전체 내용을 가운데 정렬 */
+    align-items: center; /* 세로축 정렬 */
+    padding: 15px 30px;
+    border-bottom: 1px solid #c9c9b8;
+    width: 100%;
+    margin: 0 auto;
+}
+
 
 .menu-items {
     display: flex;
-    gap: 20px; 
-    margin-right: auto; 
+    gap: 30px; 
+    justify-content: center; /* 메뉴를 중앙 정렬 */
+    
+
 }
 .button-group {
     display: flex;
     gap: 10px;
-    margin-left: auto !important; 
+    margin-left: 20px;
 }
-.button-group a,
-.button-group button {
-    background-color: #4d7155;
-    color: white;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin-right: 10px;
-    text-decoration: none; /* 링크 밑줄 제거 */
-    cursor: pointer;
+.menu-items a,
+.button-group a {
+    color: #4d7155; /* 텍스트 색상 */
+    text-decoration: none;
+    font-size: 1.2rem; /* 폰트 크기 */
+    font-weight: bold; /* 폰트 굵기 */
+    padding: 8px 15px; /* 내부 여백 */
+    border-radius: 10px; /* 모서리 둥글게 */
+}
+
 }
 .button-group a:hover {
     background-color: #3b5942;
 }
 
-        .button-group button:hover {
-            background-color: #3b5942;
-        }
-
-        .menu-items {
-            display: flex;
-            gap: 20px;
-        }
+.menu-items a:hover,
+.button-group a:hover {
+    background-color: #4d7155; /* 호버 시 배경 색상 */
+    color: white; /* 호버 시 텍스트 색상 */
+}
 
 	        .menu-items a {
 	            color: #4d7155;
@@ -63,12 +63,8 @@
 	            border-radius: 10px;
 	        }
 
-        .menu-items a:hover {
-            background-color: #4d7155;
-            color: white;
-        }
 
-        /* 메인 섹션 스타일 */
+
         #intro {
             background-color: #f9f9eb;
             padding: 100px 0;
@@ -83,7 +79,7 @@
             font-weight: 600;
         }
 
-        /* 이미지 섹션  */
+   
         .image-section {
             position: relative;
             text-align: center;
@@ -109,7 +105,7 @@
             text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
         }
 
-        /* 하단 섹션  */
+
         .features-section {
             background-color: #f9f9eb;
             padding: 60px 0;
@@ -150,7 +146,7 @@
             margin: 10px 0;
         }
 
-        /* 푸터  */
+      
         footer {
             background-color: #4d7155;
             color: white;
@@ -164,7 +160,7 @@
         p {
             color: black;
         }
-           /* 카카오톡 아이콘 고정 스타일 */
+    
 
         .kakao-login-icon {
             position: fixed; 
@@ -179,7 +175,7 @@
         }
 
         .kakao-login-icon:hover {
-            transform: scale(1.1); /* 호버 시 확대 효과 */
+            transform: scale(1.1); 
             transition: transform 0.2s ease-in-out;
         }
     </style>
@@ -194,7 +190,7 @@
     </div>
  <div class="button-group">
     <a href="/boot/index5" class="btn">회원권</a>
-    <a href="/boot/index5" class="btn">대시보드</a>
+    <a href="/boot/index4" class="btn">대시보드</a>
 </div>
 
 
@@ -294,7 +290,7 @@
                     <tr>
                         <th style="text-align: left; padding: 10px 0;">채팅 상담</th>
                         <td style="text-align: left; padding: 10px 0;">
-                            <a href="#" style="color: #4d7155; text-decoration: none; font-weight: bold;">카카오톡 상담 바로가기</a>
+                            <a href="http://pf.kakao.com/_xbHxkMn" style="color: #4d7155; text-decoration: none; font-weight: bold;">카카오톡 상담 바로가기</a>
                         </td>
                     </tr>
                     <tr>
@@ -312,7 +308,7 @@
                         <th style="text-align: left; padding: 10px 0;">영업 시간</th>
                         <td style="text-align: left; padding: 10px 0;">월~금 8:00 ~ 21:00 / 토요일 10:00 ~ 12:30</td>
                     </tr>
-                    <tr>
+                    <tr>	
                         <th style="text-align: left; padding: 10px 0;">방문 상담</th>
                         <td style="text-align: left; padding: 10px 0;">순천시 조례동 순천대점Kt건물 29길 21  5층</td>
                     </tr>
