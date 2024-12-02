@@ -18,50 +18,47 @@ body {
 
 /* 상단 메뉴 스타일 */
 .top-menu {
-  background-color: #f9f9eb;
-  display: flex;
-  justify-content: space-between;	
-  align-items: center;	
-  padding: 15px 30px;
-  border-bottom: 1px solid #c9c9b8;
+    background-color: #f9f9eb;
+    display: flex;
+    justify-content: center; /* 전체 내용을 가운데 정렬 */
+    align-items: center; /* 세로축 정렬 */
+    padding: 15px 30px;
+    border-bottom: 1px solid #c9c9b8;
+    width: 100%;
+    margin: 0 auto;
+
 }
 
-.button-group a,
-.button-group button {
-    background-color: #4d7155;
-    color: white;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin-right: 10px;
-    text-decoration: none; /* 링크 밑줄 제거 */
-    cursor: pointer;
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
 }
 
-.button-group button:hover {
-  background-color: #3b5942;
+.menu-items a,
+.button-group a {
+    color: #4d7155; /* 텍스트 색상 */
+    text-decoration: none;
+    font-size: 1.2rem; /* 폰트 크기 */
+    font-weight: bold; /* 폰트 굵기 */
+    padding: 8px 15px; /* 내부 여백 */
+    border-radius: 10px; /* 모서리 둥글게 */
+}
+
+.menu-items a:hover,
+.button-group a:hover {
+    background-color: #4d7155; /* 호버 시 배경 색상 */
+    color: white; /* 호버 시 텍스트 색상 */
 }
 
 .menu-items {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 30px; /* 메뉴 간 간격 */
+    justify-content: center; /* 메뉴를 중앙 정렬 */
 }
 
-.menu-items a {
-  color: #4d7155;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 8px 15px;
-  border-radius: 10px;
-}
 
-.menu-items a:hover {
-  background-color: #4d7155;
-  color: white;
-}
+
 
 
 .container {
@@ -273,14 +270,14 @@ body {
 
   </div>
 
-  <!-- 메인 컨텐츠 -->
+
  <div class="container">
     <!-- 텍스트 섹션 -->
     <div class="text-section">
       <h1>More than just stretching</h1>
 <p class="subtitle">요가는 단순한 스트레칭 을 넘어서는 심신수련입니다.</p>
 </div>
-    <!-- 이미지 섹션 -->
+
     <div class="image-section">
     <div class="slider">
 <div class="slider">
@@ -297,14 +294,14 @@ body {
   <h2 class="section-title">환영합니다 !</h2>
   <div class="container2 text-center">
     <div class="row">
-      <!-- 첫 번째 카드 -->
+
       <div class="card-item">
         <h3>1회 요가체험 신청하기</h3>
         <p>온라인으로 바로 신청 가능!</p>
             <a href="#" class="btn btn-secondary">체험 신청하기</a>
        	
       </div>
-      <!-- 두 번째 카드 -->
+
       <div class="card-item">
         <h3>요가 수업 상담 </h3>
         <p>온라인으로 바로 신청 가능!</p>

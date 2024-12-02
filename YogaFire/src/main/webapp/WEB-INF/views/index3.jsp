@@ -18,50 +18,47 @@ body {
 
 
 .top-menu {
-  background-color: #f9f9eb;
-  display: flex;
-  justify-content: space-between;	
-  align-items: center;	
-  padding: 15px 30px;
-  border-bottom: 1px solid #c9c9b8;
+    background-color: #f9f9eb;
+    display: flex;
+    justify-content: center; /* 전체 내용을 가운데 정렬 */
+    align-items: center; /* 세로축 정렬 */
+    padding: 15px 30px;
+    border-bottom: 1px solid #c9c9b8;
+    width: 100%;
+    margin: 0 auto;
+
 }
 
-.button-group a,
-.button-group button {
-    background-color: #4d7155;
-    color: white;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin-right: 10px;
-    text-decoration: none; /* 링크 밑줄 제거 */
-    cursor: pointer;
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
 }
 
-.button-group button:hover {
-  background-color: #3b5942;
+.menu-items a,
+.button-group a {
+    color: #4d7155; /* 텍스트 색상 */
+    text-decoration: none;
+    font-size: 1.2rem; /* 폰트 크기 */
+    font-weight: bold; /* 폰트 굵기 */
+    padding: 8px 15px; /* 내부 여백 */
+    border-radius: 10px; /* 모서리 둥글게 */	
+}
+
+.menu-items a:hover,
+.button-group a:hover {
+    background-color: #4d7155; /* 호버 시 배경 색상 */
+    color: white; /* 호버 시 텍스트 색상 */
 }
 
 .menu-items {
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  justify-content: center; /* 메뉴를 중앙 정렬 */
 }
 
-.menu-items a {
-  color: #4d7155;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 8px 15px;
-  border-radius: 10px;
-}
 
-.menu-items a:hover {
-  background-color: #4d7155;
-  color: white;
-}
+
 
 
 .container {
@@ -273,14 +270,14 @@ body {
 
   </div>
 
-  <!-- 메인 컨텐츠 -->
+ 
   <div class="container">
-    <!-- 텍스트 섹션 -->
+
     <div class="text-section">
       <h1>Meditation is mental fitness</h1>
 <p class="subtitle">마음은 운동장, 명상은 마음 운동.명상으로 마음이 건강해집니다.</p>
 </div>
-    <!-- 이미지 섹션 -->
+
     <div class="image-section">
     <div class="slider">
 <div class="slider">
@@ -297,14 +294,14 @@ body {
   <h2 class="section-title">환영합니다!</h2>
   <div class="container2 text-center">
     <div class="row">
-      <!-- 첫 번째 카드 -->
+
       <div class="card-item">
         <h3>1회 명상체험 신청하기</h3>
         <p>온라인으로 바로 신청 가능!</p>
             <a href="#" class="btn btn-secondary">체험 신청하기</a>
        	
       </div>
-      <!-- 두 번째 카드 -->
+
       <div class="card-item">
         <h3>명상 수업 상담</h3>
         <p>온라인으로 바로 신청 가능!</p>
@@ -347,11 +344,11 @@ body {
 </div>
 </section>
   
- <!-- 새로운 하단 섹션 -->
+
 <section class="contact-info-section" style="background-color: #e9f5e1; padding: 40px 20px;">
     <div class="container2">
         <div class="row">
-            <!-- 바로 상담하기 -->
+
             <div class="col-md-6">
                 <h3 style="color: #4d7155; font-weight: bold;">상담 안내</h3>
                 <p style="color: #4d7155;">상담은 영업시간 중에 전화 또는 채팅으로 가능하며, 대면 상담은 방문 또는 온라인으로 가능합니다.</p>
@@ -373,7 +370,7 @@ body {
                 </table>
             </div>
 
-            <!-- 대면 상담 예약 -->
+    
             <div class="col-md-6">
                 <h3 style="color: #4d7155; font-weight: bold;">대면 상담 예약</h3>
                 <table style="width: 100%; border-top: 1px solid #c9c9b8; margin-top: 20px;">

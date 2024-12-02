@@ -9,50 +9,50 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
 
-    .top-menu {
-      background-color: #f9f9eb;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      border-bottom: 1px solid #c9c9b8;
-    }
+   .top-menu {
+    background-color: #f9f9eb;
+    display: flex;
+    justify-content: center; /* 전체 내용을 가운데 정렬 */
+    align-items: center; /* 세로축 정렬 */
+    padding: 15px 30px;
+    border-bottom: 1px solid #c9c9b8;
+    width: 100%;
+    margin: 0 auto;
+}
+
 
 .menu-items {
     display: flex;
-    gap: 20px; 
-    margin-right: auto; 
+    gap: 30px; 
+    justify-content: center; /* 메뉴를 중앙 정렬 */
+    
+
 }
 .button-group {
     display: flex;
     gap: 10px;
-    margin-left: auto !important; 
+    margin-left: 20px;
 }
-.button-group a,
-.button-group button {
-    background-color: #4d7155;
-    color: white;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin-right: 10px;
-    text-decoration: none; 
-    cursor: pointer;
+.menu-items a,
+.button-group a {
+    color: #4d7155; /* 텍스트 색상 */
+    text-decoration: none;
+    font-size: 1.2rem; /* 폰트 크기 */
+    font-weight: bold; /* 폰트 굵기 */
+    padding: 8px 15px; /* 내부 여백 */
+    border-radius: 10px; /* 모서리 둥글게 */
+}
+
 }
 .button-group a:hover {
     background-color: #3b5942;
 }
 
-        .button-group button:hover {
-            background-color: #3b5942;
-        }
-
-        .menu-items {
-            display: flex;
-            gap: 20px;
-        }
+.menu-items a:hover,
+.button-group a:hover {
+    background-color: #4d7155; /* 호버 시 배경 색상 */
+    color: white; /* 호버 시 텍스트 색상 */
+}
 
 	        .menu-items a {
 	            color: #4d7155;
@@ -63,10 +63,6 @@
 	            border-radius: 10px;
 	        }
 
-        .menu-items a:hover {
-            background-color: #4d7155;
-            color: white;
-        }
 
 
         #intro {
@@ -312,7 +308,7 @@
                         <th style="text-align: left; padding: 10px 0;">영업 시간</th>
                         <td style="text-align: left; padding: 10px 0;">월~금 8:00 ~ 21:00 / 토요일 10:00 ~ 12:30</td>
                     </tr>
-                    <tr>
+                    <tr>	
                         <th style="text-align: left; padding: 10px 0;">방문 상담</th>
                         <td style="text-align: left; padding: 10px 0;">순천시 조례동 순천대점Kt건물 29길 21  5층</td>
                     </tr>
