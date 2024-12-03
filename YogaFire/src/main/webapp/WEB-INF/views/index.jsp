@@ -325,9 +325,14 @@
          alt="카카오톡 로그인" 
          class="kakao-login-icon">
 </a>
+<<<<<<< HEAD
 
 
 
+=======
+    <button onclick="location.href='member/signup'">회원가입</button>
+	<button onclick="location.href='login'">로그인</button>
+>>>>>>> branch 'main' of https://github.com/2024-SMHRD-KDT-BigData-25/yogafire.git
 </section>
 
 </body>
