@@ -9,29 +9,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
 
-   .top-menu {
+.top-menu {
     background-color: #f9f9eb;
     display: flex;
-    justify-content: center; /* 전체 내용을 가운데 정렬 */
+    justify-content: center; /* 메뉴를 가운데 정렬 */
     align-items: center; /* 세로축 정렬 */
-    padding: 15px 30px;
+    padding: 15px 30px; /* 상하좌우 여백 동일 */
     border-bottom: 1px solid #c9c9b8;
-    width: 100%;
+    width: 100%; /* 화면 전체 너비 */
     margin: 0 auto;
 }
 
-
 .menu-items {
     display: flex;
-    gap: 30px; 
+    gap: 10px; /* 메뉴 간 간격 */
     justify-content: center; /* 메뉴를 중앙 정렬 */
-    
+
 
 }
 .button-group {
     display: flex;
-    gap: 10px;
-    margin-left: 20px;
+    gap: 20px;
+    justify-content: center;
 }
 .menu-items a,
 .button-group a {
@@ -186,14 +185,11 @@
     <div class="menu-items">
       <a href="/boot/index2">요가</a>
       <a href="/boot/index3">명상</a>
-
     </div>
  <div class="button-group">
     <a href="/boot/index5" class="btn">회원권</a>
     <a href="/boot/index4" class="btn">대시보드</a>
 </div>
-
-
   </div>
 
     <!-- 메인 섹션 -->
@@ -329,6 +325,8 @@
          alt="카카오톡 로그인" 
          class="kakao-login-icon">
 </a>
+
+
 
 </section>
 

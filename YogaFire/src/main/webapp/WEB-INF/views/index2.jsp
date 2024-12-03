@@ -20,13 +20,12 @@ body {
 .top-menu {
     background-color: #f9f9eb;
     display: flex;
-    justify-content: center; /* 전체 내용을 가운데 정렬 */
+    justify-content: center; /* 메뉴를 가운데 정렬 */
     align-items: center; /* 세로축 정렬 */
-    padding: 15px 30px;
+    padding: 15px 30px; /* 상하좌우 여백 동일 */
     border-bottom: 1px solid #c9c9b8;
-    width: 100%;
+    width: 100%; /* 화면 전체 너비 */
     margin: 0 auto;
-
 }
 
 .button-group {
@@ -267,7 +266,6 @@ body {
     <a href="/boot/index5" class="btn">회원권</a>
     <a href="/boot/index4" class="btn">대시보드</a>
 </div>
-
   </div>
 
 
@@ -358,7 +356,7 @@ body {
                     <tr>
                         <th style="text-align: left; padding: 10px 0;">채팅 상담</th>
                         <td style="text-align: left; padding: 10px 0;">
-                            <a href="#" style="color: #4d7155; text-decoration: none; font-weight: bold;">카카오톡 상담 바로가기</a>
+                             <a href="http://pf.kakao.com/_xbHxkMn" style="color: #4d7155; text-decoration: none; font-weight: bold;">카카오톡 상담 바로가기</a>
                         </td>
                     </tr>
                     <tr>

@@ -360,7 +360,7 @@ body {
                     <tr>
                         <th style="text-align: left; padding: 10px 0;">채팅 상담</th>
                         <td style="text-align: left; padding: 10px 0;">
-                            <a href="#" style="color: #4d7155; text-decoration: none; font-weight: bold;">카카오톡 상담 바로가기</a>
+                               <a href="http://pf.kakao.com/_xbHxkMn" style="color: #4d7155; text-decoration: none; font-weight: bold;">카카오톡 상담 바로가기</a>
                         </td>
                     </tr>
                     <tr>

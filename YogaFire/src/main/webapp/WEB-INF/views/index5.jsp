@@ -1,272 +1,198 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page pageEncoding="UTF-8" %>
-<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>요가 및 명상 회원권</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         :root {
-            --main-bg: #f9fcf4;
-            --highlight-bg: #dff5e3;
-            --card-bg: white;
-            --main-text: #2f493b;
-            --secondary-text: #3c5a48;
-            --accent-color: #6fcb9f;
-            --button-bg: #4d755c;
-            --button-hover-bg: #3b5844;
-            --button-text: white;
+            --main-color: #7DCEA0; /
+            --accent-color: #F2F3F4; /
+            --hover-color: #A3D2A6; /
+            --text-color: #2C3E50; /
+            --card-shadow: rgba(0, 0, 0, 0.1);
         }
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: var(--main-bg);
-            color: var(--main-text);
+            background-color: var(--accent-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
         }
 
-        .top-menu {
-            background-color: var(--highlight-bg);
-            padding: 20px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        .navbar {
+            background-color: var(--main-color);
+            padding: 15px;
         }
 
-        .menu-items a {
-            color: var(--main-text);
+        .navbar-brand, .nav-link {
+            color: white !important;
             font-weight: bold;
-            font-size: 1.1rem;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
         }
 
-        .menu-items a:hover {
-            background-color: var(--accent-color);
-            color: var(--button-text);
+        .nav-link:hover {
+            color: var(--hover-color) !important;
         }
 
-        .page-title {
+        h2 {
+            font-size: 2.8rem;
             text-align: center;
-            margin: 40px 0 20px;
-            font-size: 2.4rem;
+            color: var(--main-color);
+            margin: 50px 0 20px;
             font-weight: bold;
-            color: var(--main-text);
         }
 
-        .membership-content {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
             margin-bottom: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: var(--text-color);
+            position: relative;
         }
 
-        .membership-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: var(--main-color);
+            display: block;
+            margin: 10px auto 0;
         }
 
-        .accordion-button {
-            background-color: var(--highlight-bg);
-            color: var(--main-text);
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s;
-            font-size: 1rem;
-            font-weight: bold;
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 15px var(--card-shadow);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .accordion-button:not(.collapsed) {
-            background-color: var(--accent-color);
-            color: var(--button-text);
-        }
-
-        .accordion-body {
-            background-color: var(--main-bg);
-            color: var(--secondary-text);
-            border-left: 3px solid var(--accent-color);
-            padding-left: 20px;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .contact-info-section {
-            background-color: var(--highlight-bg);
-            padding: 40px 20px;
-            margin-top: 40px;
-            border-top: 4px solid var(--accent-color);
-            border-radius: 10px;
-        }
-
-        .contact-info-section h3 {
-            color: var(--main-text);
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .contact-info-section p {
-            color: var(--secondary-text);
-            margin-bottom: 10px;
-        }
-
-        .contact-info-section button {
-            background-color: var(--button-bg);
-            color: var(--button-text);
-            border: none;
-            padding: 12px 25px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .contact-info-section button:hover {
-            background-color: var(--button-hover-bg);
+        .card:hover {
             transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
-        /* 이모티콘 크기 조정 */
-        .emoji {
-            font-size: 1.2rem;
+        .card h4 {
+            font-size: 1.5rem;
+            color: var(--main-color);
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            background: var(--main-color);
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--hover-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-   <div class="top-menu">
-    <div class="menu-items">
-        <!-- Home 버튼 클릭 시 index4.jsp로 이동 -->
-        <a href="/boot/index4">🧘 마이페이지</a>
-    </div>
-</div>
+    <!-- 네비게이션 바 -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="http://localhost:8090/boot/">🏠 Home</a>
+            <a class="navbar-brand ml-4" href="http://localhost:8090/boot/index4">📊 대시보드</a>
+            <div>
+                <a class="nav-link" href="#yoga-plans">🧘 요가 플랜</a>
+                <a class="nav-link" href="#meditation-plans">🧘‍♀️ 명상 플랜</a>
+            </div>
+        </div>
+    </nav>
 
-
-
-    <h1 class="page-title">요가 및 명상 회원권 🌿</h1>
-
-
-    <div class="container">
-        <ul class="nav nav-tabs justify-content-center" id="membershipTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="yoga-tab" data-bs-toggle="tab" data-bs-target="#onlineYoga" type="button" role="tab" aria-controls="onlineYoga" aria-selected="true">
-                    🧘 온라인 요가권
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="meditation-tab" data-bs-toggle="tab" data-bs-target="#onlineMeditation" type="button" role="tab" aria-controls="onlineMeditation" aria-selected="false">
-                    🌌 온라인 명상권
-                </button>
-            </li>
-        </ul>
-
-        <div class="tab-content mt-4" id="membershipTabsContent">
-            <div class="tab-pane fade show active" id="onlineYoga" role="tabpanel" aria-labelledby="yoga-tab">
-                <div class="membership-content">
-                    <h2>📜 온라인 요가 회원권</h2>
-                    <div class="accordion" id="yogaAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingYogaMonthly">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseYogaMonthly" aria-expanded="true" aria-controls="collapseYogaMonthly">
-                                    월별 요가 회원권 💪
-                                </button>
-                            </h2>
-                            <div id="collapseYogaMonthly" class="accordion-collapse collapse show" aria-labelledby="headingYogaMonthly" data-bs-parent="#yogaAccordion">
-                                <div class="accordion-body">
-                                    <span class="emoji">✔️</span>
-                                    6개월: 120,000원
-                                    <br>
-                                    <span class="emoji">✔️</span>
-                                    12개월: 200,000원
-                                    <br>
-                                    <span class="emoji">💻</span> 온라인 수업 참여 가능
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingYogaTrial">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseYogaTrial" aria-expanded="false" aria-controls="collapseYogaTrial">
-                                    체험권 🌟
-                                </button>
-                            </h2>
-                            <div id="collapseYogaTrial" class="accordion-collapse collapse" aria-labelledby="headingYogaTrial" data-bs-parent="#yogaAccordion">
-                                <div class="accordion-body">
-                                    <p>✨ 1회 체험: 10,000원</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- 요가 회원권 섹션 -->
+    <div class="container fade-in" id="yoga-plans">
+        <h2>🧘 요가 회원권</h2>
+        <div class="row">
+            <!-- 요가 플랜 -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <h4>🌟 월별 요가 회원권</h4>
+                    <p><strong>3개월, 6개월</strong></p>
+                    <p>1일 1회 매일 수강 가능</p>
+                    <button class="btn btn-primary w-100">₩14,900</button>
                 </div>
             </div>
-            <div class="tab-pane fade" id="onlineMeditation" role="tabpanel" aria-labelledby="meditation-tab">
-                <div class="membership-content">
-                    <h2>🌌 온라인 명상 회원권</h2>
-                    <div class="accordion" id="meditationAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingMeditationMonthly">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMeditationMonthly" aria-expanded="true" aria-controls="collapseMeditationMonthly">
-                                    월별 명상 회원권 🧘‍♂️
-                                </button>
-                            </h2>
-                            <div id="collapseMeditationMonthly" class="accordion-collapse collapse show" aria-labelledby="headingMeditationMonthly" data-bs-parent="#meditationAccordion">
-                                <div class="accordion-body">
-                                    <span class="emoji">✔️</span>
-                                    6개월: 100,000원
-                                    <br>
-                                    <span class="emoji">✔️</span>
-                                    12개월: 180,000원
-                                    <br>
-                                    <span class="emoji">📹</span> 녹화 영상 제공
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingMeditationTrial">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMeditationTrial" aria-expanded="false" aria-controls="collapseMeditationTrial">
-                                    체험권 🌠
-                                </button>
-                            </h2>
-                            <div id="collapseMeditationTrial" class="accordion-collapse collapse" aria-labelledby="headingMeditationTrial" data-bs-parent="#meditationAccordion">
-                                <div class="accordion-body">
-                                    <p>✨ 1회 체험: 8,000원</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- 추가 요가 플랜들 -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <h4>💎 프리미엄 요가 회원권</h4>
+                    <p><strong>3개월, 6개월</strong></p>
+                    <p>전 타임 횟수 제한 없이 수강 가능</p>
+                    <button class="btn btn-primary w-100">₩24,900</button>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <h4>🎯 횟수제 요가 회원권</h4>
+                    <p><strong>10회, 35회</strong></p>
+                    <p>참여 시 횟수 차감 방식</p>
+                    <button class="btn btn-primary w-100">₩59,000</button>
                 </div>
             </div>
         </div>
-
-        <!-- 상담 섹션 -->
-        <section class="contact-info-section">
-            <div class="container">
-                <h3>📞 상담 안내</h3>
-                <p>상담은 영업시간 중에 전화 또는 채팅으로 가능합니다.</p>
-                <table>
-                    <tr>
-                        <th>전화 상담</th>
-                        <td>02-3447-9642</td>
-                        <br>
-                    </tr>
-                    <br>
-                    <tr>
-                        <th>채팅 상담</th>
-                        <td><a href="#" style="color: var(--main-text);">카카오톡 바로가기</a></td>
-                    </tr>
-                </table>
-                <button>상담 예약하기</button>
-            </div>
-        </section>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 명상 회원권 섹션 -->
+    <div class="container fade-in" id="meditation-plans">
+        <h2>🧘‍♀️ 명상 회원권</h2>
+        <div class="row">
+            <!-- 명상 플랜 -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <h4>🌼 기본 명상 회원권</h4>
+                    <p><strong>1개월, 3개월</strong></p>
+                    <p>매주 3회의 명상 세션 참여 가능</p>
+                    <button class="btn btn-primary w-100">₩9,900</button>
+                </div>
+            </div>
+            <!-- 추가 명상 플랜들 -->
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <h4>🌟 고급 명상 회원권</h4>
+                    <p><strong>3개월, 6개월</strong></p>
+                    <p>고급 명상 오디오 제공</p>
+                    <button class="btn btn-primary w-100">₩19,900</button>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <h4>🎯 집중 명상 플랜</h4>
+                    <p><strong>6개월</strong></p>
+                    <p>1:1 개인 명상 코칭 포함</p>
+                    <button class="btn btn-primary w-100">₩59,900</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
