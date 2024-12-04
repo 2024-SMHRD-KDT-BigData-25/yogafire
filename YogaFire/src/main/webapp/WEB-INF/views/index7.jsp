@@ -171,7 +171,7 @@
     <div class="wrapper">
         <div class="logo">🔥Yoga Fire🔥</div>
         <h2>Feel the Heat of Yoga</h2>
-        <form>
+        <form action="/boot/login" method="post">
         <input type="text" name="id" placeholder="아이디"><br>
 		<input type="password" name="password" placeholder="비밀번호"><br>
 		<input type="submit" value="로그인">

@@ -27,4 +27,12 @@ public class MemberService {
 	public userInfo login(userInfo member) {
 		return mapper.login(member);
 	}
+	
+	public int delete(String id) {
+		return mapper.delete(id);
+	}
+	public int update(userInfo member) {
+	    System.out.println("서비스 성공");
+	    return mapper.update(member);
+	}
 }

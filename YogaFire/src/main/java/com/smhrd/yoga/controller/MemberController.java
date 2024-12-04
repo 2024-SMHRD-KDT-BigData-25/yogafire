@@ -1,7 +1,9 @@
 package com.smhrd.yoga.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Member;
+import java.util.UUID;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,5 +62,39 @@ public class MemberController {
 			session.setAttribute("member", res);
 			return "redirect:/index4";
 		}
+	}
+	
+	@GetMapping("/member/{id}/edit")
+	public String updateForm() {
+		return "edit";
+	}
+	@PostMapping("member/{id}/edit")
+	public String update(userInfo member, HttpSession session, @RequestParam("proficfile") MultipartFile profic) throws IllegalStateException, IOException {
+	    // 프로필 파일을 처리하여 파일 이름을 Member 객체에 설정
+	    if (profic != null && !profic.isEmpty()) {
+	        String randomUUID = UUID.randomUUID().toString();
+	        int lastIndex = randomUUID.lastIndexOf("-");
+	        String lastPart = randomUUID.substring(lastIndex + 1);
+	        String fileName = lastPart + profic.getOriginalFilename();
+	        System.out.println(fileName);
+	        // 파일 저장 경로 지정
+	        String filePath = "C://upload/" + fileName;
+	        profic.transferTo(new File(filePath));
+
+	        // Member 객체에 파일 이름 설정
+	        member.setProfic(fileName);
+	    } else {
+	        member.setProfic("default.png");
+	    }
+
+	    int res = service.update(member);
+	    if (res == 0) {
+	        System.out.println("수정하는데 실패하였습니다.");
+	        return "redirect:/member/" + member.getId() + "/edit";
+	    } else {
+	        System.out.println("수정하는데 성공하였습니다.");
+	        session.setAttribute("member", member);
+	        return "redirect:/member/" + member.getId() + "/edit";
+	    }
 	}
 }

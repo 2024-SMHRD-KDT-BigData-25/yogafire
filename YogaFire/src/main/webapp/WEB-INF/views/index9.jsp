@@ -172,25 +172,25 @@
     </div>
 
 
-    <div class="profile-container">
-      <img src="images/움직이는뚱냥.gif" alt="프로필 이미지" id="profile-preview">
-      <label for="profile-upload" class="btn">이미지 업로드</label>
-      <input type="file" id="profile-upload" style="display: none;" accept="image/*" onchange="previewImage(event)">
-    </div>
-
     <!-- 정보 수정 폼 -->
-    <form>
+    <form action="/boot/member/${member.id}/edit" method="post"
+		enctype="multipart/form-data">
+     <div class="profile-container" >
+       <img src="images/${member.profic}" alt="프로필 이미지" id="profile-preview">
+       <label for="profile-upload" class="btn">이미지 업로드</label>
+      <input type="file" id="profile-upload" name="proficfile" style="display: none;" accept="image/*" onchange="previewImage(event)">
+    </div>
       <div class="form-group">
         <label for="username">👤 닉네임</label>
-        <input type="text" id="username" class="form-control" placeholder="사용자 이름을 입력하세요" value="김선우">
+        <input type="text" id="username" name="nick" class="form-control" placeholder="사용자 이름을 입력하세요" value="${member.nick}" }>
       </div>
       <div class="form-group">
         <label for="password">🔑 현재 비밀번호</label>
-        <input type="password" id="password" class="form-control" placeholder="현재 비밀번호를 입력하세요">
+        <input type="password" id="password" class="form-control" value="${member.password}">
       </div>
       <div class="form-group">
         <label for="new-password">🔑 변경할 비밀번호</label>
-        <input type="password" id="new-password" class="form-control" placeholder="새 비밀번호를 입력하세요">
+        <input type="password" id="new-password" name="password" class="form-control" placeholder="새 비밀번호를 입력하세요">
       </div>
 
       <!-- 저장 버튼 -->
