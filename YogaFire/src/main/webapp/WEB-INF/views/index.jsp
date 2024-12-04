@@ -160,8 +160,9 @@
          <a href="/boot/index4">대시보드</a>
       </div>
       <div class="auth-buttons">
-         <button onclick="location.href='/boot/login'">로그인</button>
-         <button onclick="location.href='/boot/signup'">회원가입</button>
+        <button onclick="location.href='/boot/index7'">로그인</button>
+		<button onclick="location.href='/boot/index8'">회원가입</button>
+
       </div>
    </div>
 

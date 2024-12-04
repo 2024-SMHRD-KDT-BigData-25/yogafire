@@ -37,5 +37,22 @@ public class IndexController {
         return "index5";
     }
 
-  
+
+    // localhost:8090/boot/index5 -> index5.jsp 연결
+    @RequestMapping(value = "/index6", method = RequestMethod.GET)
+    public String index6Page() {
+        return "index6";
     }
+    
+    // localhost:8090/boot/index5 -> index5.jsp 연결
+    @RequestMapping(value = "/index7", method = RequestMethod.GET)
+    public String index7Page() {
+        return "index7";
+    }
+    // localhost:8090/boot/index5 -> index5.jsp 연결
+    @RequestMapping(value = "/index8", method = RequestMethod.GET)
+    public String index8Page() {
+        return "index8";
+    }
+
+}

@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         :root {
-            --main-color: #7DCEA0; /
-            --accent-color: #F2F3F4; /
-            --hover-color: #A3D2A6; /
-            --text-color: #2C3E50; /
+            --main-color: #7DCEA0; /* 메인 색상 */
+            --accent-color: #F4F6F7; /* 배경 색상 */
+            --hover-color: #A3D2A6; /* 호버 색상 */
+            --text-color: #2C3E50; /* 텍스트 색상 */
             --card-shadow: rgba(0, 0, 0, 0.1);
+            --section-bg: #E8F8F5; /* 섹션 배경 색상 */
         }
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: var(--accent-color);
+            background-color: var(--accent-color); /* 전체 배경 */
             color: var(--text-color);
             margin: 0;
             padding: 0;
@@ -114,6 +115,15 @@
                 transform: translateY(0);
             }
         }
+
+        /* 섹션 배경색 */
+        #yoga-plans,
+        #meditation-plans {
+            background-color: var(--section-bg); /* 섹션별 배경 색상 */
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
     </style>
 </head>
 <body>
@@ -123,7 +133,6 @@
             <a class="navbar-brand" href="http://localhost:8090/boot/">🏠 Home</a>
             <a class="navbar-brand ml-4" href="http://localhost:8090/boot/index4">📊 대시보드</a>
             <div>
- 
                 <a class="nav-link" href="#meditation-plans">🧘‍♀️ 요금제</a>
             </div>
         </div>
