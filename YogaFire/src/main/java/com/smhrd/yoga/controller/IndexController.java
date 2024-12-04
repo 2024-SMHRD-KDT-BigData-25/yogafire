@@ -37,15 +37,5 @@ public class IndexController {
         return "index5";
     }
 
-    // localhost:8090/boot/index6 -> index6.jsp 연결
-    @RequestMapping(value = "/index6", method = RequestMethod.GET)
-    public String index6Page() {
-        return "index6";
+  
     }
-
-    // localhost:8090/boot/index7 -> 회원가입 페이지 연결
-    @RequestMapping(value = "/index7", method = RequestMethod.GET)
-    public String signupPage() {
-        return "index7"; // index7.jsp로 연결
-    }
-}

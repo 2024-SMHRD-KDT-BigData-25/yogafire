@@ -9,188 +9,162 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
 
-.top-menu {
-    background-color: #f9f9eb;
-    display: flex;
-    justify-content: center; /* 메뉴를 가운데 정렬 */
-    align-items: center; /* 세로축 정렬 */
-    padding: 15px 30px; /* 상하좌우 여백 동일 */
-    border-bottom: 1px solid #c9c9b8;
-    width: 100%; /* 화면 전체 너비 */
-    margin: 0 auto;
-}
+  .top-menu {
+         background-color: #f9f9eb;
+         display: flex;
+         justify-content: center; /* 메뉴와 버튼을 중앙 정렬 */
+         align-items: center;
+         padding: 15px 30px;
+         border-bottom: 1px solid #c9c9b8;
+         width: 100%;
+         margin: 0 auto;
+         position: relative;
+      }
 
-.menu-items {
-    display: flex;
-    gap: 10px; /* 메뉴 간 간격 */
-    justify-content: center; /* 메뉴를 중앙 정렬 */
+      .menu-items {
+         display: flex;
+         gap: 10px; /* 메뉴 간 간격 */
+         justify-content: center; /* 메뉴를 중앙 정렬 */
+      }
 
+      .auth-buttons {
+         position: absolute;
+         right: 30px; /* 로그인/회원가입 버튼을 오른쪽으로 정렬 */
+         display: flex;
+         gap: 10px; /* 로그인, 회원가입 버튼 간격 */
+      }
 
-}
-.button-group {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-.menu-items a,
-.button-group a {
-    color: #4d7155; /* 텍스트 색상 */
-    text-decoration: none;
-    font-size: 1.2rem; /* 폰트 크기 */
-    font-weight: bold; /* 폰트 굵기 */
-    padding: 8px 15px; /* 내부 여백 */
-    border-radius: 10px; /* 모서리 둥글게 */
-}
+      .menu-items a,
+      .auth-buttons button {
+         color: #4d7155; /* 텍스트 색상 */
+         text-decoration: none;
+         font-size: 1.2rem;
+         font-weight: bold;
+         padding: 8px 15px;
+         border-radius: 10px; /* 모서리 둥글게 */
+         background-color: transparent; /* 배경 없음 */
+         border: none; /* 버튼 테두리 제거 */
+         cursor: pointer;
+      }
 
-}
-.button-group a:hover {
-    background-color: #3b5942;
-}
+      .menu-items a:hover,
+      .auth-buttons button:hover {
+         background-color: #4d7155; /* 호버 시 배경 색상 */
+         color: white; /* 호버 시 텍스트 색상 */
+      }
 
-.menu-items a:hover,
-.button-group a:hover {
-    background-color: #4d7155; /* 호버 시 배경 색상 */
-    color: white; /* 호버 시 텍스트 색상 */
-}
+      #intro {
+         background-color: #f9f9eb;
+         padding: 100px 0;
+         text-align: center;
+         min-height: 400px;
+      }
 
-	        .menu-items a {
-	            color: #4d7155;
-	            text-decoration: none;
-	            font-size: 1.2rem;
-	            font-weight: bold;
-	            padding: 8px 15px;
-	            border-radius: 10px;
-	        }
+      #intro h2 {
+         font-size: 1.5rem;
+         color: #4d7155;
+         line-height: 1.8;
+         font-weight: 600;
+      }
 
+      .image-section {
+         position: relative;
+         text-align: center;
+         color: white;
+      }
 
+      .image-section img {
+         width: 100%;
+         height: auto;
+         object-fit: cover;
+      }
 
-        #intro {
-            background-color: #f9f9eb;
-            padding: 100px 0;
-            text-align: center;
-            min-height: 400px;
-        }
+      .image-section .overlay-text {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+         font-size: 1.5rem;
+         line-height: 1.5;
+         font-weight: bold;
+         color: white;
+         text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+      }
 
-        #intro h2 {
-            font-size: 1.5rem;
-            color: #4d7155;
-            line-height: 1.8;
-            font-weight: 600;
-        }
+      .features-section {
+         background-color: #f9f9eb;
+         padding: 60px 0;
+         text-align: center;
+      }
 
-   
-        .image-section {
-            position: relative;
-            text-align: center;
-            color: white;
-        }
+      .features-section h2 {
+         font-size: 1.8rem;
+         font-weight: bold;
+         margin-bottom: 30px;
+         color: #4d7155;
+      }
 
-        .image-section img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
+      .feature-item {
+         margin-bottom: 40px;
+      }
 
-        .image-section .overlay-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            font-size: 1.5rem;
-            line-height: 1.5;
-            font-weight: bold;
-            color: white;
-            text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
-        }
+      .feature-item img {
+         width: 100%;
+         max-width: 280px;
+         height: auto;
+         margin: 0 auto 20px;
+         display: block;
+         border-radius: 10px;
+         object-fit: cover;
+      }
 
+      .feature-item h3 {
+         font-size: 1.3rem;
+         font-weight: bold;
+         color: #4d7155;
+      }
 
-        .features-section {
-            background-color: #f9f9eb;
-            padding: 60px 0;
-            text-align: center;
-        }
+      .feature-item p {
+         font-size: 1rem;
+         color: #4d7155;
+         line-height: 1.6;
+         margin: 10px 0;
+      }
 
-        .features-section h2 {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 30px;
-            color: #4d7155;
-        }
+      footer {
+         background-color: #4d7155;
+         color: white;
+         text-align: center;
+         padding: 15px 0;
+      }
 
-        .feature-item {
-            margin-bottom: 40px;
-        }
+      h3 {
+         color: gray;
+      }
 
-        .feature-item img {
-            width: 100%;
-            max-width: 280px;
-            height: auto;
-            margin: 0 auto 20px;
-            display: block;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-
-        .feature-item h3 {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #4d7155;
-        }
-
-        .feature-item p {
-            font-size: 1rem;
-            color: #4d7155;
-            line-height: 1.6;
-            margin: 10px 0;
-        }
-
-      
-        footer {
-            background-color: #4d7155;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-        }
-
-        h3 {
-            color: gray;
-        }
-        p {
-            color: black;
-        }
-    
-
-        .kakao-login-icon {
-            position: fixed; 
-            bottom: 20px; 
-            right: 20px; 
-            z-index: 9999; 
-            width: 60px; 
-            height: 60px;
-            cursor: pointer;
-            border-radius: 50%; 
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
-        }
-
-        .kakao-login-icon:hover {
-            transform: scale(1.1); 
-            transition: transform 0.2s ease-in-out;
-        }
+      p {
+         color: black;
+      }
+  
     </style>
 </head>
 <body>
     <!-- 상단 메뉴 -->
-  <div class="top-menu">
-    <div class="menu-items">
-      <a href="/boot/index2">요가</a>
-      <a href="/boot/index3">명상</a>
-    </div>
- <div class="button-group">
-    <a href="/boot/index5" class="btn">회원권</a>
-    <a href="/boot/index4" class="btn">대시보드</a>
-</div>
-  </div>
+ <!-- 상단 메뉴 -->
+   <div class="top-menu">
+      <div class="menu-items">
+         <a href="/boot/index2">요가</a>
+         <a href="/boot/index3">명상</a>
+         <a href="/boot/index5">회원권</a>
+         <a href="/boot/index4">대시보드</a>
+      </div>
+      <div class="auth-buttons">
+         <button onclick="location.href='/boot/login'">로그인</button>
+         <button onclick="location.href='/boot/signup'">회원가입</button>
+      </div>
+   </div>
+
 
     <!-- 메인 섹션 -->
     <section id="intro">
@@ -242,10 +216,10 @@
     
       <section class="image-section">
         <img src="images/7.png" alt="Meditation Image">
-	        <div class="overlay-text">
-	            "요가 파이어를 이용해보세요,<br>
-	            당신의 몸과 마음가짐이 달라집니다."<br>
-	            <span style="font-size: 1rem; font-weight: normal;">- 천상지희</span>
+           <div class="overlay-text">
+               "요가 파이어를 이용해보세요,<br>
+               당신의 몸과 마음가짐이 달라집니다."<br>
+               <span style="font-size: 1rem; font-weight: normal;">- 천상지희</span>
         </div>
     </section>
    
@@ -304,7 +278,7 @@
                         <th style="text-align: left; padding: 10px 0;">영업 시간</th>
                         <td style="text-align: left; padding: 10px 0;">월~금 8:00 ~ 21:00 / 토요일 10:00 ~ 12:30</td>
                     </tr>
-                    <tr>	
+                    <tr>   
                         <th style="text-align: left; padding: 10px 0;">방문 상담</th>
                         <td style="text-align: left; padding: 10px 0;">순천시 조례동 순천대점Kt건물 29길 21  5층</td>
                     </tr>
@@ -313,27 +287,9 @@
                         <td style="text-align: left; padding: 10px 0;">상담 예약 후 개별 Zoom 링크 문자로 전송</td>
                     </tr>
                 </table>
-                <button style="margin-top: 20px; background-color: #4d7155; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-                    상담 예약하기
-                </button>
             </div>
         </div>
     </div>
     
-     <a href="https://kauth.kakao.com/oauth/authorize?client_id=YOUR_REST_API_KEY&redirect_uri=http://localhost:8080/oauth&response_type=code">
-    <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" 
-         alt="카카오톡 로그인" 
-         class="kakao-login-icon">
-</a>
-<<<<<<< HEAD
-
-
-
-=======
-    <button onclick="location.href='member/signup'">회원가입</button>
-	<button onclick="location.href='login'">로그인</button>
->>>>>>> branch 'main' of https://github.com/2024-SMHRD-KDT-BigData-25/yogafire.git
-</section>
-
 </body>
 </html>

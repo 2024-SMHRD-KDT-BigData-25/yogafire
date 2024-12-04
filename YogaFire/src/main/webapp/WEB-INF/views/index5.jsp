@@ -123,8 +123,8 @@
             <a class="navbar-brand" href="http://localhost:8090/boot/">🏠 Home</a>
             <a class="navbar-brand ml-4" href="http://localhost:8090/boot/index4">📊 대시보드</a>
             <div>
-                <a class="nav-link" href="#yoga-plans">🧘 요가 플랜</a>
-                <a class="nav-link" href="#meditation-plans">🧘‍♀️ 명상 플랜</a>
+ 
+                <a class="nav-link" href="#meditation-plans">🧘‍♀️ 요금제</a>
             </div>
         </div>
     </nav>

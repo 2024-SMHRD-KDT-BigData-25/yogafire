@@ -228,35 +228,9 @@ body {
   color: #999;
 }
 
-/* 하단 고정 아이콘 */
-.kakao-login-icon {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #FEE500;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-
-.kakao-login-icon:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease-in-out;
-}
-
   </style>
 </head>
-<body>
-<a href="https://kauth.kakao.com/oauth/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code">
-  <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" 
-       alt="카카오톡 로그인" 
-       class="kakao-login-icon" />
-</a>
+<body>	
   <!-- 상단 메뉴 -->
   <div class="top-menu">
     <div class="menu-items">
