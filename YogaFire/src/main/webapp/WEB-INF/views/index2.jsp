@@ -265,27 +265,9 @@ body {
   </div>
 </div>
   <section class="start-section">
-  <h2 class="section-title">환영합니다 !</h2>
-  <div class="container2 text-center">
-    <div class="row">
-
-      <div class="card-item">
-        <h3>1회 요가체험 신청하기</h3>
-        <p>온라인으로 바로 신청 가능!</p>
-            <a href="#" class="btn btn-secondary">체험 신청하기</a>
-       	
-      </div>
-
-      <div class="card-item">
-        <h3>요가 수업 상담 </h3>
-        <p>온라인으로 바로 신청 가능!</p>
-        <a href="#" class="btn btn-secondary">상담 예약하기</a>
-      </div>
-    </div>
-  </div>
   
-<section class="yoga-program-section">
-  <h2 class="yoga-program-title">요가 프로그램</h2>
+<section class="section-title">
+  <h2 class="yoga-program-title">요가 프로그램</h2> <br>
   <div class="yoga-cards-container">
     <div class="yoga-card">
       <h3>리프레쉬 요가</h3>
@@ -359,9 +341,7 @@ body {
                         <td style="text-align: left; padding: 10px 0;">상담 예약 후 개별 Zoom 링크 문자로 전송</td>
                     </tr>
                 </table>
-                <button style="margin-top: 20px; background-color: #4d7155; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-                    상담 예약하기
-                </button>
+                
             </div>
         </div>
     </div>

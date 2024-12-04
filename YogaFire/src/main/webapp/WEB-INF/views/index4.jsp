@@ -220,11 +220,11 @@
 
   <div class="dashboard">
     <div class="profile-card">
-      <img src="images/뚱냥이.jpg" alt="Profile Picture">
+      <img src="images/움직이는뚱냥.gif" alt="Profile Picture">
       <h3>김선우</h3>
       <p>🌟 레벨: <strong>5</strong></p>
       <p>🕒 전체 요가 시간: <strong>45시간</strong></p>
-      <button onclick="editInfo()">🔧 정보 수정</button>
+     <button onclick="location.href='/boot/index9'">🔧 정보 수정</button>
       <button onclick="logout()">🚪 로그아웃</button>
     </div>
 
