@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="com.smhrd.yoga.model.userInfo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <html lang="ko">
@@ -161,7 +162,7 @@
   </style>
 </head>
 <body>
-  
+  <% userInfo member = (userInfo)session.getAttribute("member");%>
   <div id="balloon-container"></div>
   <div id="star-container"></div>
 
@@ -197,13 +198,19 @@
       <div class="text-center mt-4">
         <button type="submit" class="btn">💾 저장</button>
         <button type="button" class="btn" onclick="location.href='/boot/index4'">🔙 돌아가기</button>
-        <button type="button" class="btn" onclick=>회원탈퇴</button>
+        <button type="button" class="btn" onclick="deleteMember('<%=member.getId()%>')">회원탈퇴</button>
       </div>
     </form>
   </div>
 
   <script>
-
+  function deleteMember(id){
+		let choice = confirm("정말 탈퇴하시겠습니까?");
+		
+		if(choice){
+			location.href="/boot/member/"+id+"/delete";
+		}
+	}
     function previewImage(event) {
       const reader = new FileReader();
       reader.onload = function () {
