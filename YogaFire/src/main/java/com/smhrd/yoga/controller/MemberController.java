@@ -64,6 +64,13 @@ public class MemberController {
 		}
 	}
 	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("member");
+		return "redirect:/";
+	}
+	
+	
 	@GetMapping("/member/{id}/edit")
 	public String updateForm() {
 		return "edit";

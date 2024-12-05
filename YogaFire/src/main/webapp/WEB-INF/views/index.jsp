@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@page import="java.lang.reflect.Member"%>
+<%@page import="com.smhrd.yoga.model.userInfo"%>
 <%@ page pageEncoding="UTF-8" %>
 <html lang="ko">
 <head>
@@ -150,6 +152,8 @@
     </style>
 </head>
 <body>
+
+	<% userInfo member = (userInfo)session.getAttribute("member"); %>
     <!-- 상단 메뉴 -->
  <!-- 상단 메뉴 -->
    <div class="top-menu">
@@ -159,11 +163,16 @@
          <a href="/boot/index5">회원권</a>
          <a href="/boot/index4">대시보드</a>
       </div>
+      <%if(member == null) {%>
       <div class="auth-buttons">
         <button onclick="location.href='/boot/index7'">로그인</button>
 		<button onclick="location.href='/boot/index8'">회원가입</button>
-
       </div>
+      	<%} else {%>
+      <div class="auth-buttons">
+        <button onclick="location.href='/boot/index4'">마이페이지</button>
+      </div>
+      	<%} %>
    </div>
 
 
