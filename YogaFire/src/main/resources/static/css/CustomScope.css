@@ -1,0 +1,98 @@
+@charset "UTF-8";
+.custom-scope *, .custom-scope *:before, .custom-scope *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    position: relative;
+}
+
+.custom-scope {
+    background: #000;
+    box-sizing: border-box;
+    font-family: 'Vollkorn', sans-serif;
+    font-size: 1rem;
+    color: #000;
+}
+
+@media screen and (min-width: 700px) {
+    .custom-scope article{
+    display: flex;
+    flex-wrap: wrap;
+    }
+    .custom-scope figure {
+        background: #eee;
+        width: calc(50% + 1px);
+        height: 100vh;
+        margin: 0 auto 10vh 0;
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+        box-shadow: 4px -4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+
+    .custom-scope section {
+        background: #f9f9eb;
+        width: calc(50% + 1px);
+        height: 100vh;
+        margin: 0 0 10vh auto;
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+        padding: 5vmin;
+        box-shadow: -4px -4px 8px rgba(0, 0, 0, 0.4);
+    }
+    .custom-scope figure:nth-of-type(1),
+    .custom-scope section:nth-of-type(1) {
+        margin: 0 0 10vh 0;
+        width: 50%;
+    }
+    .custom-scope figure:nth-of-type(2n) {
+        margin: 0 0 10vh auto;
+        box-shadow: -4px -4px 8px rgba(0, 0, 0, 0.4);
+    }
+    .custom-scope section:nth-of-type(2n) {
+        margin: 0 auto 10vh 0;
+        box-shadow: 4px -4px 8px rgba(0, 0, 0, 0.4);
+    }
+    .custom-scope figure:last-of-type,
+    .custom-scope section:last-of-type {
+        margin-bottom: 0;
+    }
+    .custom-scope figure img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    .custom-scope section > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        padding: 1rem;
+    }
+    .custom-scope section > div > h1,
+    .custom-scope section > div > h2 {
+        margin: 15% 0 auto;
+        font-size: calc(2vmin + 3vmax);
+        text-align: center;
+        font-weight: 400;
+        line-height: 1;
+        word-spacing: 0.5rem;
+        font-family: "Bungee Shade", sans-serif;
+    }
+    .custom-scope section > div > p {
+        text-align: left;
+        width: 100%;
+        font-family: "Cormorant", serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: calc(0.5vmin + 1.5vmax);
+        margin-bottom: 5%;
+    }
+    
+}
+
+ 

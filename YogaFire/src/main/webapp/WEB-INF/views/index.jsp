@@ -8,20 +8,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인 페이지</title>
+    <link rel="stylesheet" href="css/CustomScope.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bangers&family=Bungee+Shade&family=Great+Vibes&family=Pacifico&family=Sarina&family=Ultra&family=Yellowtail&display=swap" rel="stylesheet">
   <style>
 
-  .top-menu {
-         background-color: #f9f9eb;
-         display: flex;
-         justify-content: center; /* 메뉴와 버튼을 중앙 정렬 */
-         align-items: center;
-         padding: 15px 30px;
-         border-bottom: 1px solid #c9c9b8;
-         width: 100%;
-         margin: 0 auto;
-         position: relative;
-      }
+.top-menu {
+ 	display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 30px;
+    background-color: rgba(249, 249, 235, 0.7); /* 초기 투명 상태 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+.top-menu.scrolled {
+    background-color: #f9f9eb; /* 특정 섹션을 지나면 색상 변경 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 약간의 그림자 추가 */
+}
 
       .menu-items {
          display: flex;
@@ -174,15 +183,43 @@
       </div>
       	<%} %>
    </div>
+<div class="custom-scope">
+    <article>
+        <figure>
+            <img src="images/요가배경이미지8.jpg" />
+        </figure>
+        <section>
+            <div>
+                <h1>YogaFire</h1>
+                <p>YogaFire는 AI 기반 코칭 시스템으로, 사용자 맞춤형 요가 및 명상 프로그램과 자세 교정 피드백을 제공합니다. 운동 기록 추적과 다양한 콘텐츠로 건강과 웰빙 향상을 지원하며, 시간과 장소 제약 없이 개인화된 트레이닝 경험을 제공하는 혁신적인 플랫폼입니다.</p>
+            </div>
+        </section>
 
+        <figure>
+            <img src="images/me2.png" />
+        </figure>
+        <section>
+            <div>
+                <h2>Ai Mediapipe</h2>
+                <p>AI와 Mediapipe를 활용한 요가 코칭은 카메라를 통해 사용자의 동작을 추적하고, 관절 위치와 자세 데이터를 분석하여 정확한 피드백을 제공합니다. AI 모델이 올바른 자세와 개선점을 제안해 운동 효과를 극대화하며, 개인 맞춤형 코칭이 가능합니다. 이를 통해 사용자들은 전문 트레이너 없이도 효율적으로 요가를 배우고 수행할 수 있습니다.</p>
+            </div>
+        </section>
+
+        <figure>
+            <img src="images/명상배경이미지13.png" />
+        </figure>
+        <section>
+            <div>
+                <h2>Yoga<br>&<br>Meditation</h2>
+                <p>요가는 신체의 균형과 유연성을 향상시키고, 근력을 강화하며, 심신의 안정을 돕는 수련법입니다. 명상은 마음을 집중하고 내면을 관찰함으로써 스트레스를 줄이고 정신적 평온을 얻는 데 중점을 둡니다. 이 둘은 조화를 이루어 몸과 마음의 건강을 동시에 증진시킵니다.</p>
+            </div>
+        </section>
+    </article>
+</div>
 
     <!-- 메인 섹션 -->
     <section id="intro">
         <div class="container">
-            <h2>
-                요가파이어는 2024년에 설립된 요가 명상 빅데이터기반으로 만든 자세교정사이트로<br>
-                건강한 라이프스타일을 제안하는 문화공간입니다.
-            </h2>
         </div>
     </section>
 
@@ -300,6 +337,24 @@
             </div>
         </div>
     </div>
-    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const topMenu = document.querySelector(".top-menu");
+        const customScope = document.querySelector(".custom-scope");
+
+        window.addEventListener("scroll", function () {
+            // `custom-scope` 섹션의 끝을 계산
+            const customScopeBottom = customScope.getBoundingClientRect().bottom;
+
+            if (customScopeBottom < 0) {
+                // `custom-scope`를 벗어난 경우
+                topMenu.classList.add("scrolled");
+            } else {
+                // `custom-scope` 내부에 있는 경우
+                topMenu.classList.remove("scrolled");
+            }
+        });
+    });
+</script>
 </body>
 </html>
