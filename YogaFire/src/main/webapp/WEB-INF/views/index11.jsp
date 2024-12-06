@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>요가 프로그램 리스트 페이지</title>
-<link rel="stylesheet" href="../css/test7.css">
+<link rel="stylesheet" href="css/index11.css">
 <style>
     :root {
       --main-color: #7DCEA0;
@@ -151,7 +151,7 @@
             </div>
         </div>
     </div>		
-<script src="../js/test7.js"></script>
+<script src="js/index11.js"></script>
   
 </body>
 </html>

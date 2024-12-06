@@ -215,7 +215,7 @@
     <h1> 마이페이지 </h1>
     <div class="menu-links">
       <a href="/boot/">Home</a>
-      <a href="#">프로그램</a>
+      <a href="/boot/index11">프로그램</a>
       <a href="/boot/index5">요금제</a>
     </div>
   </div>
