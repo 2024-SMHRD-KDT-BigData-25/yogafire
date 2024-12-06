@@ -1,11 +1,14 @@
 package com.smhrd.yoga.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import com.smhrd.yoga.model.myPage;
 import com.smhrd.yoga.model.userInfo;
 
 
@@ -22,5 +25,11 @@ public interface MemberMapper {
 	
 	@Delete("delete from user_info where id=#{id}")
 	public int delete(String id);
+	
+	@Select("select activity_at, sum(ps_time) as totalPsTime from mypage1 where id =#{id}  group by activity_at")
+	public List<myPage> time(userInfo member);
+	
+	@Select("select COALESCE(SUM(activity_score), 0) AS scoresum from user_activity where id=#{id}")
+	public int scoresum(userInfo member);
 
 }
