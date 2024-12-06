@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.smhrd.yoga.mapper.MemberMapper;
+import com.smhrd.yoga.model.myPage;
 import com.smhrd.yoga.model.userInfo;
 
 import lombok.RequiredArgsConstructor;
@@ -35,4 +36,12 @@ public class MemberService {
 	    System.out.println("서비스 성공");
 	    return mapper.update(member);
 	}
+	
+	public List<myPage> time(userInfo member) {
+		  return mapper.time(member);
+	}
+	public int scoresum(userInfo member) {
+		  return mapper.scoresum(member);
+	}
+
 }

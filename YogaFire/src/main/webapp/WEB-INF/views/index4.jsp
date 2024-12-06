@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@page import="com.smhrd.yoga.model.myPage"%>
+<%@page import="java.util.List"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page pageEncoding="UTF-8" %>
 <html lang="ko">
@@ -247,7 +249,11 @@
           <h4>나의 통계</h4>
           <p>🏆 <strong>순위:</strong> 12위</p>
           <p>📈 <strong>월간 점수:</strong> 85점</p>
-          <p>🔄 <strong>누적 점수:</strong> 450점</p>
+          <% 
+    		Integer scroesum = (Integer) session.getAttribute("scoresum"); 
+    		if (scroesum != null) {
+		  %>
+          <p>🔄 <strong>누적 점수:</strong><%= scroesum.intValue()%>점 <%} %> </p>
         </div>
       </div>
     </div>
@@ -256,6 +262,31 @@
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
+  
+	<% List<myPage> time = (List<myPage>)session.getAttribute("time");
+    // 빈 리스트를 처리할 수 있도록 기본 배열을 설정
+    StringBuilder labels = new StringBuilder();
+    StringBuilder data = new StringBuilder();
+    
+    for (int i = 0; i < time.size(); i++) {
+        myPage my = time.get(i);
+        // labels 배열에 activityAt 추가
+        labels.append("'").append(my.getActivity_at()).append("'");
+
+        // totalPsTime을 초에서 분으로 변환 (60으로 나누기)
+        int totalMinutes = my.getTotalPsTime() / 60;  // 초를 분으로 변환
+        
+        // data 배열에 totalPsTime 추가
+        data.append(totalMinutes);
+        
+        // 마지막 항목이 아니면 콤마 추가
+        if (i < time.size() - 1) {
+            labels.append(", ");
+            data.append(", ");
+        }
+   	  }
+	%>
+  
     document.addEventListener('DOMContentLoaded', function () {
       // 캘린더 초기화
       const calendarEl = document.getElementById('calendar');
@@ -274,8 +305,8 @@
       const ctx = document.getElementById('yoga-chart').getContext('2d');
       const chartData = {
         daily: {
-          labels: ['11/20', '11/21', '11/22', '11/23', '11/24', '11/25'],
-          data: [30, 60, 45, 50, 40, 70]
+          labels: [<%= labels.toString() %>],
+          data: [<%= data.toString() %>]
         },
         weekly: {
           labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
