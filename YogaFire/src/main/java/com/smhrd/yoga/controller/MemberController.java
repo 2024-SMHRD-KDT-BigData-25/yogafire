@@ -3,6 +3,7 @@ package com.smhrd.yoga.controller;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Member;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.smhrd.yoga.model.myPage;
+import com.smhrd.yoga.model.userActivity;
 import com.smhrd.yoga.model.userInfo;
 import com.smhrd.yoga.service.MemberService;
 
@@ -54,13 +57,14 @@ public class MemberController {
 	public String login(userInfo member, HttpSession session) {
 		// @ModelAttribute는 생략가능
 		userInfo res = service.login(member);
-		
 		if (res == null) {
-			System.out.println("로그인이 실패했습니다.");
 			return "redirect:/login";
 		}else {
-			System.out.println("로그인이 성공했습니다.");
 			session.setAttribute("member", res);
+			List<myPage> time = service.time(member);
+			int scroesum = service.scoresum(member);
+			session.setAttribute("time", time);
+			session.setAttribute("scoresum", Integer.valueOf(scroesum));
 			return "redirect:/index4";
 		}
 	}
