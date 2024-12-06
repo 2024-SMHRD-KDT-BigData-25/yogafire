@@ -14,7 +14,7 @@
   <style>
 
 .top-menu {
- 	display: flex;
+    display: flex;
       justify-content: center;
       align-items: center;
       padding: 15px 30px;
@@ -157,32 +157,79 @@
       p {
          color: black;
       }
+      
+      .video-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+}
+
+.scroll-indicator img {
+    width: 30px;
+    height: 30px;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+      
   
     </style>
 </head>
 <body>
 
-	<% userInfo member = (userInfo)session.getAttribute("member"); %>
+   <% userInfo member = (userInfo)session.getAttribute("member"); %>
     <!-- 상단 메뉴 -->
  <!-- 상단 메뉴 -->
    <div class="top-menu">
       <div class="menu-items">
-         <a href="/boot/index2">요가</a>
-         <a href="/boot/index3">명상</a>
-         <a href="/boot/index5">회원권</a>
-         <a href="/boot/index4">대시보드</a>
+    
       </div>
       <%if(member == null) {%>
       <div class="auth-buttons">
         <button onclick="location.href='/boot/index7'">로그인</button>
-		<button onclick="location.href='/boot/index8'">회원가입</button>
+      <button onclick="location.href='/boot/index8'">회원가입</button>
       </div>
-      	<%} else {%>
+         <%} else {%>
       <div class="auth-buttons">
         <button onclick="location.href='/boot/index4'">마이페이지</button>
       </div>
-      	<%} %>
+         <%} %>
    </div>
+   
+
+   
 <div class="custom-scope">
     <article>
         <figure>
@@ -217,11 +264,6 @@
     </article>
 </div>
 
-    <!-- 메인 섹션 -->
-    <section id="intro">
-        <div class="container">
-        </div>
-    </section>
 
     <!-- 이미지  -->
     <section class="image-section">

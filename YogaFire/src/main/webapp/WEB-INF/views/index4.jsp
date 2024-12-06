@@ -210,7 +210,7 @@
 
 <body>
   <div class="top-menu">
-    <h1>🔥 Yoga Dashboard 🔥</h1>
+    <h1> 마이페이지 </h1>
     <div class="menu-links">
       <a href="/boot/">Home</a>
       <a href="#">프로그램</a>
