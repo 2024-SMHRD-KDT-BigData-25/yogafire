@@ -35,4 +35,5 @@ public class MemberService {
 	    System.out.println("서비스 성공");
 	    return mapper.update(member);
 	}
+
 }

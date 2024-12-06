@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.smhrd.yoga.model.userActivity;
 import com.smhrd.yoga.model.userInfo;
 import com.smhrd.yoga.service.MemberService;
 
@@ -54,7 +55,6 @@ public class MemberController {
 	public String login(userInfo member, HttpSession session) {
 		// @ModelAttribute는 생략가능
 		userInfo res = service.login(member);
-		
 		if (res == null) {
 			System.out.println("로그인이 실패했습니다.");
 			return "redirect:/login";
