@@ -12,7 +12,6 @@
     :root {
       --main-color: #7DCEA0;
       --accent-color: #FDE2E2; 
-      --background-color: #FDE2E2; 
       --text-color: #2C3E50;
       --button-hover: #5DADE2;
       --card-shadow: rgba(0, 0, 0, 0.1);
@@ -22,54 +21,7 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background: var(--background-color);
-      overflow-x: hidden;
-    }
-
-
-    .balloon {
-      width: 50px;
-      height: 70px;
-      position: absolute;
-      bottom: -100px;
-      background-color: rgba(255, 99, 132, 0.7);
-      border-radius: 50%;
-      animation: floatUp 10s infinite ease-in-out;
-      z-index: -1;
-    }
-
-    @keyframes floatUp {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-120vh) scale(1.5);
-        opacity: 0;
-      }
-    }
-
-
-    .star {
-      position: absolute;
-      width: 10px; /
-      height: 10px;
-      background-color: white; 
-      border-radius: 50%;
-      animation: sparkle 3s infinite ease-in-out;
-      z-index: -1;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    }
-
-    @keyframes sparkle {
-      0%, 100% {
-        opacity: 0;
-        transform: scale(0.5);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.5);
-      }
+      background: #ffffff; /* 배경 색상을 단순한 흰색으로 설정 */
     }
 
     .container {
@@ -80,7 +32,6 @@
       border-radius: 15px;
       box-shadow: 0 8px 15px var(--card-shadow);
       position: relative;
-      z-index: 1; /
     }
 
     .header {
@@ -163,8 +114,6 @@
 </head>
 <body>
   <% userInfo member = (userInfo)session.getAttribute("member");%>
-  <div id="balloon-container"></div>
-  <div id="star-container"></div>
 
   <div class="container">
     <div class="header">
@@ -172,18 +121,16 @@
       <p>프로필 사진과 정보를 수정하세요!</p>
     </div>
 
-
     <!-- 정보 수정 폼 -->
-    <form action="/boot/member/${member.id}/edit" method="post"
-		enctype="multipart/form-data">
-     <div class="profile-container" >
-       <img src="images/${member.profic}" alt="프로필 이미지" id="profile-preview">
-       <label for="profile-upload" class="btn">이미지 업로드</label>
-      <input type="file" id="profile-upload" name="proficfile" style="display: none;" accept="image/*" onchange="previewImage(event)">
-    </div>
+    <form action="/boot/member/${member.id}/edit" method="post" enctype="multipart/form-data">
+      <div class="profile-container">
+        <img src="images/${member.profic}" alt="프로필 이미지" id="profile-preview">
+        <label for="profile-upload" class="btn">이미지 업로드</label>
+        <input type="file" id="profile-upload" name="proficfile" style="display: none;" accept="image/*" onchange="previewImage(event)">
+      </div>
       <div class="form-group">
         <label for="username">👤 닉네임</label>
-        <input type="text" id="username" name="nick" class="form-control" placeholder="사용자 이름을 입력하세요" value="${member.nick}" }>
+        <input type="text" id="username" name="nick" class="form-control" placeholder="사용자 이름을 입력하세요" value="${member.nick}">
       </div>
       <div class="form-group">
         <label for="password">🔑 현재 비밀번호</label>
@@ -204,13 +151,13 @@
   </div>
 
   <script>
-  function deleteMember(id){
-		let choice = confirm("정말 탈퇴하시겠습니까?");
-		
-		if(choice){
-			location.href="/boot/member/"+id+"/delete";
-		}
-	}
+    function deleteMember(id) {
+      let choice = confirm("정말 탈퇴하시겠습니까?");
+      if (choice) {
+        location.href = "/boot/member/" + id + "/delete";
+      }
+    }
+
     function previewImage(event) {
       const reader = new FileReader();
       reader.onload = function () {
@@ -219,35 +166,6 @@
       };
       reader.readAsDataURL(event.target.files[0]);
     }
-
-   
-    function createBalloon() {
-      const balloon = document.createElement('div');
-      balloon.classList.add('balloon');
-      balloon.style.left = Math.random() * window.innerWidth + 'px';
-      balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 80%)`;
-      document.getElementById('balloon-container').appendChild(balloon);
-
-      setTimeout(() => {
-        balloon.remove();
-      }, 10000); 
-    }
-
- 
-    function createStar() {
-      const star = document.createElement('div');
-      star.classList.add('star');
-      star.style.left = Math.random() * window.innerWidth + 'px';
-      star.style.top = Math.random() * window.innerHeight + 'px';
-      document.getElementById('star-container').appendChild(star);
-
-      setTimeout(() => {
-        star.remove();
-      }, 3000); 
-    }
-
-    setInterval(createBalloon, 1000); 
-    setInterval(createStar, 500); 
   </script>
 </body>
 </html>

@@ -115,6 +115,9 @@ background-color: #f9f9eb;
 </head>
 <body>
 
+    <h1>Test Page</h1>
+    <p>This is a test page for index10.jsp.</p>
+
 <div class="container">
   <iframe class="yogavideo" src="https://www.youtube.com/embed/D3yExRi7EME?si=SgjBFurBWFXqnDMn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   <video id="video" autoplay></video>

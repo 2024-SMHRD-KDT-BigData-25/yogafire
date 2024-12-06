@@ -61,6 +61,12 @@ public class IndexController {
         return "index9";
     }
     
+    // localhost:8090/boot/index10 -> index10.jsp 연결
+    @RequestMapping(value = "/index10", method = RequestMethod.GET)
+    public String index10Page() {
+        return "index10";
+    }
+    
     
 
 }
