@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* 기본 스타일 */
+     
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
@@ -19,7 +19,7 @@
             overflow-x: hidden;
         }
 
-        /* 애니메이션 효과 */
+   
         @keyframes fadeInUp {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -36,7 +36,7 @@
             transform: translateY(0);
         }
 
-        /* 헤더 섹션 */
+     
         .header-banner {
             display: flex;
             justify-content: space-between;
@@ -74,7 +74,7 @@
             color: #FFFFFF;
         }
 
-        /* 메인 배너 */
+  
         .main-banner {
             height: 90vh;
             background: url('images/배경.png') no-repeat center center/cover;
@@ -117,7 +117,7 @@
             transform: translateY(-3px);
         }
 
-        /* 콘텐츠 섹션 */
+     
         .custom-scope {
             padding: 60px 20px;
             background: #FFFFFF;
@@ -154,7 +154,7 @@
             color: #000000;
         }
 
-        /* 체험하기 배너 */
+     
         .ad-banner {
             position: fixed;
             bottom: 20px;
