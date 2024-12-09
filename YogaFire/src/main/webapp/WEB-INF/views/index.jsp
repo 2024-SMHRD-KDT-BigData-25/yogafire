@@ -8,28 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YogaFire</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
+        /* 기본 스타일 */
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #FFFFFF; 
-            color: #2E8B57; 
+            background-color: #FFFFFF;
+            color: #2E8B57;
             overflow-x: hidden;
         }
 
-
+        /* 애니메이션 효과 */
         @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-   
         .scroll-animated {
             opacity: 0;
             transform: translateY(50px);
@@ -41,12 +36,13 @@
             transform: translateY(0);
         }
 
+        /* 헤더 섹션 */
         .header-banner {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            background-color: #FFFFFF; 
+            background-color: #FFFFFF;
             position: fixed;
             top: 0;
             left: 0;
@@ -55,9 +51,10 @@
             animation: fadeInUp 1s ease;
         }
 
-        .header-banner .logo img {
-            height: 70px; 
-            width: auto;   
+        .header-banner .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2E8B57;
         }
 
         .header-banner button {
@@ -77,6 +74,7 @@
             color: #FFFFFF;
         }
 
+        /* 메인 배너 */
         .main-banner {
             height: 90vh;
             background: url('images/배경.png') no-repeat center center/cover;
@@ -91,14 +89,14 @@
         .main-banner h1 {
             font-size: 4rem;
             font-weight: 900;
-            color: #FFFFFF; 
+            color: #FFFFFF;
             margin-bottom: 20px;
         }
 
         .main-banner p {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #FFFFFF; 
+            color: #FFFFFF;
             margin: 20px 0;
         }
 
@@ -107,7 +105,7 @@
             font-size: 1.4rem;
             font-weight: bold;
             color: #FFFFFF;
-            background-color: #2E8B57; 
+            background-color: #2E8B57;
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -119,9 +117,10 @@
             transform: translateY(-3px);
         }
 
+        /* 콘텐츠 섹션 */
         .custom-scope {
             padding: 60px 20px;
-            background: #FFFFFF;  
+            background: #FFFFFF;
             color: #000000;
         }
 
@@ -135,8 +134,8 @@
         }
 
         .custom-scope figure img {
-            width: 100%; 
-            max-width: 600px; 
+            width: 100%;
+            max-width: 600px;
             height: auto;
             border-radius: 15px;
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
@@ -145,19 +144,56 @@
         .custom-scope h1, .custom-scope h2 {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #000000;  
+            color: #000000;
             margin-bottom: 20px;
         }
 
         .custom-scope p {
             font-size: 1.2rem;
             line-height: 1.8;
-            color: #000000; 
+            color: #000000;
+        }
+
+        /* 체험하기 배너 */
+        .ad-banner {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #FFFFFF;
+            padding: 15px 20px;
+            border-radius: 15px;
+            text-align: center;
+            color: #2E8B57;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 2.5s ease;
+        }
+
+        .ad-banner img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .ad-banner button {
+            background-color: #2E8B57;
+            color: #FFFFFF;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ad-banner button:hover {
+            background-color: #228B47;
         }
 
         footer {
-            background-color: #000000; 
-            color: #FFFFFF;  
+            background-color: #000000;
+            color: #FFFFFF;
             text-align: center;
             padding: 20px 0;
             animation: fadeInUp 3s ease;
@@ -170,9 +206,12 @@
 
 <!-- 헤더 섹션 -->
 <div class="header-banner">
+
     <div class="logo">
-        <img src="images/1.png" alt="YogaFire 로고" class="logo-img">
+        <img src="images/1.png" alt="YogaFire 로고" class="logo-img" style="height: 70px;">
     </div>
+
+   
     <% if (member == null) { %>
         <div>
             <button onclick="location.href='/boot/index7'">로그인</button>
@@ -186,13 +225,14 @@
 </div>
 
 
+<!-- 메인 배너 섹션 -->
 <div class="main-banner">
     <h1>Discover Your Inner Peace</h1>
-    <p>AI와 함께하는 요가 & 명상 코칭 서비스 프로그램</p>
+    <p>AI와 함께하는 개인화된 요가 & 명상 프로그램</p>
     <button class="cta-button" onclick="location.href='/boot/index8'">지금 시작하기</button>
 </div>
 
-
+<!-- 콘텐츠 섹션 -->
 <div class="custom-scope">
     <article>
         <figure class="scroll-animated"><img src="images/me2.jpg" alt="AI Mediapipe"></figure>
@@ -209,22 +249,24 @@
     </article>
 </div>
 
+<!-- 체험하기 섹션 -->
+<div class="ad-banner">
+    <img src="images/ai분석자세.gif" alt="체험하기">
+    <p>AI 기반 요가 자세 분석</p>
+    <button onclick="location.href='/boot/index10'">지금 체험하기</button>
+</div>
+
+<!-- 푸터 -->
 <footer>
     © 2024 YogaFire. All Rights Reserved.
 </footer>
 
-
-<!-- 스크롤 내릴때 텍스트 나타나게 동적이미지 -->
 <script>
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('show');
         });
-    }, {
-        threshold: 0.1
-    });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.scroll-animated').forEach(el => observer.observe(el));
 </script>
