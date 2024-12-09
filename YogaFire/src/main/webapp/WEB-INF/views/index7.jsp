@@ -47,26 +47,27 @@
             font-size: 1rem;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+     .form-group {
+    margin-bottom: 30px;  /* 간격 조정 (기존 20px에서 30px로) */
+}
 
-        .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            outline: none;
-            background-color: #f9f9f9;
-            transition: all 0.3s ease;
-        }
+.form-group input {
+    width: 100%;
+    max-width: 350px;   /* 최대 너비 설정 */
+    padding: 14px 18px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
 
-        .form-group input:focus {
-            border-color: #00796b;
-            background-color: #ffffff;
-            box-shadow: 0 0 5px rgba(0, 121, 107, 0.3);
-        }
+.form-group input:focus {
+    border-color: #00796b;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.3);
+}
 
         .btn {
             background: #00796b;
