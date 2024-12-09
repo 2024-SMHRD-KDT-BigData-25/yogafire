@@ -62,6 +62,13 @@
 </style>
 </head>
 <body>
+
+<% List<flowInfo> time = (List<flowInfo>)request.getAttribute("flowList"); %>
+
+
+
+
+
   <div class="top-menu">
     <h1>🔥 Yoga Program 🔥</h1>
     <div class="menu-links">
@@ -77,54 +84,12 @@
             <div class="category">
                 <h2>Beginner</h2>
                 <div class="items">
+                
                     <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
+                        <img src="images/yogalistimg.jpg" alt="Beginner Yoga">
                         <p>Beginner Pose 1</p>
                     </div>
-                    <div class="item" data-id="beginner2">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
-                    <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
-                    <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
-                    <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
-                    <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
-                    <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
-                    <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
-                    <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
-                    <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
-                    <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
-                    <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
+                    
                 </div>
             </div>
             
