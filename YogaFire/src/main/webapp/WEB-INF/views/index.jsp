@@ -44,11 +44,12 @@
             animation: fadeInUp 1s ease;
         }
 
-        .header-banner .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #2E8B57;
-        }
+  
+.header-banner .logo img {
+    height: 70px; 
+    width: auto;   
+}
+
 
         .header-banner button {
             color: #2E8B57;
@@ -198,8 +199,11 @@
 <% userInfo member = (userInfo) session.getAttribute("member"); %>
 
 
+<!-- 헤더 섹션 -->
 <div class="header-banner">
-    <div class="logo">YogaFire</div>
+    <div class="logo">
+        <img src="images/1.png" alt="YogaFire 로고" class="logo-img">
+    </div>
     <% if (member == null) { %>
         <div>
             <button onclick="location.href='/boot/index7'">로그인</button>
@@ -210,6 +214,8 @@
             <button onclick="location.href='/boot/index4'">마이페이지</button>
         </div>
     <% } %>
+</div>
+
 </div>
 
 
