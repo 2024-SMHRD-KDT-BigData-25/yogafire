@@ -22,8 +22,10 @@ h1 {
 }
 
 .category {
-    margin-bottom: 30px;
-    padding: 10px;
+margin-bottom: 30px;
+    padding: 0px;
+    background-color: white;
+    border-radius: 11px;
 }
 
 h2 {
@@ -35,13 +37,14 @@ h2 {
 
 .items {
     display: flex;               /* 아이템을 가로로 나열 */
-    overflow-x: scroll;            /* 가로 스크롤을 활성화 */
+    overflow-x: auto;            /* 가로 스크롤을 활성화 */
     gap: 20px;                   /* 아이템 간 간격 */
     padding: 10px 0;             /* 위 아래 패딩 */
     scroll-snap-type: x mandatory; /* 스크롤 시 아이템이 스냅되도록 설정 (선택 사항) */
     width: 95vw;                /* 화면의 전체 너비를 차지하도록 설정 */
     box-sizing: border-box;      /* 패딩과 마진이 전체 너비에 포함되도록 설정 */
     touch-action: pan-y;         /* 수평 스크롤을 허용하도록 터치 동작 설정 */
+    margin-left: 17px
 }
 
 .items::-webkit-scrollbar-track
@@ -111,3 +114,27 @@ p {
     padding: 10px 10px;
 }
 
+.toggle-button {
+margin-right: 5px;
+    background-color: #7DCEA0;
+    height: 30px;
+    border-radius: 15px;
+    border: 0px;
+    color: white;
+}
+.start-button {
+margin-right: 5px;
+    background-color: #7DCEA0;
+    height: 30px;
+    border-radius: 15px;
+    border: 0px;
+    color: white;
+}   
+.toggle-button:hover {
+background: #5DADE2;
+    transform: scale(1.05);
+}
+.start-button:hover {
+background: #5DADE2;
+    transform: scale(1.05);
+}

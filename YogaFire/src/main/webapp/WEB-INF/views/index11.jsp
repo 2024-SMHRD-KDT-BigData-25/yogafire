@@ -63,7 +63,7 @@
 </head>
 <body>
   <div class="top-menu">
-    <h1>🔥 Yoga Program 🔥</h1>
+    <h1>Yoga Program </h1>
     <div class="menu-links">
       <a href="/boot/">Home</a>
       <a href="#">프로그램</a>
@@ -152,6 +152,6 @@
         </div>
     </div>		
 <script src="js/index11.js"></script>
-  
+ 
 </body>
 </html>

@@ -28,7 +28,8 @@ const detailsData = {
 let currentlyOpenDetails = null; // 현재 열려있는 상세 정보를 추적
 
 function toggleDetails(event) {
-    const item = event.currentTarget;
+    const button = event.currentTarget;
+    const item = button.closest(".item"); // 버튼이 속한 .item 요소
     const id = item.dataset.id;
 
     // 기존에 열려 있는 상세 정보가 있으면 닫기
@@ -77,7 +78,34 @@ function toggleDetails(event) {
     }
 }
 
-// 각 아이템에 클릭 이벤트 추가
+function startYoga(event) {
+    const button = event.currentTarget;
+    const item = button.closest(".item"); // 버튼이 속한 .item 요소
+    const id = item.dataset.id;
+
+     window.location.href = `index10`
+    // 여기서 추가적인 로직(예: 페이지 이동, 동영상 재생)을 구현할 수 있습니다.
+}
+
+// 각 아이템에 버튼 생성 및 이벤트 추가
 document.querySelectorAll(".item").forEach(item => {
-    item.addEventListener("click", toggleDetails);
+    // 상세 보기 버튼 추가
+    const detailsButton = document.createElement("button");
+    detailsButton.className = "toggle-button";
+    detailsButton.textContent = "상세 보기";
+    detailsButton.addEventListener("click", toggleDetails);
+
+    // 요가 시작 버튼 추가
+    const startButton = document.createElement("button");
+    startButton.className = "start-button";
+    startButton.textContent = "요가 시작";
+    startButton.addEventListener("click", startYoga);
+
+    // 버튼을 아이템에 추가
+    const buttonContainer = document.createElement("div");
+    buttonContainer.className = "button-container";
+    buttonContainer.appendChild(detailsButton);
+    buttonContainer.appendChild(startButton);
+
+    item.appendChild(buttonContainer);
 });
