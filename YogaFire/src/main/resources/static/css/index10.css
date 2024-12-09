@@ -30,15 +30,29 @@
 display: flex;
 width: 65%;
 height: 100%;
+border-radius: 20px;
+    border: solid 5px;
+    border-color: #7DCEA0;
+    margin: 5px;
+    margin-right: 2px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 .yogavalue {
 background-color: #f9f9eb;
-    height: 199px;
+    height: 131px;
     display: flex;
     flex-direction: row;
     padding-left: 20px;
     gap: 10px;
     align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    border: solid 5px;
+    border-color: #7DCEA0;
+    margin-top: 30px;
+    margin-left: 5px;
+    margin-right: 7px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 #video {
             width: 35%;
@@ -46,7 +60,12 @@ background-color: #f9f9eb;
             background-color: black;
              transform: scaleX(-1); /* 수평 반전 */
             -webkit-transform: scaleX(-1); /* Webkit 브라우저 호환 */
-           
+      	    border-radius: 20px;
+   			border: solid 5px;
+  		 	border-color: #7DCEA0;
+  			margin: 5px;
+ 			margin-left: 2px;
+ 			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 .value {
 	height: 120px;
@@ -62,14 +81,14 @@ background-color: #f9f9eb;
 }
 .button-group {
 background-color: #f9f9eb;
-    height: 65%;
+    height: 90%;
     width: 10%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 20%;
-    margin: 2%;
+    border-radius: 20px;
+    margin: 5px;
     border: solid;
     border-color: #4d7155;
 }

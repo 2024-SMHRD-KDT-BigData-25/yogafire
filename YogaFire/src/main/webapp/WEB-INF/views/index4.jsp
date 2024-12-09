@@ -8,7 +8,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yoga Dashboard</title>
-
   <!-- FullCalendar 및 Chart.js CSS -->
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
   <style>
@@ -207,6 +206,131 @@
     .score-card p {
       margin: 5px 0;
     }
+    html{
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	overflow-y: overlay;
+}
+
+.container {
+display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding-bottom: 0px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.category1 {
+    padding: 0px;
+    background-color: white;
+    border-radius: 11px;
+    width: 300px;
+    box-shadow: 0 10px 20px var(--card-shadow);
+}
+.category2 {
+    padding: 0px;
+    background-color: white;
+    border-radius: 11px;
+    width: 1144px;
+    box-shadow: 0 10px 20px var(--card-shadow);
+}
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap : 30px;
+}
+.h2 {
+    border: 2px solid #7DCEA0;
+    padding: 5px;
+    border-radius: 11px;
+    background-color: #7DCEA0;
+    margin: 0px;
+}
+
+.items {
+    display: flex;               /* 아이템을 가로로 나열 */
+    overflow-x: auto;            /* 가로 스크롤을 활성화 */
+    gap: 20px;                   /* 아이템 간 간격 */
+    padding: 10px 0;             /* 위 아래 패딩 */
+    scroll-snap-type: x mandatory; /* 스크롤 시 아이템이 스냅되도록 설정 (선택 사항) */
+    width: 95vw;                /* 화면의 전체 너비를 차지하도록 설정 */
+    box-sizing: border-box;      /* 패딩과 마진이 전체 너비에 포함되도록 설정 */
+    touch-action: pan-y;         /* 수평 스크롤을 허용하도록 터치 동작 설정 */
+}
+
+.items::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.items::-webkit-scrollbar
+{
+  width: 30%;
+  height: 10px;
+  background-color: #F5F5F5;
+}
+
+.items::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #7DCEA0;
+}
+
+
+.item {
+    width: calc(20.333% - 20px);
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    flex-shrink: 0;              /* 아이템이 축소되지 않도록 설정 */
+}
+
+.item img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+
+
+.item img:hover {
+    transform: scale(1.05);
+}
+
+p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.details {
+	position: relative;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    background-color: white;
+    padding: 0 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.details.visible {
+	max-width: 1000px;
+    max-height: 4000px; /* 적절한 높이로 설정 */
+    opacity: 1;
+    padding: 10px 18px;
+}
+
+    
   </style>
 </head>
 
@@ -219,6 +343,29 @@
       <a href="/boot/index5">요금제</a>
     </div>
   </div>
+<div class="container">    
+        <div class="list">
+            <!-- 최근 실행 시퀀스 -->
+            <div class="category1">
+                <h2 class="h2">최근 실행 시퀀스</h2>
+                <div class="items">
+                    <div class="item" data-id="beginner1">
+                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
+                        <p>Beginner Pose 1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="category2">
+                <h2 class="h2">추천 시퀀스</h2>
+                <div class="items">
+                    <div class="item" data-id="beginner1">
+                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
+                        <p>Beginner Pose 1</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+</div>
 
   <div class="dashboard">
     <div class="profile-card">
@@ -355,5 +502,7 @@
       alert('로그아웃 되었습니다.');
     }
   </script>
+  
+<script src="js/index11.js"></script>
 </body>
 </html>

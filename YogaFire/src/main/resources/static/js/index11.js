@@ -59,6 +59,7 @@ function toggleDetails(event) {
         detailsDiv.innerHTML = `
             <h3>${data.title}</h3>
             <p>${data.description}</p>
+			<button>운동하러가기</button>
         `;
 
         // 선택된 이미지 바로 밑에 상세 정보 삽입
