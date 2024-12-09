@@ -114,3 +114,27 @@ p {
     padding: 10px 10px;
 }
 
+.toggle-button {
+margin-right: 5px;
+    background-color: #7DCEA0;
+    height: 30px;
+    border-radius: 15px;
+    border: 0px;
+    color: white;
+}
+.start-button {
+margin-right: 5px;
+    background-color: #7DCEA0;
+    height: 30px;
+    border-radius: 15px;
+    border: 0px;
+    color: white;
+}   
+.toggle-button:hover {
+background: #5DADE2;
+    transform: scale(1.05);
+}
+.start-button:hover {
+background: #5DADE2;
+    transform: scale(1.05);
+}

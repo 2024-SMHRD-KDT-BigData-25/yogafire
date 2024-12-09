@@ -249,6 +249,7 @@ h1 {
     border-radius: 11px;
     background-color: #7DCEA0;
     margin: 0px;
+    color: white;
 }
 
 .items {
@@ -289,7 +290,12 @@ h1 {
     cursor: pointer;
     text-align: center;
     position: relative;
+<<<<<<< HEAD
     flex-shrink: 0;            
+=======
+    flex-shrink: 0;              /* 아이템이 축소되지 않도록 설정 */
+margin-bottom: 25px;
+>>>>>>> branch 'main' of https://github.com/2024-SMHRD-KDT-BigData-25/yogafire.git
 }
 
 .item img {
@@ -330,7 +336,30 @@ p {
     padding: 10px 18px;
 }
 
-    
+.toggle-button {
+margin-right: 5px;
+    background-color: #7DCEA0;
+    height: 30px;
+    border-radius: 15px;
+    border: 0px;
+    color: white;
+}
+.start-button {
+margin-left: 5px;
+    background-color: #7DCEA0;
+    height: 30px;
+    border-radius: 15px;
+    border : 0px;
+    color: white;
+}    
+.toggle-button:hover {
+background: var(--button-hover);;
+    transform: scale(1.05);
+}
+.start-button:hover {
+background: var(--button-hover);;
+    transform: scale(1.05);
+}
   </style>
 </head>
 
