@@ -252,14 +252,14 @@ h1 {
 }
 
 .items {
-    display: flex;               /* 아이템을 가로로 나열 */
-    overflow-x: auto;            /* 가로 스크롤을 활성화 */
-    gap: 20px;                   /* 아이템 간 간격 */
-    padding: 10px 0;             /* 위 아래 패딩 */
-    scroll-snap-type: x mandatory; /* 스크롤 시 아이템이 스냅되도록 설정 (선택 사항) */
-    width: 95vw;                /* 화면의 전체 너비를 차지하도록 설정 */
-    box-sizing: border-box;      /* 패딩과 마진이 전체 너비에 포함되도록 설정 */
-    touch-action: pan-y;         /* 수평 스크롤을 허용하도록 터치 동작 설정 */
+    display: flex;               
+    overflow-x: auto;           
+    gap: 20px;                
+    padding: 10px 0;          
+    scroll-snap-type: x mandatory; 
+    width: 95vw;              
+    box-sizing: border-box;     
+    touch-action: pan-y;        
 }
 
 .items::-webkit-scrollbar-track
@@ -289,7 +289,7 @@ h1 {
     cursor: pointer;
     text-align: center;
     position: relative;
-    flex-shrink: 0;              /* 아이템이 축소되지 않도록 설정 */
+    flex-shrink: 0;            
 }
 
 .item img {
@@ -325,7 +325,7 @@ p {
 
 .details.visible {
 	max-width: 1000px;
-    max-height: 4000px; /* 적절한 높이로 설정 */
+    max-height: 4000px;
     opacity: 1;
     padding: 10px 18px;
 }
