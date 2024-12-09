@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -63,7 +64,7 @@
 </head>
 <body>
 
-<% List<flowInfo> time = (List<flowInfo>)request.getAttribute("flowList"); %>
+<% List<FlowInfo> time = (List<FlowInfo>)request.getAttribute("flowList"); %>
 
 
 
