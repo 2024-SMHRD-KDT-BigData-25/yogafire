@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.yoga.model.userInfo"%>
 <%@page import="com.smhrd.yoga.model.FlowInfo"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -68,6 +69,7 @@
 <%  List<FlowInfo> list1 = (List<FlowInfo>)request.getAttribute("flowList1"); 
 	List<FlowInfo> list2 = (List<FlowInfo>)request.getAttribute("flowList2"); 
 	List<FlowInfo> list3 = (List<FlowInfo>)request.getAttribute("flowList3"); 
+	userInfo member = (userInfo)session.getAttribute("member");
 %>
 
 
@@ -91,7 +93,8 @@
                 <div class="items">
                 <% for(int i=0; i<list1.size(); i++){ %>
                     <div class="item" data-id="beginner1">
-                        <img src="images/yogalistimg.jpg" alt="Beginner Yoga">
+                        <img src="images/yogalistimg.jpg" alt="Beginner Yoga"
+                        onclick="location.href='http://localhost:8097/boot/programs/<%=member.getId()%>/<%=list1.get(i).getFlow_idx()%>'">
                         <p><%=list1.get(i).getFlow_title() %></p>
                     </div>
                 <% } %>
@@ -104,7 +107,8 @@
                 <div class="items">
                 <% for(int i=0; i<list2.size(); i++){ %>
                     <div class="item" data-id="intermediate1">
-                        <img src="img/yogalistimg.jpg" alt="Intermediate Yoga">
+                        <img src="img/yogalistimg.jpg" alt="Intermediate Yoga"
+                        onclick="location.href='http://localhost:8097/boot/programs/<%=member.getId()%>/<%=list2.get(i).getFlow_idx()%>'">
                         <p><%=list2.get(i).getFlow_title() %></p>
                     </div>
                 <% } %>
@@ -117,7 +121,8 @@
                 <div class="items">
                     <% for(int i=0; i<list3.size(); i++){ %>
                     <div class="item" data-id="advanced1">
-                        <img src="img/배경격이미지2.jpg" alt="Advanced Yoga">
+                        <img src="img/배경격이미지2.jpg" alt="Advanced Yoga"
+                        onclick="location.href='http://localhost:8097/boot/programs/<%=member.getId()%>/<%=list3.get(i).getFlow_idx()%>'">
                         <p><%=list3.get(i).getFlow_title() %></p>
                     </div>
                     <% } %>
