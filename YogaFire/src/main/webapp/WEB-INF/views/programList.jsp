@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.yoga.model.FlowInfo"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -64,7 +65,10 @@
 </head>
 <body>
 
-<% List<FlowInfo> time = (List<FlowInfo>)request.getAttribute("flowList"); %>
+<%  List<FlowInfo> list1 = (List<FlowInfo>)request.getAttribute("flowList1"); 
+	List<FlowInfo> list2 = (List<FlowInfo>)request.getAttribute("flowList2"); 
+	List<FlowInfo> list3 = (List<FlowInfo>)request.getAttribute("flowList3"); 
+%>
 
 
 
@@ -85,12 +89,12 @@
             <div class="category">
                 <h2>Beginner</h2>
                 <div class="items">
-                
+                <% for(int i=0; i<list1.size(); i++){ %>
                     <div class="item" data-id="beginner1">
                         <img src="images/yogalistimg.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
+                        <p><%=list1.get(i).getFlow_title() %></p>
                     </div>
-                    
+                <% } %>
                 </div>
             </div>
             
@@ -98,10 +102,12 @@
             <div class="category">
                 <h2>Intermediate</h2>
                 <div class="items">
+                <% for(int i=0; i<list2.size(); i++){ %>
                     <div class="item" data-id="intermediate1">
-                        <img src="img/배경격이미지2.jpg" alt="Intermediate Yoga">
-                        <p>Intermediate Pose 1</p>
+                        <img src="img/yogalistimg.jpg" alt="Intermediate Yoga">
+                        <p><%=list2.get(i).getFlow_title() %></p>
                     </div>
+                <% } %>
                 </div>
             </div>
 
@@ -109,10 +115,12 @@
             <div class="category">
                 <h2>Advanced</h2>
                 <div class="items">
+                    <% for(int i=0; i<list3.size(); i++){ %>
                     <div class="item" data-id="advanced1">
                         <img src="img/배경격이미지2.jpg" alt="Advanced Yoga">
-                        <p>Advanced Pose 1</p>
+                        <p><%=list3.get(i).getFlow_title() %></p>
                     </div>
+                    <% } %>
                 </div>
             </div>
         </div>
