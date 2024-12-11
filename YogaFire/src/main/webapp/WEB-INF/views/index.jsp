@@ -346,7 +346,7 @@
     .membership-card button:hover {
       background: var(--button-hover);
     }
-	
+   
         
     </style>
 </head>
@@ -367,10 +367,10 @@
     <% } else { %>
         <div class="user-info">
             <!-- 프로필 이미지 -->
-            <img src="images/뚱냥이.jpg" alt="프로필 사진" class="profile-img">
+            <img src="images/${member.profic}" alt="프로필 사진" class="profile-img">
             <!-- 마이페이지 및 로그아웃 버튼 -->
             <button class="btn-profile" onclick="location.href='/boot/index4'">마이페이지</button>
-            <button class="btn-logout" onclick="location.href=''">로그아웃</button>
+            <button class="btn-logout" onclick="location.href='logout'">로그아웃</button>
         </div>
     <% } %>
 </div>
@@ -410,7 +410,7 @@
     
       <div class="price">₩14,900 / 월</div>
       <ul>
-		<li>3개월 또는 6개월</li>
+      <li>3개월 또는 6개월</li>
         <li>1일 1회 이용 가능</li>   
          
 </ul>     
@@ -424,7 +424,7 @@
     
       <div class="price">₩14,900 / 월</div>
       <ul>
-		<li>3개월 또는 6개월</li>
+      <li>3개월 또는 6개월</li>
        <li>전타임 제한 없이 사용가능</li>      
          
 </ul>     
@@ -436,8 +436,8 @@
       <h4>횟수제 요가 회원권</h4>
       <div class="price">₩59,000 / 월</div>
       <ul>        
-	<li>10회,35회</li> 
-	<li>참여시 횟수 차감 방식</li>
+   <li>10회,35회</li> 
+   <li>참여시 횟수 차감 방식</li>
       </ul>  
 <button onclick="handlePurchase()">구매하기</button>
 
@@ -452,7 +452,7 @@
     
       <div class="price">₩14,900 / 월</div>
       <ul>
-		<li>3개월 또는 6개월</li>
+      <li>3개월 또는 6개월</li>
         <li>1일 1회 이용 가능</li>   
          
 </ul>     
@@ -466,7 +466,7 @@
     
       <div class="price">₩14,900 / 월</div>
       <ul>
-		<li>3개월 또는 6개월</li>
+      <li>3개월 또는 6개월</li>
         <li>전타임 제한 없이 사용가능</li>   
          
 </ul>     
@@ -478,8 +478,8 @@
       <h4>횟수제 명상 회원권</h4>
       <div class="price">₩59,000 / 월</div>
       <ul>        
-	<li>10회,35회</li> 
-	<li>참여시 횟수 차감 방식</li>
+   <li>10회,35회</li> 
+   <li>참여시 횟수 차감 방식</li>
       </ul>  
 <button onclick="handlePurchase()">구매하기</button>
 
@@ -499,8 +499,8 @@
         <div class="row">
             <!-- 바로 상담하기 -->
             <div class="col-md-6">
-                <h3 style="color:	#000000; font-weight: bold;">상담 안내</h3>
-                <p style="color: 	#000000;">상담은 영업시간 중에 전화 또는 채팅으로 가능하며, 대면 상담은 방문 또는 온라인으로 가능합니다.</p>
+                <h3 style="color:   #000000; font-weight: bold;">상담 안내</h3>
+                <p style="color:    #000000;">상담은 영업시간 중에 전화 또는 채팅으로 가능하며, 대면 상담은 방문 또는 온라인으로 가능합니다.</p>
                 <table style="width: 100%; border-top: 1px solid #c9c9b8; margin-top: 20px;">
                     <tr>
                         <th style="text-align: left; padding: 10px 0;">영업 시간</th>
@@ -509,7 +509,7 @@
                     <tr>
                         <th style="text-align: left; padding: 10px 0;">채팅 상담</th>
                         <td style="text-align: left; padding: 10px 0;">
-                             <a href="http://pf.kakao.com/_xbHxkMn" style="color: 	#000000; text-decoration: none; font-weight: bold;">카카오톡 상담 바로가기</a>
+                             <a href="http://pf.kakao.com/_xbHxkMn" style="color:    #000000; text-decoration: none; font-weight: bold;">카카오톡 상담 바로가기</a>
                         </td>
                     </tr>
                     <tr>
@@ -521,7 +521,7 @@
 
             <!-- 대면 상담 예약 -->
             <div class="col-md-6">
-               <h3 style="color:	#000000; font-weight: bold;">상담 예약</h3>
+               <h3 style="color:   #000000; font-weight: bold;">상담 예약</h3>
                 <table style="width: 100%; border-top: 1px solid #c9c9b8; margin-top: 20px;">
                     <tr>
                         <th style="text-align: left; padding: 10px 0;">영업 시간</th>
