@@ -131,7 +131,7 @@
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="http://localhost:8090/boot/">🏠 Home</a>
-            <a class="navbar-brand ml-4" href="http://localhost:8090/boot/index4">📊 마이페이지</a>
+            <a class="navbar-brand ml-4" href="http://localhost:8090/boot/myPage">📊 마이페이지</a>
             <div>
                 <a class="nav-link" href="#meditation-plans"> 💳 요금제</a>
             </div>

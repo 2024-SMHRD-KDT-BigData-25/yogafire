@@ -13,23 +13,6 @@ public class IndexController {
         return "index";
     }
 
-    // localhost:8090/boot/index2 -> index2.jsp 연결
-    @RequestMapping(value = "/index2", method = RequestMethod.GET)
-    public String index2Page() {
-        return "index2";
-    }
-
-    // localhost:8090/boot/index3 -> index3.jsp 연결
-    @RequestMapping(value = "/index3", method = RequestMethod.GET)
-    public String index3Page() {
-        return "index3";
-    }
-
-    // localhost:8090/boot/index4 -> index4.jsp 연결
-    @RequestMapping(value = "/index4", method = RequestMethod.GET)
-    public String index4Page() {
-        return "index4";
-    }
 
     // localhost:8090/boot/index5 -> index5.jsp 연결
     @RequestMapping(value = "/index5", method = RequestMethod.GET)
@@ -71,11 +54,6 @@ public class IndexController {
     @RequestMapping(value = "/index11", method = RequestMethod.GET)
     public String index11Page() {
         return "index11";
-    }
- // localhost:8090/boot/index13 -> index13.jsp 연결
-    @RequestMapping(value = "/index13", method = RequestMethod.GET)
-    public String index13Page() {
-        return "index13";
     }
     
     @RequestMapping(value = "/userHistory", method = RequestMethod.GET)
