@@ -79,9 +79,9 @@
   <div class="top-menu">
     <h1> Yoga Program </h1>
     <div class="menu-links">
-      <a href="/boot/">Home</a>
+      <a href="/boot/myPage">마이페이지</a>
       <a href="#">프로그램</a>
-      <a href="/boot/index5">요금제</a>
+      <a href="/boot/membership">요금제</a>
     </div>
   </div>
  

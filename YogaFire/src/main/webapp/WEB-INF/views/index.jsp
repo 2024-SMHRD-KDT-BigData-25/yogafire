@@ -361,15 +361,15 @@
 
     <% if (member == null) { %>
         <div>
-            <button class="btn-login" onclick="location.href='/boot/index7'">로그인</button>
-            <button class="btn-signup" onclick="location.href='/boot/index8'">회원가입</button>
+            <button class="btn-login" onclick="location.href='/boot/login'">로그인</button>
+            <button class="btn-signup" onclick="location.href='/boot/join'">회원가입</button>
         </div>
     <% } else { %>
         <div class="user-info">
             <!-- 프로필 이미지 -->
             <img src="images/${member.profic}" alt="프로필 사진" class="profile-img">
             <!-- 마이페이지 및 로그아웃 버튼 -->
-            <button class="btn-profile" onclick="location.href='/boot/index4'">마이페이지</button>
+            <button class="btn-profile" onclick="location.href='/boot/myPage'">마이페이지</button>
             <button class="btn-logout" onclick="location.href='logout'">로그아웃</button>
         </div>
     <% } %>
@@ -381,7 +381,7 @@
     <h1>Discover Your Inner Peace</h1>
     <p>AI와 함께하는 개인화된 요가 & 명상 프로그램</p>
     <% if (member == null) { %>
-    <button class="cta-button" onclick="location.href='/boot/index7'">지금 시작하기</button>
+    <button class="cta-button" onclick="location.href='/boot/join'">지금 시작하기</button>
     <% } else { %>
     <button class="cta-button" onclick="location.href='/boot/programs'">지금 시작하기</button>
     <% } %>

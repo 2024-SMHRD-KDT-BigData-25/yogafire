@@ -144,7 +144,7 @@
       <!-- 저장 버튼 -->
       <div class="text-center mt-4">
         <button type="submit" class="btn">💾 저장</button>
-        <button type="button" class="btn" onclick="location.href='/boot/index4'">🔙 돌아가기</button>
+        <button type="button" class="btn" onclick="location.href='/boot/myPage'">🔙 돌아가기</button>
         <button type="button" class="btn" onclick="deleteMember('<%=member.getId()%>')">회원탈퇴</button>
       </div>
     </form>

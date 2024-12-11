@@ -117,7 +117,7 @@
             <button type="submit" class="btn">가입하기</button>
         </form>
         <div class="link">
-            <p>이미 계정이 있으신가요? <a href="/boot/index7">로그인</a></p>
+            <p>이미 계정이 있으신가요? <a href="/boot/login">로그인</a></p>
         </div>
     </div>
 </body>
