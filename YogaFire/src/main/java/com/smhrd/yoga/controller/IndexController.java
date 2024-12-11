@@ -77,4 +77,9 @@ public class IndexController {
     public String index13Page() {
         return "index13";
     }
+    
+    @RequestMapping(value = "/userHistory", method = RequestMethod.GET)
+    public String user_historypage() {
+        return "userHistory";
+    }
 }
