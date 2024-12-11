@@ -11,8 +11,8 @@
 </head>
 <body>
 <header class="topheader">
-	<h1>시퀀스 이름</h1>
-	<h2>현 요가 자세</h2>
+	<h1>체중 감량을 위한 요가 시퀀스</h1>
+	<h2>나바사나</h2>
 </header>
 <div class="container">
   <iframe class="yogavideo" src="https://youtube.com/embed/mJKHGA3tMdU?autoplay=1" allow="autoplay" ></iframe>
