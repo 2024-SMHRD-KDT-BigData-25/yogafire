@@ -8,28 +8,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YogaFire</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
+     
         body {
             margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #FFFFFF; 
-            color: #2E8B57; 
-            overflow-x: hidden;
-        }
-
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+    font-family: 'Arial', sans-serif;
+    background-color: #FFFFFF;
+    color: #000000; 
         }
 
    
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
         .scroll-animated {
             opacity: 0;
             transform: translateY(50px);
@@ -41,12 +35,13 @@
             transform: translateY(0);
         }
 
+     
         .header-banner {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            background-color: #FFFFFF; 
+            background-color: #FFFFFF;
             position: fixed;
             top: 0;
             left: 0;
@@ -55,9 +50,10 @@
             animation: fadeInUp 1s ease;
         }
 
-        .header-banner .logo img {
-            height: 70px; 
-            width: auto;   
+        .header-banner .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2E8B57;
         }
 
         .header-banner button {
@@ -77,9 +73,10 @@
             color: #FFFFFF;
         }
 
+  
         .main-banner {
             height: 90vh;
-            background: url('images/배경.png') no-repeat center center/cover;
+            background: url('images/배경.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -91,14 +88,14 @@
         .main-banner h1 {
             font-size: 4rem;
             font-weight: 900;
-            color: #FFFFFF; 
+            color: #FFFFFF;
             margin-bottom: 20px;
         }
 
         .main-banner p {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #FFFFFF; 
+            color: #FFFFFF;
             margin: 20px 0;
         }
 
@@ -107,7 +104,7 @@
             font-size: 1.4rem;
             font-weight: bold;
             color: #FFFFFF;
-            background-color: #2E8B57; 
+            background-color: #2E8B57;
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -119,9 +116,10 @@
             transform: translateY(-3px);
         }
 
+     
         .custom-scope {
             padding: 60px 20px;
-            background: #FFFFFF;  
+            background: #FFFFFF;
             color: #000000;
         }
 
@@ -135,8 +133,8 @@
         }
 
         .custom-scope figure img {
-            width: 100%; 
-            max-width: 600px; 
+            width: 100%;
+            max-width: 600px;
             height: auto;
             border-radius: 15px;
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
@@ -145,54 +143,247 @@
         .custom-scope h1, .custom-scope h2 {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #000000;  
+            color: #000000;
             margin-bottom: 20px;
         }
 
         .custom-scope p {
             font-size: 1.2rem;
             line-height: 1.8;
-            color: #000000; 
+            color: #000000;
+        }
+
+     
+        .ad-banner {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #FFFFFF;
+            padding: 15px 20px;
+            border-radius: 15px;
+            text-align: center;
+            color: #2E8B57;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 2.5s ease;
+        }
+
+        .ad-banner img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .ad-banner button {
+            background-color: #2E8B57;
+            color: #FFFFFF;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ad-banner button:hover {
+            background-color: #228B47;
         }
 
         footer {
-            background-color: #000000; 
-            color: #FFFFFF;  
+            background-color: #000000;
+            color: #FFFFFF;
             text-align: center;
             padding: 20px 0;
             animation: fadeInUp 3s ease;
         }
+        
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    border: 2px solid #2E8B57; 
+    object-fit: cover; 
+}
+
+
+.btn-profile, .btn-logout {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    color: #2E8B57;
+    background-color: #FFFFFF;
+    border: 2px solid #2E8B57;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-profile:hover, .btn-logout:hover {
+    background-color: #2E8B57;
+    color: #FFFFFF;
+}
+
+.pricing-section h2, 
+.pricing-section h4, 
+.pricing-section p { 
+    color: #000000 !important; 
+}
+
+ .pricing-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .pricing-card {
+      background: linear-gradient(135deg, #F5F5FF, #E3E3FF);
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 30px;
+      max-width: 300px;
+      flex: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .pricing-card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+       color: #000000;
+    }
+
+    .pricing-card .price {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #333;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .pricing-card ul li {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #000000;
+      display: flex;
+      align-items: center;
+    }
+
+    .pricing-card ul li::before {
+      content: '✔️';
+      margin-right: 10px;
+      color: #6B6BFF;
+    }
+
+    .pricing-card button {
+      background: #6B6BFF;
+      color: #FFF;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .pricing-card button:hover {
+      background: #4F4FDC;
+    }
+
+    .membership-section h3 {
+      color: var(--text-color);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .membership-card {
+      padding: 15px;
+      border-radius: 10px;
+      background: var(--accent-color);
+      box-shadow: 0 5px 10px var(--card-shadow);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .membership-card h4 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .membership-card p {
+      margin: 5px 0;
+    }
+
+    .membership-card button {
+      padding: 10px 20px;
+      background: var(--main-color);
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .membership-card button:hover {
+      background: var(--button-hover);
+    }
+	
+        
     </style>
 </head>
 <body>
 
 <% userInfo member = (userInfo) session.getAttribute("member"); %>
-
 <!-- 헤더 섹션 -->
 <div class="header-banner">
     <div class="logo">
-        <img src="images/1.png" alt="YogaFire 로고" class="logo-img">
+        <img src="images/1.png" alt="YogaFire 로고" class="logo-img" style="height: 70px;">
     </div>
+
     <% if (member == null) { %>
         <div>
-            <button onclick="location.href='/boot/index7'">로그인</button>
-            <button onclick="location.href='/boot/index8'">회원가입</button>
+            <button class="btn-login" onclick="location.href='/boot/index7'">로그인</button>
+            <button class="btn-signup" onclick="location.href='/boot/index8'">회원가입</button>
         </div>
     <% } else { %>
-        <div>
-            <button onclick="location.href='/boot/index4'">마이페이지</button>
+        <div class="user-info">
+            <!-- 프로필 이미지 -->
+            <img src="images/뚱냥이.jpg" alt="프로필 사진" class="profile-img">
+            <!-- 마이페이지 및 로그아웃 버튼 -->
+            <button class="btn-profile" onclick="location.href='/boot/index4'">마이페이지</button>
+            <button class="btn-logout" onclick="location.href=''">로그아웃</button>
         </div>
     <% } %>
 </div>
 
 
+<!-- 메인 배너 섹션 -->
 <div class="main-banner">
     <h1>Discover Your Inner Peace</h1>
-    <p>AI와 함께하는 요가 & 명상 코칭 서비스 프로그램</p>
-    <button class="cta-button" onclick="location.href='/boot/index8'">지금 시작하기</button>
+    <p>AI와 함께하는 개인화된 요가 & 명상 프로그램</p>
+    <button class="cta-button" onclick="location.href='/boot/index7'">지금 시작하기</button>
 </div>
 
-
+<!-- 콘텐츠 섹션 -->
 <div class="custom-scope">
     <article>
         <figure class="scroll-animated"><img src="images/me2.jpg" alt="AI Mediapipe"></figure>
@@ -209,25 +400,153 @@
     </article>
 </div>
 
-<footer>
-    © 2024 YogaFire. All Rights Reserved.
-</footer>
+<!-- 요금제 섹션 -->
+<body>
+  <div class="pricing-container">
+    
+    
+<div class="pricing-card">
+      <h4>월별 요가 회원권</h4>
+    
+      <div class="price">₩14,900 / 월</div>
+      <ul>
+		<li>3개월 또는 6개월</li>
+        <li>1일 1회 이용 가능</li>   
+         
+</ul>     
+<button>선택하기</button>
+    </div>
+
+<div class="pricing-card" style="background: linear-gradient(135deg, #E3F5E3, #D6FFD6);">  
+  
+      <h4>프리미엄 요가 회원권</h4>
+    
+      <div class="price">₩14,900 / 월</div>
+      <ul>
+		<li>3개월 또는 6개월</li>
+       <li>전타임 제한 없이 사용가능</li>      
+         
+</ul>     
+<button>선택하기</button>
+    </div>
+
+    <div class="pricing-card" style="background: linear-gradient(135deg, #FFF5F5, #FFE3E3);">
+      <h4>횟수제 요가 회원권</h4>
+      <div class="price">₩59,000 / 월</div>
+      <ul>        
+	<li>10회,35회</li> 
+	<li>참여시 횟수 차감 방식</li>
+      </ul>  
+<button>선택하기</button>
+    </div>
+  </div>
+
+   <div class="pricing-container">
+    
+    
+<div class="pricing-card">
+      <h4>월별 명상 회원권</h4>
+    
+      <div class="price">₩14,900 / 월</div>
+      <ul>
+		<li>3개월 또는 6개월</li>
+        <li>1일 1회 이용 가능</li>   
+         
+</ul>     
+<button>선택하기</button>
+    </div>
+
+<div class="pricing-card" style="background: linear-gradient(135deg, #E3F5E3, #D6FFD6);">  
+  
+      <h4>프리미엄 명상 회원권</h4>
+    
+      <div class="price">₩14,900 / 월</div>
+      <ul>
+		<li>3개월 또는 6개월</li>
+        <li>전타임 제한 없이 사용가능</li>   
+         
+</ul>     
+<button>선택하기</button>
+    </div>
+
+    <div class="pricing-card" style="background: linear-gradient(135deg, #FFF5F5, #FFE3E3);">
+      <h4>횟수제 명상 회원권</h4>
+      <div class="price">₩59,000 / 월</div>
+      <ul>        
+	<li>10회,35회</li> 
+	<li>참여시 횟수 차감 방식</li>
+      </ul>  
+<button>선택하기</button>
+    </div>
+  </div>
 
 
-<!-- 스크롤 내릴때 텍스트 나타나게 동적이미지 -->
+<!-- 체험하기 섹션 -->
+<div class="ad-banner">
+    <img src="images/ai분석자세.gif" alt="체험하기">
+    <p>AI 기반 요가 자세 분석</p>
+    <button onclick="location.href='/boot/index10'">지금 체험하기</button>
+</div>
+
+<section class="contact-info-section" style="background-color: #f8f9fa; padding: 40px 20px;">
+    <div class="container2">
+        <div class="row">
+            <!-- 바로 상담하기 -->
+            <div class="col-md-6">
+                <h3 style="color:	#000000; font-weight: bold;">상담 안내</h3>
+                <p style="color: 	#000000;">상담은 영업시간 중에 전화 또는 채팅으로 가능하며, 대면 상담은 방문 또는 온라인으로 가능합니다.</p>
+                <table style="width: 100%; border-top: 1px solid #c9c9b8; margin-top: 20px;">
+                    <tr>
+                        <th style="text-align: left; padding: 10px 0;">영업 시간</th>
+                        <td style="text-align: left; padding: 10px 0;">전화 상담 월~금 8:00 ~ 22:00 / 채팅 상담 월~금 10:00 ~ 19:00</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left; padding: 10px 0;">채팅 상담</th>
+                        <td style="text-align: left; padding: 10px 0;">
+                             <a href="http://pf.kakao.com/_xbHxkMn" style="color: 	#000000; text-decoration: none; font-weight: bold;">카카오톡 상담 바로가기</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left; padding: 10px 0;">전화 상담</th>
+                        <td style="text-align: left; padding: 10px 0;">02-3447-9642</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- 대면 상담 예약 -->
+            <div class="col-md-6">
+               <h3 style="color:	#000000; font-weight: bold;">상담 예약</h3>
+                <table style="width: 100%; border-top: 1px solid #c9c9b8; margin-top: 20px;">
+                    <tr>
+                        <th style="text-align: left; padding: 10px 0;">영업 시간</th>
+                        <td style="text-align: left; padding: 10px 0;">월~금 8:00 ~ 21:00 / 토요일 10:00 ~ 12:30</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left; padding: 10px 0;">방문 상담</th>
+                        <td style="text-align: left; padding: 10px 0;">순천시 조례동 순천대점Kt건물 29길 21  5층</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left; padding: 10px 0;">온라인 줌 상담</th>
+                        <td style="text-align: left; padding: 10px 0;">상담 예약 후 개별 Zoom 링크 문자로 전송</td>
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
 <script>
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('show');
         });
-    }, {
-        threshold: 0.1
-    });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.scroll-animated').forEach(el => observer.observe(el));
 </script>
 
+
+
 </body>
-</html>
+</html> 

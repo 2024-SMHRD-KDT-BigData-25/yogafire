@@ -15,7 +15,7 @@
       --accent-color: #F2F3F4;
       --background-color: #EAF2F8;
       --text-color: #2C3E50;
-      --button-hover: #5DADE2;
+      --button-hover: #3CB371;
       --card-shadow: rgba(0, 0, 0, 0.1);
     }
         body {
@@ -77,7 +77,7 @@
 
 
   <div class="top-menu">
-    <h1>🔥 Yoga Program 🔥</h1>
+    <h1> Yoga Program </h1>
     <div class="menu-links">
       <a href="/boot/">Home</a>
       <a href="#">프로그램</a>

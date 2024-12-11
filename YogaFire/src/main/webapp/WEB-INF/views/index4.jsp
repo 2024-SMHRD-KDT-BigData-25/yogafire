@@ -16,7 +16,7 @@
       --accent-color: #F2F3F4;
       --background-color: #EAF2F8;
       --text-color: #2C3E50;
-      --button-hover: #5DADE2;
+      --button-hover:  #3CB371;
       --card-shadow: rgba(0, 0, 0, 0.1);
     }
 
@@ -31,45 +31,38 @@
       background-color: var(--main-color);
       padding: 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      align-items: center;
       box-shadow: 0 4px 6px var(--card-shadow);
     }
 
     .top-menu h1 {
       font-size: 2.5rem;
-      font-weight: bold;
       color: white;
       margin: 0;
-    }
-
-    .menu-links {
-      display: flex;
-      gap: 20px;
     }
 
     .menu-links a {
       text-decoration: none;
       color: white;
       padding: 10px 20px;
-      border-radius: 5px;
       background: var(--button-hover);
+      border-radius: 5px;
       font-weight: bold;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-left: 10px;
+      transition: 0.3s;
     }
 
     .menu-links a:hover {
       background: white;
       color: var(--text-color);
-      transform: scale(1.05);
     }
 
     .dashboard {
       display: grid;
       grid-template-columns: 300px auto;
+      grid-template-rows: auto auto auto;
+      
       gap: 30px;
       padding: 30px;
     }
@@ -83,50 +76,44 @@
       box-shadow: 0 10px 20px var(--card-shadow);
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      height: calc(100vh - 80px);
+      
+      grid-row: span 2;
+      
     }
 
     .profile-card img {
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      border: 3px solid white;
       margin-bottom: 15px;
-    }
-
-    .profile-card h3 {
-      font-size: 1.8rem;
-    }
-
-    .profile-card p {
-      margin: 10px 0;
-      font-size: 1.2rem;
     }
 
     .profile-card button {
       padding: 10px 20px;
-      margin-top: 10px;
       background: white;
       color: var(--main-color);
       font-weight: bold;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 10px;
     }
 
     .profile-card button:hover {
       background: var(--button-hover);
       color: white;
-      transform: scale(1.05);
     }
 
     .main-content {
-      display: grid;
+    /*  display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 30px;
+      gap: 30px;*/
+      
+      display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 30px;
     }
 
     .card {
@@ -134,273 +121,95 @@
       border-radius: 15px;
       padding: 20px;
       box-shadow: 0 8px 15px var(--card-shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      grid-row: span 2;
+      
+     
+      
     }
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .card h3 {
-      margin-bottom: 20px;
-      color: var(--text-color);
-      font-size: 1.5rem;
-    }
-
-    .emoji {
-      font-size: 3rem;
-      margin-bottom: 15px;
-    }
-
-    #calendar {
-      width: 100%;
-      height: 500px;
-    }
-
-    #yoga-chart {
-      width: 100%;
-      height: 300px;
-    }
-
-    .view-options {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
-    .view-options button {
-      padding: 10px 20px;
-      background: var(--main-color);
-      color: white;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .view-options button:hover {
-      background: var(--button-hover);
-      transform: scale(1.05);
-    }
-
-    .score-card {
-      margin-top: 20px;
+    .welcome {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
       text-align: center;
-      padding: 15px;
+    }
+
+    .items {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+    }
+
+    .item {
+      width: 150px;
+      text-align: center;
+    }
+
+    .item img {
+      width: 100%;
       border-radius: 10px;
-      background: var(--accent-color);
-      box-shadow: 0 5px 10px var(--card-shadow);
-      font-size: 1rem;
-      color: var(--text-color);
+      transition: transform 0.3s;
     }
 
-    .score-card h4 {
-      font-size: 1.3rem;
-      color: var(--text-color);
-      margin-bottom: 10px;
+    .item img:hover {
+      transform: scale(1.05);
+      }
+.card.recent .items {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+}
+
     }
-
-    .score-card p {
-      margin: 5px 0;
-    }
-    html{
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-	overflow-y: overlay;
+    
+   card.recent .item {
+  width: calc(25% - 20px); 
+  max-width: 200px; 
+  text-align: center;
 }
 
-.container {
-display: flex;
-    flex-direction: column;
-    padding: 30px;
-    padding-bottom: 0px;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.category1 {
-    padding: 0px;
-    background-color: white;
-    border-radius: 11px;
-    width: 300px;
-    box-shadow: 0 10px 20px var(--card-shadow);
-}
-.category2 {
-    padding: 0px;
-    background-color: white;
-    border-radius: 11px;
-    width: 1144px;
-    box-shadow: 0 10px 20px var(--card-shadow);
-}
-.list {
-    display: flex;
-    flex-wrap: wrap;
-    gap : 30px;
-}
-.h2 {
-    border: 2px solid #7DCEA0;
-    padding: 5px;
-    border-radius: 11px;
-    background-color: #7DCEA0;
-    margin: 0px;
-    color: white;
-}
-
-.items {
-    display: flex;               /* 아이템을 가로로 나열 */
-    overflow-x: auto;            /* 가로 스크롤을 활성화 */
-    gap: 20px;                   /* 아이템 간 간격 */
-    padding: 10px 0;             /* 위 아래 패딩 */
-    scroll-snap-type: x mandatory; /* 스크롤 시 아이템이 스냅되도록 설정 (선택 사항) */
-    width: 95vw;                /* 화면의 전체 너비를 차지하도록 설정 */
-    box-sizing: border-box;      /* 패딩과 마진이 전체 너비에 포함되도록 설정 */
-    touch-action: pan-y;         /* 수평 스크롤을 허용하도록 터치 동작 설정 */
-}
-
-.items::-webkit-scrollbar-track
-{
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+.card.recent .item img {
+  width: 100%;
+  height: auto;
   border-radius: 10px;
-  background-color: #F5F5F5;
+  transition: transform 0.3s ease;
 }
 
-.items::-webkit-scrollbar
-{
-  width: 30%;
-  height: 10px;
-  background-color: #F5F5F5;
-}
-
-.items::-webkit-scrollbar-thumb
-{
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  background-color: #7DCEA0;
-}
-
-
-.item {
-    width: calc(20.333% - 20px);
-    cursor: pointer;
-    text-align: center;
-    position: relative;
-    flex-shrink: 0;              /* 아이템이 축소되지 않도록 설정 */
-margin-bottom: 25px;
-}
-
-.item img {
-    width: 80%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-
-
-.item img:hover {
-    transform: scale(1.05);
-}
-
-p {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-.details {
-	position: relative;
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-    background-color: white;
-    padding: 0 10px;
-    margin-top: 10px;
-    border-radius: 10px;
-    margin-left: 20px;
-}
-
-.details.visible {
-	max-width: 1000px;
-    max-height: 4000px; /* 적절한 높이로 설정 */
-    opacity: 1;
-    padding: 10px 18px;
-}
-
-.toggle-button {
-margin-right: 5px;
-    background-color: #7DCEA0;
-    height: 30px;
-    border-radius: 15px;
-    border: 0px;
-    color: white;
-}
-.start-button {
-margin-left: 5px;
-    background-color: #7DCEA0;
-    height: 30px;
-    border-radius: 15px;
-    border : 0px;
-    color: white;
-}    
-.toggle-button:hover {
-background: var(--button-hover);;
-    transform: scale(1.05);
-}
-.start-button:hover {
-background: var(--button-hover);;
-    transform: scale(1.05);
+.card.recent .item img:hover {
+  transform: scale(1.1);
 }
   </style>
 </head>
 
 <body>
   <div class="top-menu">
-    <h1> 마이페이지 </h1>
+    <h1>마이페이지</h1>
     <div class="menu-links">
-      <a href="/boot/">Home</a>
-      <a href="/boot/programs">프로그램</a>
-      <a href="/boot/index5">요금제</a>
+      <a href="/boot/">🏠Home</a>
+      <a href="/boot/programs">📚프로그램</a>
+      <a href="/boot/index5">💳요금제</a>
+      <a href="/boot/index5">🔗공유하기</a>
     </div>
   </div>
-<div class="container">    
-        <div class="list">
-            <!-- 최근 실행 시퀀스 -->
-            <div class="category1">
-                <h2 class="h2">최근 실행 시퀀스</h2>
-                <div class="items">
-                    <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
-                </div>
-            </div>
-            <div class="category2">
-                <h2 class="h2">추천 시퀀스</h2>
-                <div class="items">
-                    <div class="item" data-id="beginner1">
-                        <img src="../img/요가배격이미지2.jpg" alt="Beginner Yoga">
-                        <p>Beginner Pose 1</p>
-                    </div>
-                </div>
-            </div>
-         </div>
-</div>
+
+ 
 
   <div class="dashboard">
-    <div class="profile-card">
+  
+   <div class="profile-card">
       <img src="images/${member.profic}" alt="Profile Picture">
       <h3>${member.nick}</h3>
       <p>🌟 레벨: <strong>5</strong></p>
       <p>🕒 전체 요가 시간: <strong>45시간</strong></p>
-     <button onclick="location.href='/boot/index9'">🔧 정보 수정</button>
+      <button onclick="location.href='/boot/index9'">🔧 정보 수정</button>
       <button onclick="location.href='logout'">🚪 로그아웃</button>
     </div>
+  
+   <div class="welcome">
+    <h2>✨ 환영합니다! 요가 파이어를 시작하세요 ✨</h2>
+  </div>
+  
+   
 
     <div class="main-content">
       <div class="card">
@@ -416,26 +225,52 @@ background: var(--button-hover);;
           <button onclick="updateChart('monthly')">월별</button>
         </div>
         <canvas id="yoga-chart"></canvas>
-   
+
         <div class="score-card">
-          <h4>나의 통계</h4>
+          <h4>나의 점수</h4>
           <p>🏆 <strong>순위:</strong> 12위</p>
           <p>📈 <strong>월간 점수:</strong> 85점</p>
           <% 
-    		Integer scroesum = (Integer) session.getAttribute("scoresum"); 
-    		if (scroesum != null) {
-		  %>
+          Integer scroesum = (Integer) session.getAttribute("scoresum"); 
+          if (scroesum != null) {
+        %>
           <p>🔄 <strong>누적 점수:</strong><%= scroesum.intValue()%>점 <%} %> </p>
         </div>
       </div>
+
+    
+
+     
     </div>
+    
+      <div class="card recent">
+     <h3>📂 최근 실행 시퀀스</h3>
+        <div class="items">
+          <div class="item">
+            <img src="images/yoga1.jpg" alt="요가 시퀀스">
+            <p>Beginner Pose 1</p>
+          </div>
+        </div>
+      </div>
+     <div class="card recommend">
+        <h3>🌟 추천 시퀀스</h3>
+        <div class="items">
+          <div class="item">
+            <img src="images/yoga2.jpg" alt="추천 시퀀스">
+            <p>Advanced Pose</p>
+          </div>
+        </div>
+      </div>
   </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
   
-	<% List<myPage> time = (List<myPage>)session.getAttribute("time");
+  
+  
+   <% List<myPage> time = (List<myPage>)session.getAttribute("time");
     // 빈 리스트를 처리할 수 있도록 기본 배열을 설정
     StringBuilder labels = new StringBuilder();
     StringBuilder data = new StringBuilder();
@@ -456,8 +291,8 @@ background: var(--button-hover);;
             labels.append(", ");
             data.append(", ");
         }
-   	  }
-	%>
+        }
+   %>
   
     document.addEventListener('DOMContentLoaded', function () {
       // 캘린더 초기화
@@ -529,5 +364,3 @@ background: var(--button-hover);;
   </script>
   
 <script src="js/index11.js"></script>
-</body>
-</html>
