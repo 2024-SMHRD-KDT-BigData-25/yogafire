@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="com.smhrd.yoga.model.userInfo"%>
 <%@page import="com.smhrd.yoga.model.FlowInfo"%>
 <%@page import="com.smhrd.yoga.model.myPage"%>
 <%@page import="java.util.List"%>
@@ -182,9 +183,10 @@
 
 <body>
 
-	<% List<myPage> time = (List<myPage>)session.getAttribute("time");%>
-	<% FlowInfo flowlist = (FlowInfo)session.getAttribute("flowlist"); %>
-	<% Integer totaltime = (Integer)session.getAttribute("totaltime"); %>
+	<%  List<myPage> time = (List<myPage>)session.getAttribute("time");
+		FlowInfo flowlist = (FlowInfo)session.getAttribute("flowlist");
+		Integer totaltime = (Integer)session.getAttribute("totaltime");
+		userInfo member = (userInfo)session.getAttribute("member"); %>
 
   <div class="top-menu">
     <h1>마이페이지</h1>
@@ -255,10 +257,10 @@
       <div class="card recent">
      <h3>📂 최근 실행 시퀀스</h3>
         <div class="items">
-          <div class="item">
 		<%if (flowlist != null) { %>
+		  <div class="item">
              <img src=<%=flowlist.getFlow_img()%> alt="Beginner Yoga">
-             <p><%=flowlist.getFlow_title() %> <%} else {%> <%} %></p>
+             <p><%=flowlist.getFlow_title() %> <%} else {%> <div data-id="beginner1"> <%=member.getNick()%>님의 최근 운동 내역이 없어요😓 <%}%></p>
           </div>
         </div>
       </div>

@@ -367,10 +367,10 @@
     <% } else { %>
         <div class="user-info">
             <!-- 프로필 이미지 -->
-            <img src="images/뚱냥이.jpg" alt="프로필 사진" class="profile-img">
+            <img src="images/${member.profic}" alt="프로필 사진" class="profile-img">
             <!-- 마이페이지 및 로그아웃 버튼 -->
             <button class="btn-profile" onclick="location.href='/boot/index4'">마이페이지</button>
-            <button class="btn-logout" onclick="location.href=''">로그아웃</button>
+            <button class="btn-logout" onclick="location.href='logout'">로그아웃</button>
         </div>
     <% } %>
 </div>
