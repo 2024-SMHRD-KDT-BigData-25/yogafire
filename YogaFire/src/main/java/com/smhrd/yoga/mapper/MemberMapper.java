@@ -41,5 +41,7 @@ public interface MemberMapper {
 
 	@Select("select sum(ps_time) from mypage1 where id=#{id};")
 	public Integer totaltime(userInfo member);
+	
+	public Integer alltodaycal();
 
 }

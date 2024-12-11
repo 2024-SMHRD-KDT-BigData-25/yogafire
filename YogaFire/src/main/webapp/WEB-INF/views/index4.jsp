@@ -186,6 +186,8 @@
 	<%  List<myPage> time = (List<myPage>)session.getAttribute("time");
 		FlowInfo flowlist = (FlowInfo)session.getAttribute("flowlist");
 		Integer totaltime = (Integer)session.getAttribute("totaltime");
+		Integer alltodaycal = (Integer)session.getAttribute("alltodaycal");
+		Integer todaycal = (Integer) session.getAttribute("todaycal");
 		userInfo member = (userInfo)session.getAttribute("member"); %>
 
   <div class="top-menu">
@@ -234,11 +236,18 @@
         <canvas id="yoga-chart"></canvas>
 
         <div class="score-card">
-          <h4>나의 점수</h4>
-          <p>🏆 <strong>순위:</strong> 12위</p>
-		  <% 
-    		Integer todaycal = (Integer) session.getAttribute("todaycal"); 
-    		if (todaycal != null) {
+          <h4>나의 통계</h4>
+         <% double rate = Math.round((double)todaycal.intValue() / alltodaycal.intValue() * 100); 
+          		if (rate >= 50.0) {%>
+          <p>⭐ 요가파이어의 전체 회원들 중 오늘 <strong><%=member.getNick()%></strong>님의 운동량은 <strong><%=Math.round((double)todaycal.intValue() / alltodaycal.intValue() * 100)%>%</strong>!⭐</p>
+          <p>열심히 하셨네요 </p>
+        	<%} else { %>
+          		<p>⭐ 요가파이어의 전체 회원들 중 오늘 <strong><%=member.getNick()%></strong>님의 운동량은 <strong><%=Math.round((double)todaycal.intValue() / alltodaycal.intValue() * 100)%>%</strong>!⭐</p>
+          		<p>분발해 주세요 </p>
+        	<%} %>
+		   
+    		 
+    		<%if (todaycal != null) {
 		  %>
           <p>📈 <strong>오늘 소모한 칼로리 :</strong> <%=todaycal.intValue()%>cal <%} else {%><p>📈 <strong>오늘 소모한 칼로리 :</strong> 0cal <%} %></p>
           <% 

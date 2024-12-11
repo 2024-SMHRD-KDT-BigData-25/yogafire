@@ -59,5 +59,9 @@ public class MemberService {
 	public Integer totaltime(userInfo member) {
 		return mapper.totaltime(member);
 	}
+	
+	public Integer alltodaycal() {
+		return mapper.alltodaycal();
+	}
 
 }

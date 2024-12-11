@@ -75,6 +75,7 @@ public class MemberController {
 			Integer todaycal = service.todaycal(member);
 			Integer totalcal = service.totalcal(member);
 			Integer totaltime = service.totaltime(member);
+			Integer alltodaycal = service.alltodaycal();
 			
 			session.setAttribute("time", time);
 			session.setAttribute("scoresum", Integer.valueOf(scroesum));
@@ -82,6 +83,7 @@ public class MemberController {
 			session.setAttribute("todaycal", todaycal);
 			session.setAttribute("totalcal", totalcal);
 			session.setAttribute("totaltime", totaltime);
+			session.setAttribute("alltodaycal", alltodaycal);
 			return "redirect:/index4";
 		}
 	}
