@@ -106,9 +106,7 @@
     }
 
     .main-content {
-    /*  display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 30px;*/
+    
       
       display: grid;
     grid-template-columns:1fr 1fr;
