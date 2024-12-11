@@ -13,9 +13,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+
+import com.smhrd.yoga.model.FlowInfo;
 import com.smhrd.yoga.model.myPage;
 import com.smhrd.yoga.model.userActivity;
 import com.smhrd.yoga.model.userInfo;
+import com.smhrd.yoga.service.FlowService;
 import com.smhrd.yoga.service.MemberService;
 
 import jakarta.servlet.http.HttpSession;
@@ -26,6 +29,7 @@ import lombok.RequiredArgsConstructor;
 public class MemberController {
 	
 	private final MemberService service;
+	private final FlowService service2;
 	
 	@GetMapping("/member/signup")
 	public String signup() {
@@ -39,7 +43,7 @@ public class MemberController {
 		
 		if(res ==  0) { 
 			System.out.println("회원가입이 실패했습니다");
-			return "redirect:/member/signup";
+			return "redirect:/index8";
 		}else {
 			System.out.println("회원가입이 성공했습니다");
 			return "redirect:/";
@@ -58,13 +62,26 @@ public class MemberController {
 		// @ModelAttribute는 생략가능
 		userInfo res = service.login(member);
 		if (res == null) {
-			return "redirect:/login";
+			return "redirect:/index7";
 		}else {
 			session.setAttribute("member", res);
 			List<myPage> time = service.time(member);
 			int scroesum = service.scoresum(member);
+			Integer recentflowidx = service.recentflow(member);
+			if (recentflowidx == null) {
+			    recentflowidx = 0;
+			}
+			FlowInfo flowlist = service2.flowlist(recentflowidx);
+			Integer todaycal = service.todaycal(member);
+			Integer totalcal = service.totalcal(member);
+			Integer totaltime = service.totaltime(member);
+			
 			session.setAttribute("time", time);
 			session.setAttribute("scoresum", Integer.valueOf(scroesum));
+			session.setAttribute("flowlist", flowlist);
+			session.setAttribute("todaycal", todaycal);
+			session.setAttribute("totalcal", totalcal);
+			session.setAttribute("totaltime", totaltime);
 			return "redirect:/index4";
 		}
 	}
@@ -95,10 +112,7 @@ public class MemberController {
 	public String update(userInfo member, HttpSession session, @RequestParam("proficfile") MultipartFile profic) throws IllegalStateException, IOException {
 	    // 프로필 파일을 처리하여 파일 이름을 Member 객체에 설정
 	    if (profic != null && !profic.isEmpty()) {
-	        String randomUUID = UUID.randomUUID().toString();
-	        int lastIndex = randomUUID.lastIndexOf("-");
-	        String lastPart = randomUUID.substring(lastIndex + 1);
-	        String fileName = lastPart + profic.getOriginalFilename();
+	        String fileName = profic.getOriginalFilename();
 	        System.out.println(fileName);
 	        // 파일 저장 경로 지정
 	        String filePath = "C://upload/" + fileName;
@@ -113,11 +127,11 @@ public class MemberController {
 	    int res = service.update(member);
 	    if (res == 0) {
 	        System.out.println("수정하는데 실패하였습니다.");
-	        return "redirect:/member/" + member.getId() + "/edit";
+	        return "redirect:/index9";
 	    } else {
 	        System.out.println("수정하는데 성공하였습니다.");
 	        session.setAttribute("member", member);
-	        return "redirect:/member/" + member.getId() + "/edit";
+	        return "redirect:/index9";
 	    }
 	}
 }

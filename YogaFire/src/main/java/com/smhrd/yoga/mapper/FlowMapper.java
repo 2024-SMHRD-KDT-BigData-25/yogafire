@@ -20,4 +20,6 @@ public interface FlowMapper {
 	@Select("select * from flow_info where flow_lv='고급'")
 	public List<FlowInfo> list3();
 	
+	@Select("select * from flow_info where flow_idx=#{recentflowidx}")
+	public FlowInfo flowlist(int recentflowidx);
 }

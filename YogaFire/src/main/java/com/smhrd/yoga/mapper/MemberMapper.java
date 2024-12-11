@@ -31,5 +31,15 @@ public interface MemberMapper {
 	
 	@Select("select COALESCE(SUM(activity_score), 0) AS scoresum from user_activity where id=#{id}")
 	public int scoresum(userInfo member);
+	
+	@Select("select flow_idx from tmp where id=#{id} limit 1")
+	public Integer recentflow(userInfo member);
+	
+	public Integer todaycal(userInfo member);
+	
+	public Integer totalcal(userInfo member);
+
+	@Select("select sum(ps_time) from mypage1 where id=#{id};")
+	public Integer totaltime(userInfo member);
 
 }

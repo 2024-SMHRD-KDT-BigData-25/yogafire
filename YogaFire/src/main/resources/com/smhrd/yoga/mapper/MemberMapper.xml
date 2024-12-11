@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.yoga.mapper.MemberMapper">
+	<select id="todaycal" parameterType="com.smhrd.yoga.model.userInfo" resultType="int">
+		select sum(a.ps_cal) as todaycal from pose_info as a, user_activity as b, flow_order c where (a.ps_idx = c.ps_idx) and (b.flow_order_idx = c.flow_order_idx) and (DATE(b.activity_at) = CURDATE()) and (b.id=#{id})
+	</select>
+	<select id="totalcal" parameterType="com.smhrd.yoga.model.userInfo" resultType="int">
+		select sum(a.ps_cal) as totalcal from pose_info as a, user_activity as b, flow_order c where (a.ps_idx = c.ps_idx) and (b.flow_order_idx = c.flow_order_idx) and (b.id=#{id})
+	</select>
+	
+</mapper>

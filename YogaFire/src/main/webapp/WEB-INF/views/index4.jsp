@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="com.smhrd.yoga.model.FlowInfo"%>
 <%@page import="com.smhrd.yoga.model.myPage"%>
 <%@page import="java.util.List"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
@@ -180,6 +181,11 @@
 </head>
 
 <body>
+
+	<% List<myPage> time = (List<myPage>)session.getAttribute("time");%>
+	<% FlowInfo flowlist = (FlowInfo)session.getAttribute("flowlist"); %>
+	<% Integer totaltime = (Integer)session.getAttribute("totaltime"); %>
+
   <div class="top-menu">
     <h1>마이페이지</h1>
     <div class="menu-links">
@@ -198,7 +204,8 @@
       <img src="images/${member.profic}" alt="Profile Picture">
       <h3>${member.nick}</h3>
       <p>🌟 레벨: <strong>5</strong></p>
-      <p>🕒 전체 요가 시간: <strong>45시간</strong></p>
+            <% if (totaltime != null) { %>
+      <p>🕒 전체 요가 시간: <strong><%=totaltime.intValue()/3600 %>시간 <%=totaltime.intValue()/60 %>분 <%} else { totaltime = 0; %><p>🕒 전체 요가 시간: <strong> <%=totaltime %>분 <%} %> </strong></p>
       <button onclick="location.href='/boot/index9'">🔧 정보 수정</button>
       <button onclick="location.href='logout'">🚪 로그아웃</button>
     </div>
@@ -227,12 +234,16 @@
         <div class="score-card">
           <h4>나의 점수</h4>
           <p>🏆 <strong>순위:</strong> 12위</p>
-          <p>📈 <strong>월간 점수:</strong> 85점</p>
+		  <% 
+    		Integer todaycal = (Integer) session.getAttribute("todaycal"); 
+    		if (todaycal != null) {
+		  %>
+          <p>📈 <strong>오늘 소모한 칼로리 :</strong> <%=todaycal.intValue()%>cal <%} else {%><p>📈 <strong>오늘 소모한 칼로리 :</strong> 0cal <%} %></p>
           <% 
-          Integer scroesum = (Integer) session.getAttribute("scoresum"); 
-          if (scroesum != null) {
-        %>
-          <p>🔄 <strong>누적 점수:</strong><%= scroesum.intValue()%>점 <%} %> </p>
+    		Integer totalcal = (Integer) session.getAttribute("totalcal"); 
+    		if (totalcal != null) {
+		  %>
+          <p>🔄 <strong>누적 칼로리:</strong><%= totalcal.intValue()%>cal <%} else { %><p>🔄 <strong>누적 칼로리:</strong> 0cal <%} %></p>
         </div>
       </div>
 
@@ -245,8 +256,9 @@
      <h3>📂 최근 실행 시퀀스</h3>
         <div class="items">
           <div class="item">
-            <img src="images/yoga1.jpg" alt="요가 시퀀스">
-            <p>Beginner Pose 1</p>
+		<%if (flowlist != null) { %>
+             <img src=<%=flowlist.getFlow_img()%> alt="Beginner Yoga">
+             <p><%=flowlist.getFlow_title() %> <%} else {%> <%} %></p>
           </div>
         </div>
       </div>
@@ -268,8 +280,8 @@
   
   
   
-   <% List<myPage> time = (List<myPage>)session.getAttribute("time");
-    // 빈 리스트를 처리할 수 있도록 기본 배열을 설정
+    
+  <%// 빈 리스트를 처리할 수 있도록 기본 배열을 설정
     StringBuilder labels = new StringBuilder();
     StringBuilder data = new StringBuilder();
     

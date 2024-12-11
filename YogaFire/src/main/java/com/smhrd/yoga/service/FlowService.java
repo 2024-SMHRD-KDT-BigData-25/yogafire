@@ -27,4 +27,8 @@ public class FlowService {
 		return mapper.list3();
 	}
 	
+	public FlowInfo flowlist(int recentflowidx) {
+		return mapper.flowlist(recentflowidx);
+	}
+	
 }

@@ -43,5 +43,21 @@ public class MemberService {
 	public int scoresum(userInfo member) {
 		  return mapper.scoresum(member);
 	}
+	
+	public Integer recentflow(userInfo member) {
+		return mapper.recentflow(member);
+	}
+	
+	public Integer todaycal(userInfo member) {
+		return mapper.todaycal(member);
+	}
+	
+	public Integer totalcal(userInfo member) {
+		return mapper.totalcal(member);
+	}
+	
+	public Integer totaltime(userInfo member) {
+		return mapper.totaltime(member);
+	}
 
 }
