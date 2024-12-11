@@ -414,7 +414,8 @@
         <li>1일 1회 이용 가능</li>   
          
 </ul>     
-<button>선택하기</button>
+<button onclick="handlePurchase()">구매하기</button>
+
     </div>
 
 <div class="pricing-card" style="background: linear-gradient(135deg, #E3F5E3, #D6FFD6);">  
@@ -427,7 +428,8 @@
        <li>전타임 제한 없이 사용가능</li>      
          
 </ul>     
-<button>선택하기</button>
+<button onclick="handlePurchase()">구매하기</button>
+
     </div>
 
     <div class="pricing-card" style="background: linear-gradient(135deg, #FFF5F5, #FFE3E3);">
@@ -437,7 +439,8 @@
 	<li>10회,35회</li> 
 	<li>참여시 횟수 차감 방식</li>
       </ul>  
-<button>선택하기</button>
+<button onclick="handlePurchase()">구매하기</button>
+
     </div>
   </div>
 
@@ -453,7 +456,8 @@
         <li>1일 1회 이용 가능</li>   
          
 </ul>     
-<button>선택하기</button>
+<button onclick="handlePurchase()">구매하기</button>
+
     </div>
 
 <div class="pricing-card" style="background: linear-gradient(135deg, #E3F5E3, #D6FFD6);">  
@@ -466,7 +470,8 @@
         <li>전타임 제한 없이 사용가능</li>   
          
 </ul>     
-<button>선택하기</button>
+<button onclick="handlePurchase()">구매하기</button>
+
     </div>
 
     <div class="pricing-card" style="background: linear-gradient(135deg, #FFF5F5, #FFE3E3);">
@@ -476,7 +481,8 @@
 	<li>10회,35회</li> 
 	<li>참여시 횟수 차감 방식</li>
       </ul>  
-<button>선택하기</button>
+<button onclick="handlePurchase()">구매하기</button>
+
     </div>
   </div>
 
@@ -546,6 +552,12 @@
     document.querySelectorAll('.scroll-animated').forEach(el => observer.observe(el));
 </script>
 
+<script>
+  // 구매하기 버튼 클릭 시 동작하는 함수
+  function handlePurchase() {
+    alert("구매 완료!");
+  }
+</script>
 
 
 </body>
