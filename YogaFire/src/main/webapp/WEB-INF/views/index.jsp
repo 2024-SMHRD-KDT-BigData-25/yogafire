@@ -486,13 +486,15 @@
     </div>
   </div>
 
-
-<!-- 체험하기 섹션 -->
+<!-- 체험하기 섹션 (로그인하지 않은 경우에만 표시) -->
+<% if (member == null) { %>
 <div class="ad-banner">
     <img src="images/ai분석자세.gif" alt="체험하기">
     <p>AI 기반 요가 자세 분석</p>
     <button onclick="location.href='/boot/index10'">지금 체험하기</button>
 </div>
+<% } %>
+
 
 <section class="contact-info-section" style="background-color: #f8f9fa; padding: 40px 20px;">
     <div class="container2">
