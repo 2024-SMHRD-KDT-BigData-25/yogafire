@@ -178,6 +178,12 @@
 .card.recent .item img:hover {
   transform: scale(1.1);
 }
+
+.itembox {
+	display: flex;
+    gap: 70px;
+    padding-left: 30px;
+}
   </style>
 </head>
 
@@ -189,13 +195,14 @@
 		Integer todaycal = (Integer) session.getAttribute("todaycal"); 
 		Integer totalcal = (Integer) session.getAttribute("totalcal");
 		Integer alltodaycal = (Integer)session.getAttribute("alltodaycal");
+		List<FlowInfo> randomFlows = (List<FlowInfo>)session.getAttribute("randomflow");
 		userInfo member = (userInfo)session.getAttribute("member"); %>
 
   <div class="top-menu">
     <h1>마이페이지</h1>
     <div class="menu-links">
       <a href="/boot/">🏠Home</a>
-      <a href="/boot/member/${member.id}/history">유저 이력</a>
+      <a href="/boot/${member.id}/history">📜유저 이력</a>
       <a href="/boot/programs">📚프로그램</a>
       <a href="/boot/membership">💳요금제</a>
       <a href="/boot/membership">🔗공유하기</a>
@@ -277,12 +284,17 @@
       </div>
      <div class="card recommend">
         <h3>🌟 추천 시퀀스</h3>
-        <div class="items">
-          <div class="item">
-            <img src="images/yoga2.jpg" alt="추천 시퀀스">
-            <p>Advanced Pose</p>
-          </div>
-        </div>
+        <div class="itembox">
+		<%  if (randomFlows != null) {
+                for (FlowInfo flow : randomFlows) {%>
+        			<div class="items">
+            		  <div class="item">
+            		  	<img src="images/yoga2.jpg" alt="추천 시퀀스">
+            		  	<p><%= flow.getFlow_title()%></p>
+          			  </div>
+       				 </div>
+               	<% }
+     	  }%>
       </div>
   </div>
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<%@page import="com.smhrd.yoga.model.userInfo"%>
 <%@page import="com.smhrd.yoga.model.userhistory"%>
 <%@page import="java.util.List"%>
 <%@ page pageEncoding="UTF-8" %>
@@ -178,8 +179,8 @@ margin-right: 20px;
 </head>
 <body>
 <% List<userhistory> userscore = (List<userhistory>)request.getAttribute("userscore"); %>
-
-
+<% userInfo member = (userInfo)session.getAttribute("member"); %>
+<% System.out.print(userscore); %>
 <!-- 헤더 섹션 -->
 <div class="header-banner">
     <div class="logo">
@@ -196,6 +197,7 @@ margin-right: 20px;
 
 <div class="Sequence-performed" id="scroll-container">
 	<h1>Sequence performed</h1>
+	<%if (userscore != null && !userscore.isEmpty()) { %>
 	<% for (userhistory u : userscore) { %>
 	<div class="Sequence-performed-box">
 		<div class="Sequence-performed-img">
@@ -208,9 +210,14 @@ margin-right: 20px;
 		</div>
 	</div>	
 	<%} %>
-	
 </div>
-
+<%} else {%>
+	<div class="Sequence-performed-box">
+		<div class="Sequence-performed-text">
+			<p><strong>유저 운동내력이 없어요🥲<br> 요가파이어는 <%=member.getNick()%>님을 기다리고 있답니다!</strong></p>
+		</div>
+	</div>	
+<%} %>
 
 <script>
     // DOM 요소 가져오기

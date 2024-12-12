@@ -1,13 +1,16 @@
 package com.smhrd.yoga.mapper;
 
 import java.util.List;
+import java.util.Set;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import com.smhrd.yoga.model.FlowInfo;
 import com.smhrd.yoga.model.myPage;
 import com.smhrd.yoga.model.userInfo;
 import com.smhrd.yoga.model.userhistory;
@@ -45,6 +48,14 @@ public interface MemberMapper {
 
 	public Integer alltodaycal();
 	
-	@Select("select * from userhistory")
+	@Select("select* from userscore where id=#{id}")
 	public List<userhistory> userscore(userInfo member);
+
+    @Select("<script>" +
+            "SELECT * FROM flow_info WHERE flow_idx IN " +
+            "<foreach item='num' collection='numSet' open='(' separator=',' close=')'>" +
+            "#{num}" +
+            "</foreach>" +
+            "</script>")
+    public List<FlowInfo> randomflow(@Param("numSet") Set<Integer> numSet);
 }

@@ -3,7 +3,10 @@ package com.smhrd.yoga.controller;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Member;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.stereotype.Controller;
@@ -82,6 +85,15 @@ public class MemberController {
 			session.setAttribute("totalcal", totalcal);
 			session.setAttribute("totaltime", totaltime);
 			session.setAttribute("alltodaycal", alltodaycal);
+			
+			Random r = new Random(); 
+			Set<Integer> numSet = new HashSet<>();
+	        while (numSet.size() < 5) {
+	            int num = r.nextInt(1, 21); // 1부터 20까지 랜덤 숫자
+	            numSet.add(num);
+	        }
+	        List<FlowInfo> randomFlows = service.randomflow(numSet);
+			session.setAttribute("randomflow", randomFlows);
 			return "redirect:/myPage";
 		}
 	}
@@ -135,7 +147,7 @@ public class MemberController {
 	    }
 	}
 	
-	@GetMapping("/member/{id}/history")
+	@GetMapping("{id}/history")
 	public String userscore(userInfo member, Model model) {
 		List<userhistory> userscore = service.userscore(member);
 		model.addAttribute("userscore", userscore);

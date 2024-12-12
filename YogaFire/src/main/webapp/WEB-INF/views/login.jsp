@@ -9,7 +9,7 @@
     <title>로그인</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-    4
+    
         * {
             box-sizing: border-box;
             margin: 0;
@@ -48,12 +48,12 @@
         }
 
      .form-group {
-    margin-bottom: 30px;  /* 간격 조정 (기존 20px에서 30px로) */
+    margin-bottom: 30px;  
 }
 
 .form-group input {
     width: 100%;
-    max-width: 350px;   /* 최대 너비 설정 */
+    max-width: 350px;  
     padding: 14px 18px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
