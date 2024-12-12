@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Update;
 
 import com.smhrd.yoga.model.myPage;
 import com.smhrd.yoga.model.userInfo;
+import com.smhrd.yoga.model.userhistory;
 
 
 @Mapper
@@ -43,4 +44,7 @@ public interface MemberMapper {
 	public Integer totaltime(userInfo member);
 
 	public Integer alltodaycal();
+	
+	@Select("select * from userhistory")
+	public List<userhistory> userscore(userInfo member);
 }

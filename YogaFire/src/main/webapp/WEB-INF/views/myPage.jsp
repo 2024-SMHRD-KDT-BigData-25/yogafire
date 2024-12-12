@@ -195,6 +195,7 @@
     <h1>마이페이지</h1>
     <div class="menu-links">
       <a href="/boot/">🏠Home</a>
+      <a href="/boot/member/${member.id}/history">유저 이력</a>
       <a href="/boot/programs">📚프로그램</a>
       <a href="/boot/membership">💳요금제</a>
       <a href="/boot/membership">🔗공유하기</a>

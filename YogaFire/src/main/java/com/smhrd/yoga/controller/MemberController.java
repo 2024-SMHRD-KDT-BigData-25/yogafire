@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,7 @@ import com.smhrd.yoga.model.FlowInfo;
 import com.smhrd.yoga.model.myPage;
 import com.smhrd.yoga.model.userActivity;
 import com.smhrd.yoga.model.userInfo;
+import com.smhrd.yoga.model.userhistory;
 import com.smhrd.yoga.service.FlowService;
 import com.smhrd.yoga.service.MemberService;
 
@@ -131,5 +133,12 @@ public class MemberController {
 	        session.setAttribute("member", member);
 	        return "redirect:/userEdit";
 	    }
+	}
+	
+	@GetMapping("/member/{id}/history")
+	public String userscore(userInfo member, Model model) {
+		List<userhistory> userscore = service.userscore(member);
+		model.addAttribute("userscore", userscore);
+		return "userHistory";
 	}
 }

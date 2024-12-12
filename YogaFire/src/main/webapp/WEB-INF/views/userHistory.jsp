@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<%@page import="com.smhrd.yoga.model.userhistory"%>
+<%@page import="java.util.List"%>
 <%@ page pageEncoding="UTF-8" %>
 <html lang="ko">
 <head>
@@ -175,6 +177,7 @@ margin-right: 20px;
     </style>
 </head>
 <body>
+<% List<userhistory> userscore = (List<userhistory>)request.getAttribute("userscore"); %>
 
 
 <!-- 헤더 섹션 -->
@@ -193,166 +196,19 @@ margin-right: 20px;
 
 <div class="Sequence-performed" id="scroll-container">
 	<h1>Sequence performed</h1>
+	<% for (userhistory u : userscore) { %>
 	<div class="Sequence-performed-box">
 		<div class="Sequence-performed-img">
 			<img src="images/요가배경이미지8.jpg">
 		</div>
 		<div class="Sequence-performed-text">
-			<h2>Name : 시퀀스 이름</h2>
-			<h3>Day : 2024/10/21</h3>
-			<h3>Score : A</h3>
+			<h2>Name : <%=u.getFlow_title() %></h2>
+			<h3>Day : <%=u.getActivity_at() %></h3>
+			<h3>Score : <%=u.getAvg_activity_score() %></h3>	
 		</div>
 	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
-	<div class="Sequence-performed-box">
-		<div class="Sequence-performed-img">
-			<img src="images/요가배경이미지8.jpg">
-		</div>
-		<div class="Sequence-performed-text">
-			<h2>시퀀스 이름</h2>
-			<h3>2024/10/21</h3>
-			<h3>점수 : A</h3>
-		</div>
-	</div>	
+	<%} %>
+	
 </div>
 
 
