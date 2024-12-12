@@ -495,7 +495,7 @@
 <div class="ad-banner">
     <img src="images/ai분석자세.gif" alt="체험하기">
     <p>AI 기반 요가 자세 분석</p>
-    <button onclick="location.href='/boot/index10'">지금 체험하기</button>
+    <button onclick="location.href='/boot/yogaPlay'">지금 체험하기</button>
 </div>
 <% } %>
 
