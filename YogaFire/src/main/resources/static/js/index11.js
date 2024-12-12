@@ -83,7 +83,7 @@ function startYoga(event) {
     const item = button.closest(".item"); // 버튼이 속한 .item 요소
     const id = item.dataset.id;
 
-     window.location.href = `index10`
+     window.location.href = `yogaPlay`
     // 여기서 추가적인 로직(예: 페이지 이동, 동영상 재생)을 구현할 수 있습니다.
 }
 
