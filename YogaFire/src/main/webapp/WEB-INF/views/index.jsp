@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <%@page import="com.smhrd.yoga.model.userInfo"%>
 <%@ page pageEncoding="UTF-8" %>
+
 <html lang="ko">
 <head>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YogaFire</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.	net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
      
@@ -43,7 +50,7 @@
             padding: 20px 40px;
             background-color: #FFFFFF;
             position: fixed;
-            top: 0;
+            top: 20;
             left: 0;
             width: 100%;
             z-index: 1000;
@@ -72,11 +79,25 @@
             background-color: #2E8B57;
             color: #FFFFFF;
         }
+        .swiper-container {
+    width: 100%;
+    height: 90vh;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    height: 100%;
+}
 
   
         .main-banner {
             height: 90vh;
-            background: url('images/배경.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -153,19 +174,20 @@
             color: #000000;
         }
 
-     
-        .ad-banner {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #FFFFFF;
-            padding: 15px 20px;
-            border-radius: 15px;
-            text-align: center;
-            color: #2E8B57;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 2.5s ease;
-        }
+     .ad-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FFFFFF;
+    padding: 15px 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: #2E8B57;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 2.5s ease;
+    z-index: 2000; /
+}
+
 
         .ad-banner img {
             width: 150px;
@@ -346,9 +368,74 @@
     .membership-card button:hover {
       background: var(--button-hover);
     }
+    
+    .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #f8f9fa; 
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.marquee {
+    display: inline-flex;
+    animation: scroll 15s linear infinite; 
+}
+
+.marquee-item {
+    flex-shrink: 0;
+    padding: 0 50px;
+    font-size: 18px;
+    color: #333;
+    white-space: nowrap;
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+    
    
-        
-    </style>
+        <style>
+    .image-hover-effect {
+        position: relative;
+        overflow: hidden;
+        width: 100%; 
+        height: 100%; 
+    }
+
+    .image-hover-effect img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out; 
+    }
+
+    .image-hover-effect:hover img {
+        transform: scale(1.2); 
+    }
+    
+    <style>
+    .hover-zoom-effect {
+        position: relative;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .hover-zoom-effect:hover {
+        transform: scale(1.5); 
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    }
+</style>
+    
+
 </head>
 <body>
 
@@ -375,34 +462,62 @@
     <% } %>
 </div>
 
-
 <!-- 메인 배너 섹션 -->
-<div class="main-banner">
-    <h1>Discover Your Inner Peace</h1>
-    <p>AI와 함께하는 개인화된 요가 & 명상 프로그램</p>
-    <% if (member == null) { %>
-    <button class="cta-button" onclick="location.href='/boot/login'">지금 시작하기</button>
-    <% } else { %>
-    <button class="cta-button" onclick="location.href='/boot/programs'">지금 시작하기</button>
-    <% } %>
+<div class="swiper-container main-banner">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background: url('images/배경1.jpg') no-repeat center center/cover;">
+            <h1>Discover Your Inner Peace</h1>
+            <p>Ai와 함께하는 요가 자세 분석 Ai 코칭 시스템</p>
+            <% if (member == null) { %>
+            <button class="cta-button" onclick="location.href='/boot/login'">지금 시작하기</button>
+            <% } else { %>
+            <button class="cta-button" onclick="location.href='/boot/programs'">지금 시작하기</button>
+            <% } %>
+        </div>
+        <div class="swiper-slide" style="background: url('images/배경2.jpg') no-repeat center center/cover;">
+            <h1>Find Your Balance</h1>
+            <p> 'MediaPipe'를 통해 사용자의 자세를 실시간으로 분석</p>
+         
+        </div>
+        <div class="swiper-slide" style="background: url('images/배경3.jpg') no-repeat center center/cover;">
+            <h1>Join the Movement</h1>
+            <p>잘못된 운동자세, 요가파이어만의 정확한 AI코치를 이용해보세요.</p>
+        </div>
+    </div>
 </div>
+
+
+<!-- 체험하기 섹션 (로그인하지 않은 경우에만 표시) -->
+<% if (member == null) { %>
+<div class="ad-banner hover-zoom-effect">
+    <img src="images/ai분석자세.gif" alt="체험하기">
+    <p>AI 기반 요가 자세 분석</p>
+    <button onclick="location.href='/boot/yogaPlay'">지금 체험하기</button>
+</div>
+<% } %>
 
 <!-- 콘텐츠 섹션 -->
 <div class="custom-scope">
     <article>
-        <figure class="scroll-animated"><img src="images/me2.jpg" alt="AI Mediapipe"></figure>
+        <figure class="scroll-animated image-hover-effect">
+            <img src="images/me2.jpg" alt="AI Mediapipe">
+        </figure>
         <section class="scroll-animated">
-            <h1>AI Mediapipe</h1>
-            <p>AI와 Mediapipe를 활용한 요가 코칭은 카메라를 통해 사용자의 동작을 추적하고, 관절 위치와 자세 데이터를 분석하여 정확한 피드백을 제공합니다. AI 모델이 올바른 자세와 개선점을 제안해 운동 효과를 극대화하며, 개인 맞춤형 코칭이 가능합니다. 이를 통해 사용자들은 전문 트레이너 없이도 효율적으로 요가를 배우고 수행할 수 있습니다.</p>
+            <h1>Ai Mediapipe</h1>
+            <p>Ai와 Mediapipe를 활용한 요가 코칭은 카메라를 통해 사용자의 동작을 추적하고, 관절 위치와 자세 데이터를 분석하여 정확한 피드백을 제공합니다. AI 모델이 올바른 자세와 개선점을 제안해 운동 효과를 극대화하며, 개인 맞춤형 코칭이 가능합니다. 이를 통해 사용자들은 전문 트레이너 없이도 효율적으로 요가를 배우고 수행할 수 있습니다
+</p>
         </section>
 
-        <figure class="scroll-animated"><img src="images/요가배경이미지8.jpg" alt="요가 배경"></figure>
+        <figure class="scroll-animated image-hover-effect">
+            <img src="images/요가배경이미지8.jpg" alt="요가 배경">
+        </figure>
         <section class="scroll-animated">
             <h2>Yoga</h2>
             <p>요가는 신체의 균형과 유연성을 향상시키고, 근력을 강화하며, 심신의 안정을 돕는 수련법입니다. 명상은 마음을 집중하고 내면을 관찰함으로써 스트레스를 줄이고 정신적 평온을 얻는 데 중점을 둡니다. 이 둘은 조화를 이루어 몸과 마음의 건강을 동시에 증진시킵니다.</p>
         </section>
     </article>
 </div>
+
 
 <!-- 요금제 섹션 -->
 <body>
@@ -513,14 +628,6 @@
     </div>
   </div>
 
-<!-- 체험하기 섹션 (로그인하지 않은 경우에만 표시) -->
-<% if (member == null) { %>
-<div class="ad-banner">
-    <img src="images/ai분석자세.gif" alt="체험하기">
-    <p>AI 기반 요가 자세 분석</p>
-    <button onclick="location.href='/boot/yogaPlay'">지금 체험하기</button>
-</div>
-<% } %>
 
 
 <section class="contact-info-section" style="background-color: #f8f9fa; padding: 40px 20px;">
@@ -543,7 +650,7 @@
                     </tr>
                     <tr>
                         <th style="text-align: left; padding: 10px 0;">전화 상담</th>
-                        <td style="text-align: left; padding: 10px 0;">02-3447-9642</td>
+                        <td style="text-align: left; padding: 10px 0;">1522-7800</td>
                     </tr>
                 </table>
             </div>
@@ -558,7 +665,7 @@
                     </tr>
                     <tr>
                         <th style="text-align: left; padding: 10px 0;">방문 상담</th>
-                        <td style="text-align: left; padding: 10px 0;">순천시 조례동 순천대점Kt건물 29길 21  5층</td>
+                        <td style="text-align: left; padding: 10px 0;">광주 동구 중앙로 196 (금남로 3가)</td>
                     </tr>
                     <tr>
                         <th style="text-align: left; padding: 10px 0;">온라인 줌 상담</th>
@@ -572,13 +679,16 @@
 </section>
 
 <script>
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('show');
-        });
-    }, { threshold: 0.1 });
+$(window).on("scroll", function () {
+    $(".scroll-animated").each(function () {
+        const position = $(this).offset().top;
+        const scrollPosition = $(window).scrollTop() + $(window).height();
+        if (scrollPosition > position) {
+            $(this).addClass("show");
+        }
+    });
+});
 
-    document.querySelectorAll('.scroll-animated').forEach(el => observer.observe(el));
 </script>
 
 <script>
@@ -591,7 +701,46 @@
     alert("로그인을 해 주세요.");
   }
 </script>
+ 
+<div class="marquee-container">
+    <div class="marquee">
+        <div class="marquee-item">Welcome to YogaFire 2024</div>
+        <div class="marquee-item">2024 K-Digital Training</div>
+        <div class="marquee-item">빅데이터 분석서비스 개발자과정(NCS) 25회차 </div>
+        <div class="marquee-item">교육기간 24.06.25 ~ 24.12.17</div>
+    </div>
+</div>
 
+<script>
+    $(document).ready(function () {
+        const $marquee = $(".marquee").clone();
+        $(".marquee-container").append($marquee); 
+    });
+</script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.swiper-container', {
+        loop: true,              
+        autoplay: {
+            delay: 2500,         
+            disableOnInteraction: false,
+        },
+        effect: 'fade',          // 페이드 효과 Swiper가 기본으로 지원해주는 슬라이드중 fade효과 사용해보았음!
+        fadeEffect: {
+            crossFade: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+});
+
+</script>
 </body>
 </html> 
