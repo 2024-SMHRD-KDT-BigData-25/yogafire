@@ -4,12 +4,14 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Member;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.smhrd.yoga.mapper.MemberMapper;
+import com.smhrd.yoga.model.FlowInfo;
 import com.smhrd.yoga.model.myPage;
 import com.smhrd.yoga.model.userInfo;
 import com.smhrd.yoga.model.userhistory;
@@ -67,6 +69,10 @@ public class MemberService {
 	
 	public List<userhistory> userscore(userInfo member) {
 		return mapper.userscore(member);
+	}
+	
+	public List<FlowInfo> randomflow(Set<Integer> numSet) {
+		return mapper.randomflow(numSet);
 	}
 
 }
