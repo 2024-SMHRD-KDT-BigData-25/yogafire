@@ -135,7 +135,7 @@ public class MemberController {
 	    }
 	}
 	
-	@GetMapping("/member/{id}/history")
+	@GetMapping("{id}/history")
 	public String userscore(userInfo member, Model model) {
 		List<userhistory> userscore = service.userscore(member);
 		model.addAttribute("userscore", userscore);

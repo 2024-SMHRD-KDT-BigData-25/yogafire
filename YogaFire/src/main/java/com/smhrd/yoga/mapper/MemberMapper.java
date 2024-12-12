@@ -45,6 +45,6 @@ public interface MemberMapper {
 
 	public Integer alltodaycal();
 	
-	@Select("select * from userhistory")
+	@Select("select* from userscore where id=#{id}")
 	public List<userhistory> userscore(userInfo member);
 }
