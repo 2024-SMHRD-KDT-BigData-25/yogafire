@@ -98,7 +98,6 @@
   
         .main-banner {
             height: 90vh;
-            background: url('images/배경.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
