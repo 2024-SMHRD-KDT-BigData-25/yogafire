@@ -50,7 +50,7 @@
             padding: 20px 40px;
             background-color: #FFFFFF;
             position: fixed;
-            top: 0;
+            top: 20;
             left: 0;
             width: 100%;
             z-index: 1000;
@@ -175,19 +175,20 @@
             color: #000000;
         }
 
-     
-        .ad-banner {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #FFFFFF;
-            padding: 15px 20px;
-            border-radius: 15px;
-            text-align: center;
-            color: #2E8B57;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 2.5s ease;
-        }
+     .ad-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FFFFFF;
+    padding: 15px 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: #2E8B57;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 2.5s ease;
+    z-index: 2000; /
+}
+
 
         .ad-banner img {
             width: 150px;
@@ -486,6 +487,16 @@
     </div>
 </div>
 
+
+<!-- 체험하기 섹션 (로그인하지 않은 경우에만 표시) -->
+<% if (member == null) { %>
+<div class="ad-banner hover-zoom-effect">
+    <img src="images/ai분석자세.gif" alt="체험하기">
+    <p>AI 기반 요가 자세 분석</p>
+    <button onclick="location.href='/boot/yogaPlay'">지금 체험하기</button>
+</div>
+<% } %>
+
 <!-- 콘텐츠 섹션 -->
 <div class="custom-scope">
     <article>
@@ -618,14 +629,6 @@
     </div>
   </div>
 
-<!-- 체험하기 섹션 (로그인하지 않은 경우에만 표시) -->
-<% if (member == null) { %>
-<div class="ad-banner hover-zoom-effect">
-    <img src="images/ai분석자세.gif" alt="체험하기">
-    <p>AI 기반 요가 자세 분석</p>
-    <button onclick="location.href='/boot/yogaPlay'">지금 체험하기</button>
-</div>
-<% } %>
 
 
 <section class="contact-info-section" style="background-color: #f8f9fa; padding: 40px 20px;">
