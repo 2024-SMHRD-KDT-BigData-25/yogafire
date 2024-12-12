@@ -467,7 +467,7 @@
     <div class="swiper-wrapper">
         <div class="swiper-slide" style="background: url('images/배경1.jpg') no-repeat center center/cover;">
             <h1>Discover Your Inner Peace</h1>
-            <p>AI와 함께하는 요가 자세 분석 Ai 코칭 시스템</p>
+            <p>Ai와 함께하는 요가 자세 분석 Ai 코칭 시스템</p>
             <% if (member == null) { %>
             <button class="cta-button" onclick="location.href='/boot/login'">지금 시작하기</button>
             <% } else { %>
@@ -503,8 +503,8 @@
             <img src="images/me2.jpg" alt="AI Mediapipe">
         </figure>
         <section class="scroll-animated">
-            <h1>AI Mediapipe</h1>
-            <p>AI와 Mediapipe를 활용한 요가 코칭은 카메라를 통해 사용자의 동작을 추적하고, 관절 위치와 자세 데이터를 분석하여 정확한 피드백을 제공합니다. AI 모델이 올바른 자세와 개선점을 제안해 운동 효과를 극대화하며, 개인 맞춤형 코칭이 가능합니다. 이를 통해 사용자들은 전문 트레이너 없이도 효율적으로 요가를 배우고 수행할 수 있습니다
+            <h1>Ai Mediapipe</h1>
+            <p>Ai와 Mediapipe를 활용한 요가 코칭은 카메라를 통해 사용자의 동작을 추적하고, 관절 위치와 자세 데이터를 분석하여 정확한 피드백을 제공합니다. AI 모델이 올바른 자세와 개선점을 제안해 운동 효과를 극대화하며, 개인 맞춤형 코칭이 가능합니다. 이를 통해 사용자들은 전문 트레이너 없이도 효율적으로 요가를 배우고 수행할 수 있습니다
 </p>
         </section>
 
