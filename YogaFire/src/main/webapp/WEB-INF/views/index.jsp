@@ -418,7 +418,11 @@
         <li>1일 1회 이용 가능</li>   
          
 </ul>     
-<button onclick="handlePurchase()">구매하기</button>
+ <% if (member == null) {%> 
+	<button onclick="purchaseFail()">구매하기</button>
+ <%}else{ %>
+	<button onclick="handlePurchase()">구매하기</button>
+ <%} %>
 
     </div>
 
@@ -432,7 +436,11 @@
        <li>전타임 제한 없이 사용가능</li>      
          
 </ul>     
-<button onclick="handlePurchase()">구매하기</button>
+ <% if (member == null) {%> 
+	<button onclick="purchaseFail()">구매하기</button>
+ <%}else{ %>
+	<button onclick="handlePurchase()">구매하기</button>
+ <%} %>
 
     </div>
 
@@ -442,9 +450,12 @@
       <ul>        
    <li>10회,35회</li> 
    <li>참여시 횟수 차감 방식</li>
-      </ul>  
-<button onclick="handlePurchase()">구매하기</button>
-
+      </ul> 
+ <% if (member == null) {%> 
+	<button onclick="purchaseFail()">구매하기</button>
+ <%}else{ %>
+	<button onclick="handlePurchase()">구매하기</button>
+ <%} %>
     </div>
   </div>
 
@@ -460,7 +471,11 @@
         <li>1일 1회 이용 가능</li>   
          
 </ul>     
-<button onclick="handlePurchase()">구매하기</button>
+ <% if (member == null) {%> 
+	<button onclick="purchaseFail()">구매하기</button>
+ <%}else{ %>
+	<button onclick="handlePurchase()">구매하기</button>
+ <%} %>
 
     </div>
 
@@ -474,7 +489,11 @@
         <li>전타임 제한 없이 사용가능</li>   
          
 </ul>     
-<button onclick="handlePurchase()">구매하기</button>
+ <% if (member == null) {%> 
+	<button onclick="purchaseFail()">구매하기</button>
+ <%}else{ %>
+	<button onclick="handlePurchase()">구매하기</button>
+ <%} %>
 
     </div>
 
@@ -485,7 +504,11 @@
    <li>10회,35회</li> 
    <li>참여시 횟수 차감 방식</li>
       </ul>  
-<button onclick="handlePurchase()">구매하기</button>
+ <% if (member == null) {%> 
+	<button onclick="purchaseFail()">구매하기</button>
+ <%}else{ %>
+	<button onclick="handlePurchase()">구매하기</button>
+ <%} %>
 
     </div>
   </div>
@@ -562,6 +585,10 @@
   // 구매하기 버튼 클릭 시 동작하는 함수
   function handlePurchase() {
     alert("구매 완료!");
+  }
+  // 구매하기 버튼 클릭 시 로그인 하지 않았을때 
+  function purchaseFail() {
+    alert("로그인을 해 주세요.");
   }
 </script>
 
