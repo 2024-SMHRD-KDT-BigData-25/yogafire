@@ -127,11 +127,11 @@ public class MemberController {
 	    int res = service.update(member);
 	    if (res == 0) {
 	        System.out.println("수정하는데 실패하였습니다.");
-	        return "redirect:/userEdit";
+	        return "userEdit";
 	    } else {
 	        System.out.println("수정하는데 성공하였습니다.");
 	        session.setAttribute("member", member);
-	        return "redirect:/userEdit";
+	        return "userEdit";
 	    }
 	}
 	
