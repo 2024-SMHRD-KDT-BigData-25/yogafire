@@ -701,7 +701,7 @@ $(window).on("scroll", function () {
     alert("로그인을 해 주세요.");
   }
 </script>
-
+ 
 <div class="marquee-container">
     <div class="marquee">
         <div class="marquee-item">Welcome to YogaFire 2024</div>
