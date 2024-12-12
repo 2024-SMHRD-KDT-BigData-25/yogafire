@@ -31,10 +31,6 @@ public class MemberController {
 	private final MemberService service;
 	private final FlowService service2;
 	
-	@GetMapping("/member/signup")
-	public String signup() {
-		return "signup";
-	}
 	
 	@PostMapping("/member")
 	public String signup(userInfo member) {
@@ -43,7 +39,7 @@ public class MemberController {
 		
 		if(res ==  0) { 
 			System.out.println("회원가입이 실패했습니다");
-			return "redirect:/index8";
+			return "redirect:/join";
 		}else {
 			System.out.println("회원가입이 성공했습니다");
 			return "redirect:/";
@@ -51,18 +47,13 @@ public class MemberController {
 	}
 	
 	
-	@GetMapping("/login")
-	public String login(userInfo member) {
-		// @ModelAttribute는 생략가능
-		return "login";
-	}
 	
 	@PostMapping("/login")
 	public String login(userInfo member, HttpSession session) {
 		// @ModelAttribute는 생략가능
 		userInfo res = service.login(member);
 		if (res == null) {
-			return "redirect:/index7";
+			return "redirect:/login";
 		}else {
 			session.setAttribute("member", res);
 			List<myPage> time = service.time(member);
@@ -82,7 +73,7 @@ public class MemberController {
 			session.setAttribute("todaycal", todaycal);
 			session.setAttribute("totalcal", totalcal);
 			session.setAttribute("totaltime", totaltime);
-			return "redirect:/index4";
+			return "redirect:/myPage";
 		}
 	}
 	
@@ -106,7 +97,7 @@ public class MemberController {
 	}
 	@GetMapping("/member/{id}/edit")
 	public String updateForm() {
-		return "edit";
+		return "userEdit";
 	}
 	@PostMapping("member/{id}/edit")
 	public String update(userInfo member, HttpSession session, @RequestParam("proficfile") MultipartFile profic) throws IllegalStateException, IOException {
@@ -127,11 +118,11 @@ public class MemberController {
 	    int res = service.update(member);
 	    if (res == 0) {
 	        System.out.println("수정하는데 실패하였습니다.");
-	        return "redirect:/index9";
+	        return "redirect:/userEdit";
 	    } else {
 	        System.out.println("수정하는데 성공하였습니다.");
 	        session.setAttribute("member", member);
-	        return "redirect:/index9";
+	        return "redirect:/userEdit";
 	    }
 	}
 }

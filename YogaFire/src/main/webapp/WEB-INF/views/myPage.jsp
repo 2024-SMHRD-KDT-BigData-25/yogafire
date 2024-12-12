@@ -193,8 +193,8 @@
     <div class="menu-links">
       <a href="/boot/">🏠Home</a>
       <a href="/boot/programs">📚프로그램</a>
-      <a href="/boot/index5">💳요금제</a>
-      <a href="/boot/index5">🔗공유하기</a>
+      <a href="/boot/membership">💳요금제</a>
+      <a href="/boot/membership">🔗공유하기</a>
     </div>
   </div>
 
@@ -208,7 +208,7 @@
       <p>🌟 레벨: <strong>5</strong></p>
             <% if (totaltime != null) { %>
       <p>🕒 전체 요가 시간: <strong><%=totaltime.intValue()/3600 %>시간 <%=totaltime.intValue()/60 %>분 <%} else { totaltime = 0; %><p>🕒 전체 요가 시간: <strong> <%=totaltime %>분 <%} %> </strong></p>
-      <button onclick="location.href='/boot/index9'">🔧 정보 수정</button>
+      <button onclick="location.href='/boot/member/${member.id}/edit'">🔧 정보 수정</button>
       <button onclick="location.href='logout'">🚪 로그아웃</button>
     </div>
   
