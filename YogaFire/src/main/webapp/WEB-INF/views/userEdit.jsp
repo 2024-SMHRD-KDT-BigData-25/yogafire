@@ -138,7 +138,7 @@
       </div>
       <div class="form-group">
         <label for="new-password">🔑 변경할 비밀번호</label>
-        <input type="password" id="new-password" name="password" class="form-control" placeholder="새 비밀번호를 입력하세요">
+        <input type="password" id="new-password" name="password" class="form-control" placeholder="새 비밀번호를 입력하세요" required>
       </div>
 
       <!-- 저장 버튼 -->

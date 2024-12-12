@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.smhrd.yoga.mapper.MemberMapper;
 import com.smhrd.yoga.model.myPage;
 import com.smhrd.yoga.model.userInfo;
+import com.smhrd.yoga.model.userhistory;
 
 import lombok.RequiredArgsConstructor;
 
@@ -62,6 +63,10 @@ public class MemberService {
 	
 	public Integer alltodaycal() {
 		return mapper.alltodaycal();
+	}
+	
+	public List<userhistory> userscore(userInfo member) {
+		return mapper.userscore(member);
 	}
 
 }
