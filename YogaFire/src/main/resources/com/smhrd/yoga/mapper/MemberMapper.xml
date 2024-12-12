@@ -8,4 +8,8 @@
 		select sum(a.ps_cal) as totalcal from pose_info as a, user_activity as b, flow_order c where (a.ps_idx = c.ps_idx) and (b.flow_order_idx = c.flow_order_idx) and (b.id=#{id})
 	</select>
 	
+	<select  id="alltodaycal" resultType="int">
+		select sum(a.ps_cal) as alltodaycal from pose_info as a, user_activity as b, flow_order c where (a.ps_idx = c.ps_idx) and (b.flow_order_idx = c.flow_order_idx) and (DATE(b.activity_at) = CURDATE());
+	</select>
+	
 </mapper>
