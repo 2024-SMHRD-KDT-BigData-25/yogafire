@@ -96,6 +96,10 @@
                         <img src="images/yogalistimg.jpg" alt="Beginner Yoga"
                         onclick="location.href='http://localhost:8097/boot/programs/<%=member.getId()%>/<%=list1.get(i).getFlow_idx()%>'">
                         <p><%=list1.get(i).getFlow_title() %></p>
+                        <div class="exp"><%=list1.get(i).getFlow_exp() %></div>
+                        <div class="flowimg">
+                        	<img src="images/yogaflow/beginner20.png">
+                        </div>
                     </div>
                 <% } %>
                 </div>
@@ -110,11 +114,15 @@
                         <img src="img/yogalistimg.jpg" alt="Intermediate Yoga"
                         onclick="location.href='http://localhost:8097/boot/programs/<%=member.getId()%>/<%=list2.get(i).getFlow_idx()%>'">
                         <p><%=list2.get(i).getFlow_title() %></p>
+                        <div class="exp"><%=list2.get(i).getFlow_exp() %></div>
+                        <div class="flowimg">
+                        	<img src="images/yogaflow/'<%=list2.get(i).getFlow_img() %>'">
+                        </div>
                     </div>
                 <% } %>
                 </div>
             </div>
-
+			
             <!-- 고급 -->
             <div class="category">
                 <h2>Advanced</h2>
@@ -124,12 +132,17 @@
                         <img src="img/배경격이미지2.jpg" alt="Advanced Yoga"
                         onclick="location.href='http://localhost:8097/boot/programs/<%=member.getId()%>/<%=list3.get(i).getFlow_idx()%>'">
                         <p><%=list3.get(i).getFlow_title() %></p>
+                        <div class="exp"><%=list3.get(i).getFlow_exp() %></div>
+                        <div class="flowimg">
+                        	<img src="images/yogaflow/'<%=list3.get(i).getFlow_img() %>'">
+                        </div>
                     </div>
                     <% } %>
                 </div>
             </div>
         </div>
     </div>		
+    
 <script src="js/index11.js"></script>
  
 </body>

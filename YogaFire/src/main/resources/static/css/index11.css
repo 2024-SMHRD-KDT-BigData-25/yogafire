@@ -26,6 +26,7 @@ margin-bottom: 30px;
     padding: 0px;
     background-color: white;
     border-radius: 11px;
+    padding-bottom: 1px;
 }
 
 h2 {
@@ -39,12 +40,12 @@ h2 {
     display: flex;               /* 아이템을 가로로 나열 */
     overflow-x: auto;            /* 가로 스크롤을 활성화 */
     gap: 20px;                   /* 아이템 간 간격 */
-    padding: 10px 0;             /* 위 아래 패딩 */
+    padding: 0 0 15px 0;             /* 아래 패딩 */
     scroll-snap-type: x mandatory; /* 스크롤 시 아이템이 스냅되도록 설정 (선택 사항) */
     width: 95vw;                /* 화면의 전체 너비를 차지하도록 설정 */
     box-sizing: border-box;      /* 패딩과 마진이 전체 너비에 포함되도록 설정 */
     touch-action: pan-y;         /* 수평 스크롤을 허용하도록 터치 동작 설정 */
-    margin-left: 17px
+    margin-left: 17px;
 }
 
 .items::-webkit-scrollbar-track
@@ -75,6 +76,7 @@ h2 {
     text-align: center;
     position: relative;
     flex-shrink: 0;              /* 아이템이 축소되지 않도록 설정 */
+    padding-top: 20px;
 }
 
 .item img {
@@ -93,25 +95,36 @@ h2 {
 p {
     margin-top: 10px;
     font-weight: bold;
+    max-width: 500px
 }
 
 .details {
-	position: relative;
-    overflow: hidden;
-    max-height: 0;
     opacity: 0;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-    background-color: #f9f9f9;
-    padding: 0 10px;
-    margin-top: 10px;
-    border-radius: 10px;
+    transition: opacity 0.5s ease;
 }
 
 .details.visible {
-	max-width: 1000px;
-    max-height: 4000px; /* 적절한 높이로 설정 */
     opacity: 1;
-    padding: 10px 10px;
+}
+
+.item.highlight {
+    border: 2px solid #f39c12; /* 강조 표시를 위한 테두리 색상 */
+	border-radius: 20px;
+}
+
+.itemdetails {
+	padding: 20px;
+    background-color: lightgray;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+.itemdetails img {
+	width: 62%;
+	border-radius: 20px;
 }
 
 .toggle-button {
@@ -137,4 +150,10 @@ background: #5DADE2;
 .start-button:hover {
 background: #5DADE2;
     transform: scale(1.05);
+}
+.exp {
+	display: none;
+}
+.flowimg {
+	display: none;
 }
