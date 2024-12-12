@@ -381,7 +381,7 @@
     <h1>Discover Your Inner Peace</h1>
     <p>AI와 함께하는 개인화된 요가 & 명상 프로그램</p>
     <% if (member == null) { %>
-    <button class="cta-button" onclick="location.href='/boot/join'">지금 시작하기</button>
+    <button class="cta-button" onclick="location.href='/boot/login'">지금 시작하기</button>
     <% } else { %>
     <button class="cta-button" onclick="location.href='/boot/programs'">지금 시작하기</button>
     <% } %>
@@ -495,7 +495,7 @@
 <div class="ad-banner">
     <img src="images/ai분석자세.gif" alt="체험하기">
     <p>AI 기반 요가 자세 분석</p>
-    <button onclick="location.href='/boot/index10'">지금 체험하기</button>
+    <button onclick="location.href='/boot/yogaPlay'">지금 체험하기</button>
 </div>
 <% } %>
 
