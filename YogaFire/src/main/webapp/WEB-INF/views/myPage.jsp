@@ -410,7 +410,7 @@ background: #5DADE2;
         <div class="items">
 		<%if (flowlist != null) { %>
 		  <div class="item">
-             <img src=<%=flowlist.getFlow_img()%> alt="Beginner Yoga">
+             <img src="images/yogaflow/<%=flowlist.getFlow_img() %>" alt="Beginner Yoga">
              <p><%=flowlist.getFlow_title() %> <%} else {%> <div data-id="beginner1"> <%=member.getNick()%>님의 최근 운동 내역이 없어요😓 <%}%></p>
           </div>
         </div>

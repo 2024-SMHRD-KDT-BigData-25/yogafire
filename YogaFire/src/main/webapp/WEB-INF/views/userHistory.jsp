@@ -132,7 +132,7 @@ Integer totaltime = (Integer)session.getAttribute("totaltime"); %>
     <% if (userscore != null && !userscore.isEmpty()) { %>
         <% for (userhistory u : userscore) { %>
             <div class="history-item">
-                <img src="" alt="요가 자세">
+                <img src="${pageContext.request.contextPath}/images/yogaflow/<%=u.getFlow_img() %>" alt="요가 자세">
                 <div class="details">
                     <h2>🧘 <%=u.getFlow_title() %></h2>
                     <h3>날짜: <%=u.getActivity_at() %></h3>
