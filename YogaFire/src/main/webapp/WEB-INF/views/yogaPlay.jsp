@@ -6,8 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>시퀀스 실행 페이지</title>
-<link rel="stylesheet" href="css/index10.css">
-<link rel="stylesheet" href="css/fire.css">
+  <link rel="stylesheet" href="css/index10.css">
+  <link rel="stylesheet" href="css/fire.css">
 </head>
 <body>
 <header class="topheader">
@@ -34,8 +34,9 @@
 </div>
 <div class="yogavalue">
 	<div class="button-group">
-      <button>일시정지</button>
-      <button>그만하기</button>
+      <button onclick="pauseVideo()">일시정지</button>
+      <button onclick="stopAndRedirect()">그만하기</button>
+      
 	</div>
 	<img class="yogaimg" src="images/yogapose/10-5-1.png">
 	<img class="yogaimg" src="images/yogapose/1-1-1.png">
@@ -47,7 +48,16 @@
 	<img class="yogaimg" src="images/yogapose/10-8.jpg">
 </div>
 
+<script>
  
+
+    function stopAndRedirect() {
+        if (confirm("정말 그만하시겠습니까?")) {
+            window.location.href = "http://localhost:8090/boot/programs"; // 이동할 URL
+        }
+    }
+</script>
+
 <script src="js/index10.js"></script> 
 </body>
-</html> 
+</html>

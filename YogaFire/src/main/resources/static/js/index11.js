@@ -80,11 +80,12 @@ function toggleDetails(event) {
 
 function startYoga(event) {
     const button = event.currentTarget;
-    const item = button.closest(".item"); // 버튼이 속한 .item 요소
-    const id = item.dataset.id;
+    const item = button.closest(".item");
+    const flowId = item.dataset.flowId;
+    const userId = item.dataset.userId;
 
-     window.location.href = `yogaPlay`
-    // 여기서 추가적인 로직(예: 페이지 이동, 동영상 재생)을 구현할 수 있습니다.
+    // Flask 서버 경로로 이동
+    window.location.href = `http://localhost:8097/boot/programs/${userId}/${flowId}`;
 }
 
 // 각 아이템에 버튼 생성 및 이벤트 추가
@@ -108,4 +109,8 @@ document.querySelectorAll(".item").forEach(item => {
     buttonContainer.appendChild(startButton);
 
     item.appendChild(buttonContainer);
+	
+	
 });
+
+

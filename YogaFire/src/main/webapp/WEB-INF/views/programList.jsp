@@ -90,42 +90,43 @@
             <!-- 초급 -->
             <div class="category">
                 <h2>Beginner</h2>
-                <div class="items">
-                <% for(int i=0; i<list1.size(); i++){ %>
-                    <div class="item" data-id="beginner1">
-                        <img src="images/yogalistimg.jpg" alt="Beginner Yoga"
-                        onclick="location.href='http://localhost:8097/boot/programs/<%=member.getId()%>/<%=list1.get(i).getFlow_idx()%>'">
-                        <p><%=list1.get(i).getFlow_title() %></p>
-                    </div>
-                <% } %>
-                </div>
-            </div>
+               <div class="items">
+    <% for(int i=0; i<list1.size(); i++){ %>
+        <div class="item" 
+             data-flow-id="<%=list1.get(i).getFlow_idx()%>" 
+             data-user-id="<%=member.getId()%>">
+            <img src="images/yogalistimg.jpg" alt="Beginner Yoga">
+            <p><%=list1.get(i).getFlow_title() %></p>
+        </div>
+    <% } %>
+</div>
+
             
             <!-- 중급 -->
-            <div class="category">
-                <h2>Intermediate</h2>
-                <div class="items">
-                <% for(int i=0; i<list2.size(); i++){ %>
-                    <div class="item" data-id="intermediate1">
-                        <img src="img/yogalistimg.jpg" alt="Intermediate Yoga"
-                        onclick="location.href='http://localhost:8097/boot/programs/<%=member.getId()%>/<%=list2.get(i).getFlow_idx()%>'">
-                        <p><%=list2.get(i).getFlow_title() %></p>
-                    </div>
-                <% } %>
+         <div class="items">
+    <% for(int i=0; i<list1.size(); i++){ %>
+        <div class="item" 
+             data-flow-id="<%=list1.get(i).getFlow_idx()%>" 
+             data-user-id="<%=member.getId()%>">
+            <img src="images/yogalistimg.jpg" alt="Beginner Yoga">
+            <p><%=list1.get(i).getFlow_title() %></p>
+        </div>
+    <% } %>
+</div>
                 </div>
             </div>
 
             <!-- 고급 -->
-            <div class="category">
-                <h2>Advanced</h2>
-                <div class="items">
-                    <% for(int i=0; i<list3.size(); i++){ %>
-                    <div class="item" data-id="advanced1">
-                        <img src="img/배경격이미지2.jpg" alt="Advanced Yoga"
-                        onclick="location.href='http://localhost:8097/boot/programs/<%=member.getId()%>/<%=list3.get(i).getFlow_idx()%>'">
-                        <p><%=list3.get(i).getFlow_title() %></p>
-                    </div>
-                    <% } %>
+          <div class="items">
+    <% for(int i=0; i<list1.size(); i++){ %>
+        <div class="item" 
+             data-flow-id="<%=list1.get(i).getFlow_idx()%>" 
+             data-user-id="<%=member.getId()%>">
+            <img src="images/yogalistimg.jpg" alt="Beginner Yoga">
+            <p><%=list1.get(i).getFlow_title() %></p>
+        </div>
+    <% } %>
+</div>
                 </div>
             </div>
         </div>
