@@ -370,7 +370,7 @@
      	  }%>
       </div>
   </div>
-<!-- 채팅 봇 버튼 HTML -->
+
 <button class="chatbot-btn" id="chatbot-btn">💬</button>
 
 
