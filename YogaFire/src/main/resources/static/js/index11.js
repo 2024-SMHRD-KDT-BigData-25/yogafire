@@ -56,11 +56,21 @@ function toggleDetails(event) {
     // 새로운 상세 정보 생성
     const data = detailsData[id];
     if (data) {
+		
+		const itemTitle = item.querySelector("p").innerText;
+		const itemExp = item.querySelector(".exp").innerText;
+		const itemImg = item.querySelector(".flowimg img").src;
+		
         const detailsDiv = document.createElement("div");
         detailsDiv.className = "details";
         detailsDiv.innerHTML = `
-            <h3>${data.title}</h3>
-            <p>${data.description}</p>
+		<div class="itemdetails">
+			<div>
+            	<h3>${itemTitle}</h3>
+            	<p>${itemExp}</p>
+			</div>
+			<img src="${itemImg}">
+		</div>
         `;
 
         // .category 요소 아래에 상세 정보 삽입

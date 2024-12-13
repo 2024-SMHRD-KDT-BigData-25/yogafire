@@ -92,16 +92,15 @@
                 <h2>Beginner</h2>
                <div class="items">
    				 <% for(int i=0; i<list1.size(); i++){ %>
-        			<div class="item" 
+        			<div class="item" data-id="beginner1"
             			 data-flow-id="<%=list1.get(i).getFlow_idx()%>" 
             				 data-user-id="<%=member.getId()%>">
             			<img src="images/yogaflow/<%=list1.get(i).getFlow_img() %>" alt="Beginner Yoga">
            				 <p><%=list1.get(i).getFlow_title() %></p>
            				 <div class="exp"><%=list1.get(i).getFlow_exp() %></div>
                         <div class="flowimg">
-                        	<img src="images/yogaflow/'<%=list1.get(i).getFlow_img() %>'">
-                        </div>
-           				 
+                        	<img src="images/yogaflow/beginner<%=list1.get(i).getFlow_img() %>">
+                        </div>			 
        				  </div>
     				<% } %>
 				</div>
@@ -120,7 +119,7 @@
             <p><%=list2.get(i).getFlow_title() %></p>
         	<div class="exp"><%=list2.get(i).getFlow_exp() %></div>
             <div class="flowimg">
-                <img src="images/yogaflow/'<%=list2.get(i).getFlow_img() %>'">
+                <img src="images/yogaflow/<%=list2.get(i).getFlow_img() %>">
             </div>
         </div>
     <% } %>
@@ -134,12 +133,12 @@
     		<% for(int i=0; i<list3.size(); i++){ %>
         	<div class="item" 
             	 data-flow-id="<%=list3.get(i).getFlow_idx()%>" 
-           	 	 data-user-id="<%=member.getId()%>" data-id="beginner1">
+           	 	 data-user-id="<%=member.getId()%>">
             	<img src="images/yogaflow/<%=list3.get(i).getFlow_img() %>" alt="Beginner Yoga">
             	<p><%=list3.get(i).getFlow_title() %></p>
         		<div class="exp"><%=list3.get(i).getFlow_exp() %></div>
                 <div class="flowimg">
-                    <img src="images/yogaflow/'<%=list3.get(i).getFlow_img() %>'">
+                    <img src="images/yogaflow/<%=list3.get(i).getFlow_img() %>">
                 </div>
         	</div>
     		<% } %>
