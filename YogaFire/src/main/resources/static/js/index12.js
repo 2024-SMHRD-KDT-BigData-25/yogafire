@@ -10,7 +10,7 @@ let currentlyOpenDetails = null; // 현재 열려있는 상세 정보를 추적
 function toggleDetails(event) {
     const button = event.currentTarget;
     const item = button.closest(".item"); // 버튼이 속한 .item 요소
-    const category = item.closest(".category"); // .category 요소 가져오기
+    const category = item.closest(".card.recommend"); // .category 요소 가져오기
     const id = item.dataset.id;
 
     // 기존에 열려 있는 상세 정보가 있으면 닫기
