@@ -184,6 +184,79 @@
     gap: 70px;
     padding-left: 30px;
 }
+  .chatbot-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .chatbot-btn:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.1);
+  }
+
+  .chatbot-window {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--card-shadow);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+  }
+
+  .chatbot-header {
+    background: var(--main-color);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .chatbot-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .chatbot-footer {
+    padding: 10px;
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+  }
+
+  .chatbot-footer input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+  }
+
+  .chatbot-footer button {
+    padding: 8px 15px;
+    margin-left: 5px;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   </style>
 </head>
 
@@ -297,6 +370,8 @@
      	  }%>
       </div>
   </div>
+<!-- 채팅 봇 버튼 HTML -->
+<button class="chatbot-btn" id="chatbot-btn">💬</button>
 
 
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
@@ -397,5 +472,7 @@
       alert('로그아웃 되었습니다.');
     }
   </script>
-  
+<script>
+
+</script>  
 <script src="js/index11.js"></script>
