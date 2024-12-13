@@ -91,18 +91,26 @@
             <div class="category">
                 <h2>Beginner</h2>
                <div class="items">
-    <% for(int i=0; i<list1.size(); i++){ %>
-        <div class="item" 
-             data-flow-id="<%=list1.get(i).getFlow_idx()%>" 
-             data-user-id="<%=member.getId()%>">
-            <img src="images/yogalistimg.jpg" alt="Beginner Yoga">
-            <p><%=list1.get(i).getFlow_title() %></p>
-        </div>
-    <% } %>
-</div>
+   				 <% for(int i=0; i<list1.size(); i++){ %>
+        			<div class="item" 
+            			 data-flow-id="<%=list1.get(i).getFlow_idx()%>" 
+            				 data-user-id="<%=member.getId()%>">
+            			<img src="images/yogalistimg.jpg" alt="Beginner Yoga">
+           				 <p><%=list1.get(i).getFlow_title() %></p>
+           				 <div class="exp"><%=list2.get(i).getFlow_exp() %></div>
+                        <div class="flowimg">
+                        	<img src="images/yogaflow/'<%=list2.get(i).getFlow_img() %>'">
+                        </div>
+           				 
+       				  </div>
+    				<% } %>
+				</div>
+            </div>
 
             
             <!-- 중급 -->
+  <div class="category">                     
+      <h2>Intermediate</h2>
          <div class="items">
     <% for(int i=0; i<list1.size(); i++){ %>
         <div class="item" 
@@ -110,27 +118,36 @@
              data-user-id="<%=member.getId()%>">
             <img src="images/yogalistimg.jpg" alt="Beginner Yoga">
             <p><%=list1.get(i).getFlow_title() %></p>
+        	<div class="exp"><%=list3.get(i).getFlow_exp() %></div>
+            <div class="flowimg">
+                <img src="images/yogaflow/'<%=list3.get(i).getFlow_img() %>'">
+            </div>
         </div>
     <% } %>
+  </div>
 </div>
-                </div>
-            </div>
 
             <!-- 고급 -->
+  <div class="category">
+       <h2>Advanced</h2>
           <div class="items">
-    <% for(int i=0; i<list1.size(); i++){ %>
-        <div class="item" 
-             data-flow-id="<%=list1.get(i).getFlow_idx()%>" 
-             data-user-id="<%=member.getId()%>">
-            <img src="images/yogalistimg.jpg" alt="Beginner Yoga">
-            <p><%=list1.get(i).getFlow_title() %></p>
-        </div>
-    <% } %>
-</div>
+    		<% for(int i=0; i<list1.size(); i++){ %>
+        	<div class="item" 
+            	 data-flow-id="<%=list1.get(i).getFlow_idx()%>" 
+           	 	 data-user-id="<%=member.getId()%>">
+            	<img src="images/yogalistimg.jpg" alt="Beginner Yoga">
+            	<p><%=list1.get(i).getFlow_title() %></p>
+        		<div class="exp"><%=list3.get(i).getFlow_exp() %></div>
+                <div class="flowimg">
+                    <img src="images/yogaflow/'<%=list3.get(i).getFlow_img() %>'">
                 </div>
-            </div>
-        </div>
-    </div>		
+        	</div>
+    		<% } %>
+		</div>
+     </div>
+</div>
+</div>
+		
 <script src="js/index11.js"></script>
  
 </body>
