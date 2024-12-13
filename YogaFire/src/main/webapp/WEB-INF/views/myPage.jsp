@@ -143,6 +143,7 @@
     .item {
       width: 150px;
       text-align: center;
+      padding: 10px;
     }
 
     .item img {
@@ -181,7 +182,7 @@
 
 .itembox {
 	display: flex;
-    gap: 70px;
+    gap: 45px;
     padding-left: 30px;
 }
   .chatbot-btn {
@@ -257,6 +258,65 @@
     border-radius: 5px;
     cursor: pointer;
   }
+  .toggle-button {
+margin-right: 5px;
+    background-color: #7DCEA0;
+    height: 30px;
+    border-radius: 15px;
+    border: 0px;
+    color: white;
+}
+.start-button {
+margin-left: 5px;
+    background-color: #7DCEA0;
+    height: 30px;
+    border-radius: 15px;
+    border: 0px;
+    color: white;
+}   
+.toggle-button:hover {
+background: #5DADE2;
+    transform: scale(1.05);
+}
+.start-button:hover {
+background: #5DADE2;
+    transform: scale(1.05);
+}
+.exp {
+	display: none;
+}
+.flowimg {
+	display: none;
+}
+.details {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.details.visible {
+    opacity: 1;
+}
+.item.highlight {
+    border: 2px solid #f39c12; /* 강조 표시를 위한 테두리 색상 */
+	border-radius: 20px;
+}
+.itemdetails {
+	padding: 20px;
+    background-color: lightgray;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+.itemdetails div{
+	width: 30%
+}
+.itemdetails img {
+	width: 62%;
+	border-radius: 20px;
+}
   </style>
 </head>
 
@@ -355,15 +415,20 @@
           </div>
         </div>
       </div>
+      
      <div class="card recommend">
         <h3>🌟 추천 시퀀스</h3>
         <div class="itembox">
 		<%  if (randomFlows != null) {
                 for (FlowInfo flow : randomFlows) {%>
         			<div class="items">
-            		  <div class="item">
-            		  	<img src="images/yoga2.jpg" alt="추천 시퀀스">
+            		  <div class="item" data-id="beginner1">
+            		  	<img src="images/yogaflow/<%= flow.getFlow_img() %>" alt="추천 시퀀스">
             		  	<p><%= flow.getFlow_title()%></p>
+            		  	<div class="exp"><%=flow.getFlow_exp() %></div>
+                        <div class="flowimg">
+                        	<img src="images/yogaflow/요가시퀀스<%=flow.getFlow_img() %>">
+                        </div>	
           			  </div>
        				 </div>
                	<% }
@@ -475,4 +540,4 @@
 <script>
 
 </script>  
-<script src="js/index11.js"></script>
+<script src="js/index12.js"></script>
