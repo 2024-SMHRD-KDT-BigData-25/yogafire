@@ -30,24 +30,25 @@ let currentlyOpenDetails = null; // 현재 열려있는 상세 정보를 추적
 function toggleDetails(event) {
     const button = event.currentTarget;
     const item = button.closest(".item"); // 버튼이 속한 .item 요소
+    const category = item.closest(".category"); // .category 요소 가져오기
     const id = item.dataset.id;
 
     // 기존에 열려 있는 상세 정보가 있으면 닫기
     if (currentlyOpenDetails && currentlyOpenDetails !== item) {
-        const openDetails = currentlyOpenDetails.querySelector(".details");
+        const openDetails = category.querySelector(".details");
         if (openDetails) {
             openDetails.classList.remove("visible");
             setTimeout(() => openDetails.remove(), 500); // 애니메이션 후 제거
-            currentlyOpenDetails.classList.remove("expanded"); // 기존 아이템의 확장 상태 해제
         }
+        currentlyOpenDetails.classList.remove("highlight"); // 기존 아이템의 강조 상태 해제
     }
 
     // 상세 정보가 이미 열려 있는지 확인하고, 열기 또는 닫기
-    const existingDetails = item.querySelector(".details");
-    if (existingDetails) {
+    const existingDetails = category.querySelector(".details");
+    if (existingDetails && currentlyOpenDetails === item) {
         existingDetails.classList.remove("visible");
         setTimeout(() => existingDetails.remove(), 500);
-        item.classList.remove("expanded"); // 해당 아이템의 확장 상태 해제
+        item.classList.remove("highlight"); // 강조 상태 해제
         currentlyOpenDetails = null; // 열려 있는 상세 정보 없앰
         return;
     }
@@ -62,16 +63,16 @@ function toggleDetails(event) {
             <p>${data.description}</p>
         `;
 
-        // 선택된 이미지 바로 밑에 상세 정보 삽입
-        item.appendChild(detailsDiv);
+        // .category 요소 아래에 상세 정보 삽입
+        category.appendChild(detailsDiv);
 
         // 약간의 딜레이 후 애니메이션 효과 활성화
         setTimeout(() => {
             detailsDiv.classList.add("visible");
         }, 10);
 
-        // 해당 아이템에 확장 상태 추가
-        item.classList.add("expanded");
+        // 해당 아이템에 강조 상태 추가
+        item.classList.add("highlight");
 
         // 현재 열려 있는 상세 정보 추적
         currentlyOpenDetails = item;
