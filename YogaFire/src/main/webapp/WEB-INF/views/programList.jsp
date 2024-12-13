@@ -97,9 +97,9 @@
             				 data-user-id="<%=member.getId()%>">
             			<img src="images/yogalistimg.jpg" alt="Beginner Yoga">
            				 <p><%=list1.get(i).getFlow_title() %></p>
-           				 <div class="exp"><%=list2.get(i).getFlow_exp() %></div>
+           				 <div class="exp"><%=list1.get(i).getFlow_exp() %></div>
                         <div class="flowimg">
-                        	<img src="images/yogaflow/'<%=list2.get(i).getFlow_img() %>'">
+                        	<img src="images/yogaflow/'<%=list1.get(i).getFlow_img() %>'">
                         </div>
            				 
        				  </div>
@@ -112,15 +112,15 @@
   <div class="category">                     
       <h2>Intermediate</h2>
          <div class="items">
-    <% for(int i=0; i<list1.size(); i++){ %>
+    <% for(int i=0; i<list2.size(); i++){ %>
         <div class="item" 
-             data-flow-id="<%=list1.get(i).getFlow_idx()%>" 
+             data-flow-id="<%=list2.get(i).getFlow_idx()%>" 
              data-user-id="<%=member.getId()%>">
             <img src="images/yogalistimg.jpg" alt="Beginner Yoga">
-            <p><%=list1.get(i).getFlow_title() %></p>
-        	<div class="exp"><%=list3.get(i).getFlow_exp() %></div>
+            <p><%=list2.get(i).getFlow_title() %></p>
+        	<div class="exp"><%=list2.get(i).getFlow_exp() %></div>
             <div class="flowimg">
-                <img src="images/yogaflow/'<%=list3.get(i).getFlow_img() %>'">
+                <img src="images/yogaflow/'<%=list2.get(i).getFlow_img() %>'">
             </div>
         </div>
     <% } %>
@@ -131,12 +131,12 @@
   <div class="category">
        <h2>Advanced</h2>
           <div class="items">
-    		<% for(int i=0; i<list1.size(); i++){ %>
+    		<% for(int i=0; i<list3.size(); i++){ %>
         	<div class="item" 
-            	 data-flow-id="<%=list1.get(i).getFlow_idx()%>" 
+            	 data-flow-id="<%=list3.get(i).getFlow_idx()%>" 
            	 	 data-user-id="<%=member.getId()%>">
             	<img src="images/yogalistimg.jpg" alt="Beginner Yoga">
-            	<p><%=list1.get(i).getFlow_title() %></p>
+            	<p><%=list3.get(i).getFlow_title() %></p>
         		<div class="exp"><%=list3.get(i).getFlow_exp() %></div>
                 <div class="flowimg">
                     <img src="images/yogaflow/'<%=list3.get(i).getFlow_img() %>'">
