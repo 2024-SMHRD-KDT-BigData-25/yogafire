@@ -80,6 +80,7 @@ function toggleDetails(event) {
 
 function startYoga(event) {
     const button = event.currentTarget;
+
     const item = button.closest(".item");
     const flowId = item.dataset.flowId;
     const userId = item.dataset.userId;
