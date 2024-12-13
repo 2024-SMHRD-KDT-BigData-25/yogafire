@@ -106,8 +106,8 @@ Integer totaltime = (Integer)session.getAttribute("totaltime"); %>
 
 <div class="sidebar">
     <div class="profile">
-        <img src="" alt="프로필">
-        <h2>사용자</h2>
+        <img src="${pageContext.request.contextPath}/images/${member.profic}" alt="프로필">
+        <h2><%=member.getNick() %></h2>
     </div>
 
     <div class="stats">
