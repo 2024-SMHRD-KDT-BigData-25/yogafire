@@ -11,91 +11,116 @@
     <title>YogaFire</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            display: flex;
-            height: 100vh;
-        }
+ 
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    height: 100vh;
+    overflow: hidden; 
+}
 
-        .sidebar {
-            width: 300px;
-            background-color: #3CB371;
-            color: white;
-            padding: 20px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
 
-        .sidebar .profile img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            border: 3px solid white;
-        }
+.sidebar {
+    width: 300px;
+    background-color: #3CB371;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .sidebar .profile h2 {
-            font-size: 1.5rem;
-        }
 
-        .sidebar .stats, .sidebar .actions {
-            text-align: center;
-            margin: 20px 0;
-        }
+.sidebar .profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid white;
+}
 
-        .sidebar .actions button {
-            background-color: white;
-            color: #3CB371;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
 
-        .main-content {
-            flex-grow: 1;
-            padding: 20px;
-        }
+.sidebar .profile h2 {
+    font-size: 1.5rem;
+}
 
-        .main-content h1 {
-            font-size: 1.8rem;
-            color: #3CB371;
-            margin-bottom: 20px;
-        }
 
-        .history-item {
-            display: flex;
-            align-items: center;
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+.sidebar .stats, 
+.sidebar .actions {
+    text-align: center;
+    margin: 20px 0;
+}
 
-        .history-item img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
+.sidebar .actions button {
+    background-color: white;
+    color: #3CB371;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
 
-        .history-item .details h2, .history-item .details h3 {
-            margin: 0;
-            color: #333;
-        }
 
-        .history-item .details h3 {
-            font-size: 1.2rem;
-            color: #666;
-        }
+.sidebar .actions button:hover {
+    background-color: #2E8B57;
+    color: white;
+}
+
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto; 
+}
+
+
+.main-content h1 {
+    font-size: 1.8rem;
+    color: #3CB371;
+    margin-bottom: 20px;
+}
+
+
+.history-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.history-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+
+.history-item .details h2, 
+.history-item .details h3 {
+    margin: 0;
+    color: #333;
+}
+
+
+.history-item .details h3 {
+    font-size: 1.2rem;
+    color: #666;
+}
+
     </style>
 </head>
 <body>
