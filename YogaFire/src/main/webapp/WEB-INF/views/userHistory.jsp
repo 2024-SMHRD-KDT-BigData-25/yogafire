@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@page import="com.smhrd.yoga.model.userInfo"%>
+<%@page import="com.smhrd.yoga.model.userhistory"%>
+<%@page import="java.util.List"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page pageEncoding="UTF-8" %>
 <html lang="ko">
@@ -157,6 +160,10 @@
 </head>
 <body>
 
+<% List<userhistory> userscore = (List<userhistory>)request.getAttribute("userscore"); %>
+<% userInfo member = (userInfo)session.getAttribute("member");
+Integer totaltime = (Integer)session.getAttribute("totaltime");%>
+
 <div class="sidebar">
     <div class="profile">
         <img src="" alt="프로필">
@@ -164,68 +171,39 @@
     </div>
     <div class="stats">
         <div class="level">🌟 레벨: 5</div>
-        <div class="time">전체 요가 시간: 0시간 16분</div>
+        <% if (totaltime != null) { %>
+        <div class="time">🕒 전체 요가 시간:<%=totaltime.intValue()/3600 %>시간 <%=totaltime.intValue()/60 %>분 <%} else { totaltime = 0; %>🕒 전체 요가 시간:  <%=totaltime %>분 <%} %>
     </div>
     <div class="actions">
         <button onclick="location.href='/boot/member/${member.id}/edit'">🔧 정보 수정</button>
-      <button onclick="location.href='logout'">🚪 로그아웃</button>
+      <button onclick="location.href='/boot/myPage'">마이페이지</button>
     </div>
 </div>
 
 <div class="main-content">
     <h1>플레이 이력</h1>
-
+	<%if (userscore != null && !userscore.isEmpty()) { %>
+	<% for (userhistory u : userscore) { %>
     <div class="history-item highlight">
         <img src="" alt="요가 자세">
         <div class="details">
-            <h2><span class="emoji">🌲</span> 나무 자세</h2>
-            <h3>날짜: 2024/10/21</h3>
-            <h3>점수: A+</h3>
-            <div class="tags">
-                <span class="tag">균형</span>
-                <span class="tag">초급</span>
-            </div>
+            <h2><span class="emoji">🧘</span><%=u.getFlow_title() %></h2>
+            <h3>날짜: <%=u.getActivity_at() %></h3>
+            <h3>점수: <%=u.getAvg_activity_score() %></h3>
+
         </div>
     </div>
-
+    	<%} %>
+	<%}else {%>
     <div class="history-item">
         <img src="" alt="요가 자세">
         <div class="details">
-            <h2><span class="emoji">🛡️</span> 전사 자세</h2>
-            <h3>날짜: 2024/10/18</h3>
-            <h3>점수: B+</h3>
-            <div class="tags">
-                <span class="tag">힘</span>
-                <span class="tag">중급</span>
-            </div>
-        </div>
-    </div>
+		<p><strong>유저 운동내력이 없어요🥲<br> 요가파이어는 <%=member.getNick()%>님을 기다리고 있답니다!</strong>
 
-    <div class="history-item">
-        <img src="" alt="요가 자세">
-        <div class="details">
-            <h2><span class="emoji">🧘</span> 다리 찢기 자세</h2>
-            <h3>날짜: 2024/10/15</h3>
-            <h3>점수: A</h3>
-            <div class="tags">
-                <span class="tag">유연성</span>
-                <span class="tag">고급</span>
-            </div>
         </div>
     </div>
+	<%} %>
 
-    <div class="history-item">
-        <img src="" alt="요가 자세">
-        <div class="details">
-            <h2><span class="emoji">🦶</span> 산 자세</h2>
-            <h3>날짜: 2024/10/12</h3>
-            <h3>점수: A+</h3>
-            <div class="tags">
-                <span class="tag">기본</span>
-                <span class="tag">초급</span>
-            </div>
-        </div>
-    </div>
 </div>
 
 </body>
