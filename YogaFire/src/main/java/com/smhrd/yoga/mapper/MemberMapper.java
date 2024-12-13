@@ -12,6 +12,7 @@ import org.apache.ibatis.annotations.Update;
 
 import com.smhrd.yoga.model.FlowInfo;
 import com.smhrd.yoga.model.myPage;
+import com.smhrd.yoga.model.userActivity;
 import com.smhrd.yoga.model.userInfo;
 import com.smhrd.yoga.model.userhistory;
 
@@ -58,4 +59,5 @@ public interface MemberMapper {
             "</foreach>" +
             "</script>")
     public List<FlowInfo> randomflow(@Param("numSet") Set<Integer> numSet);
+    
 }

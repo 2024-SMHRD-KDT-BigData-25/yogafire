@@ -22,4 +22,5 @@ public interface FlowMapper {
 	
 	@Select("select * from flow_info where flow_idx=#{recentflowidx}")
 	public FlowInfo flowlist(int recentflowidx);
+	
 }

@@ -74,5 +74,5 @@ public class MemberService {
 	public List<FlowInfo> randomflow(Set<Integer> numSet) {
 		return mapper.randomflow(numSet);
 	}
-
+	
 }
