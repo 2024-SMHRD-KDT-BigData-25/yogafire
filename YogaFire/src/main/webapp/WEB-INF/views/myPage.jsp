@@ -329,6 +329,7 @@ background: #5DADE2;
 		Integer totalcal = (Integer) session.getAttribute("totalcal");
 		Integer alltodaycal = (Integer)session.getAttribute("alltodaycal");
 		List<FlowInfo> randomFlows = (List<FlowInfo>)session.getAttribute("randomflow");
+		String message = (String)session.getAttribute("message");
 		userInfo member = (userInfo)session.getAttribute("member"); %>
 
   <div class="top-menu">
@@ -357,7 +358,7 @@ background: #5DADE2;
     </div>
   
    <div class="welcome">
-    <h2>✨ 환영합니다! 요가 파이어를 시작하세요 ✨</h2>
+    <h2>✨ ${message} ✨</h2>
   </div>
   
    

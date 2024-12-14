@@ -60,4 +60,10 @@ public interface MemberMapper {
             "</script>")
     public List<FlowInfo> randomflow(@Param("numSet") Set<Integer> numSet);
     
+    // 유저의 운동 기록 조회
+    @Select("select distinct activity_at from user_activity where id =#{id} ORDER BY activity_at DESC")
+    List<userActivity> ActivityHistory(String id);
+    
+    @Select("select distinct activity_at from user_activity where id =#{id} ORDER BY activity_at DESC limit 1")
+    userActivity skipdays(String id);
 }

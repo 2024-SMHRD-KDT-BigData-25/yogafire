@@ -3,6 +3,7 @@ package com.smhrd.yoga.service;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Member;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
@@ -13,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.smhrd.yoga.mapper.MemberMapper;
 import com.smhrd.yoga.model.FlowInfo;
 import com.smhrd.yoga.model.myPage;
+import com.smhrd.yoga.model.userActivity;
 import com.smhrd.yoga.model.userInfo;
 import com.smhrd.yoga.model.userhistory;
 
@@ -74,5 +76,57 @@ public class MemberService {
 	public List<FlowInfo> randomflow(Set<Integer> numSet) {
 		return mapper.randomflow(numSet);
 	}
+	
+    // 유저의 운동 기록을 조회
+    public List<userActivity> ActivityHistory(String id) {
+        return mapper.ActivityHistory(id);
+    }
+    public userActivity checkSkipDays(String id) {
+    	return mapper.skipdays(id);
+    }
+
+    // 연속 운동일 수를 확인
+    public int checkActivity(String id) {
+        List<userActivity> activities = ActivityHistory(id);
+        if (activities.isEmpty()) {return 0;}
+        LocalDate today = LocalDate.now();
+        int checkday = 0;
+        for (userActivity activity : activities) {
+            // Null 체크 후 변환
+            if (activity.getActivity_at() != null) {
+            	LocalDate activityDate = activity.getActivity_at().toLocalDate();
+
+            	if (today.equals(activityDate)) {
+            		today = today.minusDays(1);  // 어제 날짜로 업데이트
+                    checkday++;
+                    
+                }
+            } 
+        }
+        return checkday;
+    }
+
+    // 어제 운동 기록이 있는지 확인
+    public int Skipdays(String id) {
+        userActivity activities = checkSkipDays(id);
+        if (activities == null) {return 0;}
+        LocalDate today = LocalDate.now();
+        int skipday = 0;
+        while (true) {
+            // Null 체크 후 변환
+            if (activities.getActivity_at() != null) {
+            	LocalDate activityDate = activities.getActivity_at().toLocalDate();
+            	if (!today.equals(activityDate)) {
+            		today = today.minusDays(1);
+            		System.out.println("최근 운동 날짜 : "+activityDate);
+            		System.out.println("오늘 날짜 ㅣ" + today);
+            		skipday++;
+                }else {
+                	break;
+                }
+            } 
+        }
+        return skipday;
+    }
 	
 }

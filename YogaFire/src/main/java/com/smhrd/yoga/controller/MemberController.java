@@ -94,9 +94,27 @@ public class MemberController {
 	        }
 	        List<FlowInfo> randomFlows = service.randomflow(numSet);
 			session.setAttribute("randomflow", randomFlows);
+			
+			String id = member.getId();
+			String nick = member.getNick();
+	        int checkday = service.checkActivity(id);
+	        int skipday = service.Skipdays(id);
+	        System.out.println(checkday);
+	        System.out.println(skipday);
+	        String message = "";
+	        
+	        if (checkday != 0) {
+	        	message = nick + "님 " + checkday + "일간 운동을 하셨어요!";
+	        } else if (skipday != 0) {
+	        	message = nick + "님 " + skipday + "일간 운동을 빠지셨어요!";
+	        } else {
+	        	message = nick + "님 요가파이어에 오신것을 환영합니다!";
+	        }
+	        session.setAttribute("message", message);
+	    	}
+			
 			return "redirect:/myPage";
 		}
-	}
 	
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
