@@ -47,7 +47,38 @@
 	<img class="yogaimg" src="images/yogapose/10-7.jpg">
 	<img class="yogaimg" src="images/yogapose/10-8.jpg">
 </div>
+<div class="overlay" id="overlay">
+    <div class="popup">
+        <h1>그림과 같이<br>카메라의 각도를 조절해주세요.</h1>
+        <div class="popup-box">
+        	<div class="popup-img">
+        		<iframe class="yogavideo1" src="https://www.youtube.com/embed/D3yExRi7EME?si=SgjBFurBWFXqnDMn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        	</div>       	
+        </div>
+        <button onclick="startCountdown()">Start</button>
+        <p class="countdown" id="countdown"></p>
+    </div>
+</div>
 
+<script>
+    function startCountdown() {
+        const overlay = document.getElementById('overlay');
+        const countdownElement = document.getElementById('countdown');
+        let timeLeft = 5;
+
+        countdownElement.textContent = `Start in ${timeLeft} seconds...`;
+
+        const timer = setInterval(() => {
+            timeLeft -= 1;
+            if (timeLeft > 0) {
+                countdownElement.textContent = `Start in ${timeLeft} seconds...`;
+            } else {
+                clearInterval(timer);
+                overlay.classList.add('hidden');
+            }
+        }, 1000);
+    }
+</script>
 <script>
  
 
