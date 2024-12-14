@@ -19,12 +19,31 @@
   <video id="video" autoplay></video>
     <script>
         // JavaScript로 카메라 화면 접근
-        const video = document.getElementById('video');
+        const mainVideo = document.getElementById('video'); //메인 화면
+        const popupVideo = document.getElementById('popup-video'); //팝업 화면
 
+        console.log("mainVideo element:", mainVideo);
+        console.log("popupVideo element:", popupVideo);
+        
         // getUserMedia를 사용하여 카메라 스트림 가져오기
         navigator.mediaDevices.getUserMedia({ video: true })
             .then(stream => {
-                video.srcObject = stream;
+                console.log("Camera stream obtained:", stream);
+                
+                //각 video 요소에 스트림 설정
+                if (mainVideo) {
+                	mainVideo.srcObject = stream;
+                	mainVideo.play();
+                } else {
+                	console.error("mainVideo element not found.");
+                }
+                
+                if (popupVideo) {
+                	popupVideo.srcObject = stream;
+                	popupVideo.play();
+                } else {
+                	consol.error("popupVideo element not found.");
+                }
             })
             .catch(error => {
                 console.error("카메라에 접근할 수 없습니다:", error);
@@ -52,8 +71,11 @@
         <h1>그림과 같이<br>카메라의 각도를 조절해주세요.</h1>
         <div class="popup-box">
         	<div class="popup-img">
-        		<iframe class="yogavideo1" src="https://www.youtube.com/embed/D3yExRi7EME?si=SgjBFurBWFXqnDMn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        		<img src="images/예시.png">
         	</div>       	
+        	<div class="popup-camara">
+        		<video id="popup-video" autoplay></video>
+        	</div>
         </div>
         <button onclick="startCountdown()">Start</button>
         <p class="countdown" id="countdown"></p>
