@@ -89,8 +89,8 @@ public class IndexController {
 		
 		Random r = new Random(); 
 		Set<Integer> numSet = new HashSet<>();
-        while (numSet.size() < 5) {
-            int num = r.nextInt(1, 21); // 1부터 20까지 랜덤 숫자
+        while (numSet.size() < 6) {
+            int num = r.nextInt(1, 22); // 1부터 20까지 랜덤 숫자
             numSet.add(num);
         }
         List<FlowInfo> randomFlows = service.randomflow(numSet);
@@ -100,8 +100,6 @@ public class IndexController {
 		String nick = member.getNick();
         int checkday = service.checkActivity(id);
         int skipday = service.Skipdays(id);
-        System.out.println(checkday);
-        System.out.println(skipday);
         String message = "";
         
         if (checkday != 0) {

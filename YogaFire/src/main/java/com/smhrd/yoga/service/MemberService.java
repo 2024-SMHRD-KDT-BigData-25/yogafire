@@ -118,8 +118,6 @@ public class MemberService {
             	LocalDate activityDate = activities.getActivity_at().toLocalDate();
             	if (!today.equals(activityDate)) {
             		today = today.minusDays(1);
-            		System.out.println("최근 운동 날짜 : "+activityDate);
-            		System.out.println("오늘 날짜 ㅣ" + today);
             		skipday++;
                 }else {
                 	break;

@@ -89,8 +89,8 @@ public class MemberController {
 			
 			Random r = new Random(); 
 			Set<Integer> numSet = new HashSet<>();
-	        while (numSet.size() < 5) {
-	            int num = r.nextInt(1, 21); // 1부터 20까지 랜덤 숫자
+	        while (numSet.size() < 6) {
+	            int num = r.nextInt(1, 22); // 1부터 20까지 랜덤 숫자
 	            numSet.add(num);
 	        }
 	        List<FlowInfo> randomFlows = service.randomflow(numSet);
@@ -100,14 +100,12 @@ public class MemberController {
 			String nick = member.getNick();
 	        int checkday = service.checkActivity(id);
 	        int skipday = service.Skipdays(id);
-	        System.out.println(checkday);
-	        System.out.println(skipday);
 	        String message = "";
 	        
 	        if (checkday != 0) {
-	        	message = nick + "님 " + checkday + "일간 운동을 하셨어요!";
+	        	message = nick + "님 " + checkday + "일간 연속 운동을 하셨어요!";
 	        } else if (skipday != 0) {
-	        	message = nick + "님 " + skipday + "일간 운동을 빠지셨어요!";
+	        	message = nick + "님 " + skipday + "일간 운동을 빠지셨어요! 요가파이어는 " + nick + "님을 항상 기다리고 있답니다";
 	        } else {
 	        	message = nick + "님 요가파이어에 오신것을 환영합니다!";
 	        }

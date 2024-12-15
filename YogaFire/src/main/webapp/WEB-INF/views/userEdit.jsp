@@ -123,8 +123,8 @@
 
     <!-- 정보 수정 폼 -->
     <form action="/boot/member/${member.id}/edit" method="post" enctype="multipart/form-data">
-      <div class="profile-container">
-        <img src="images/${member.profic}" alt="프로필 이미지" id="profile-preview">
+      <div class="profile-container"> 
+        <img src="${pageContext.request.contextPath}/images/${member.profic}" alt="프로필 이미지" id="profile-preview">
         <label for="profile-upload" class="btn">이미지 업로드</label>
         <input type="file" id="profile-upload" name="proficfile" style="display: none;" accept="image/*" onchange="previewImage(event)">
       </div>
