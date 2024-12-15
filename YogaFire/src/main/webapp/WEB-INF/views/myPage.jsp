@@ -10,6 +10,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yoga Dashboard</title>
+    <!-- jQuery를 먼저 로드 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- FullCalendar 및 Chart.js CSS -->
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
   <style>
@@ -471,18 +473,36 @@ background: #5DADE2;
    %>
   
     document.addEventListener('DOMContentLoaded', function () {
-      // 캘린더 초기화
-      const calendarEl = document.getElementById('calendar');
-      const calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        locale: 'ko',
-        events: [
-          { title: '하타 요가', start: '2024-12-01' },
-          { title: '빈야사 요가', start: '2024-12-05' },
-          { title: '아쉬탕가 요가', start: '2024-12-10' }
-        ]
-      });
-      calendar.render();
+	      // 캘린더 초기화
+	      const calendarEl = document.getElementById('calendar');
+	      const calendar = new FullCalendar.Calendar(calendarEl, {
+	        initialView: 'dayGridMonth',
+	        locale: 'ko',
+	        events: [
+	        	 $.ajax({
+	        		 type: "get",
+	        		 url: "/boot/calendarList",
+	        		 beforeSend: function() {
+	        		     console.log("AJAX 요청이 시작되었습니다.");
+	        		 },
+	        		 success: function (data) {
+	        			 console.log("AJAX 요청 성공, 서버 응답:", data);
+	        			 if (data != null) {
+	        				 for (let i = 0; i < data.length; i++) {
+	        					 calendar.addEvent({
+	        						 title: data[i].flow_title,
+	                                 start: data[i].activity_at
+	        					 })
+	        				 }
+	        			 }
+	        		 },
+	        		    error: function(xhr, status, error) {
+	        		        console.error("AJAX 요청 실패:", error);
+	        		    }
+	        	 })
+	        ]
+	      });
+	      calendar.render();
 
       // 차트 데이터
       const ctx = document.getElementById('yoga-chart').getContext('2d');

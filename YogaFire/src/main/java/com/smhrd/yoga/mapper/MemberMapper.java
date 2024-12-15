@@ -66,4 +66,7 @@ public interface MemberMapper {
     
     @Select("select distinct activity_at from user_activity where id =#{id} ORDER BY activity_at DESC limit 1")
     userActivity skipdays(String id);
+    
+	@Select("SELECT id, min(flow_title) AS flow_title, activity_at FROM userscore WHERE id = #{id} GROUP BY activity_at ORDER BY activity_at DESC;")
+	public List<userhistory> calendar(userInfo member);
 }

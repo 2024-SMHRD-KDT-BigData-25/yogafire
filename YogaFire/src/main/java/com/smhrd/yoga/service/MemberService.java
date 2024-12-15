@@ -128,5 +128,9 @@ public class MemberService {
         }
         return skipday;
     }
+    
+	public List<userhistory> calendar(userInfo member) {
+		return mapper.calendar(member);
+	}
 	
 }

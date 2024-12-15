@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -171,4 +172,12 @@ public class MemberController {
 		model.addAttribute("userscore", userscore);
 		return "userHistory";
 	}
+	
+    @GetMapping("/calendarList")
+    @ResponseBody
+    public List<userhistory> calendar(HttpSession session) throws Exception{
+    	userInfo member = (userInfo)session.getAttribute("member");
+    	List<userhistory> vo = service.calendar(member);
+        return vo;
+    }
 }
