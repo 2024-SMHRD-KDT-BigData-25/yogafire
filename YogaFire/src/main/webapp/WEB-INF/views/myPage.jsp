@@ -437,7 +437,7 @@ background: #5DADE2;
       </div>
   </div>
 
-<button class="chatbot-btn" id="chatbot-btn">💬</button>
+<button class="chatbot-btn" id="chatbot-btn" onclick="location.href='http://localhost:8097/boot/chat'">💬</button>
 
 
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
