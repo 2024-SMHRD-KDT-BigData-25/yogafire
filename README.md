@@ -114,7 +114,8 @@
 ## 🖥 화면 구성
 
 ### 메인페이지
-![image](https://github.com/user-attachments/assets/03c5d230-aed1-4424-a711-ea755cd239ca)
+![image](https://github.com/user-attachments/assets/add4286b-d130-4f5f-9b46-101f00efd081)
+
 
 <br>
 
